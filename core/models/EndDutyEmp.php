@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class EndDutyEmp extends Model {
 
     protected $table = "end_duty_emp";

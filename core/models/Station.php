@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class Station extends Model {
 
     protected $table = "stations";

@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class User extends Model {
 
     protected $table = "users";

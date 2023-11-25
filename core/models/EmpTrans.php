@@ -1,4 +1,5 @@
 <?php
+include("Model.php");
 class EmpTrans extends Model
 {
 

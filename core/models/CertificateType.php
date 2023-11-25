@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class CertificateEmp extends Model {
 
     protected $table = "type_certs";

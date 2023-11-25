@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class absence extends Model {
 
     protected $table = "absence";

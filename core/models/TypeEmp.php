@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class TypeEmp extends Model {
 
     protected $table = "type_emp";

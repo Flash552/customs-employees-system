@@ -1,4 +1,5 @@
 <?php 
+include("Model.php");
 class RankEmp extends Model {
 
     protected $table = "rank_emp";
