@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Icon -->
+        <link rel="icon" href="images/cropped-fav_icon-32x32.png">
+        <link rel="shortcut" href="images/cropped-fav_icon-32x32.png">
+        <link rel="apple-touch" href="images/cropped-fav_icon-32x32.png">
+        <!-- Google Fonts 'Work sans' -->
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- Main File CSS -->
+        <link rel="stylesheet" href="../CSS/controlePanel.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+        <!-- Bootstrap File CSS -->
+        <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+        <!-- Normalize File CSS -->
+        <link rel="stylesheet" href="../CSS/normalize.css">
+        <!-- Font Awesome Library -->
+        <link rel="stylesheet" href="../CSS/all.min.css">
+        <title>Gizmo</title>
+    </head>
+    <body dir="rtl">
+        <div class="page">
+            <div class="sidebar">
+                <h3>نظام شؤون الموظفين</h3>
+                <ul>
+                    <li class="active" data-set="emloyees/employees.html">
+                        <i class="fa-regular fa-user fa-fw"></i>
+                        <span>الموظفين</span>
+                    </li>
+                    <li data-set="users/users.html"> 
+                        <i class="fa-regular fa-chart-bar fa-fw"></i>
+                        <span>المستخدمين</span>
+                    </li>
+                    <li data-set="">
+                        <i class="fa-brands fa-product-hunt fa-fw"></i>
+                        <span>التقارير</span>
+                    </li>
+                    <li data-set="">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span>سجل الغياب</span>
+                    </li>
+                    <li data-set="certs/certs.html">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span>المؤهلات والدورات</span>
+                    </li>
+                    <li  data-set="settings/settings.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>الإعدادات</span>
+                    </li>
+                    <li data-set="">
+                        <i class="fa-regular fa-circle-user fa-fw"></i>
+                        <span>الحساب</span>
+                    </li>
+                    <li data-set="">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <span>خروج</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="hide"></div>
+            <div class="content">
+                <div class="head">
+                    <div class="input-box">
+                        <form action="table_emp.php" method="POST">
+                            <input class="search" type="text" name="search" placeholder="بحث" id="">
+                        </form>
+                    </div>
+                    <div class="icons">
+                        <span class="notification">
+                            <i class="fa-regular fa-bell fa-lg"></i>
+                        </span>
+                        <img src="../image/employees/photo_2023-01-13_01-42-38.jpg" alt="">
+                    </div>
+                </div>
+                <iframe src="emloyees/employees.html" id="iframe-side-bar" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/indexPanel.js"></script>
+        <script>
+            document.querySelector("li[data-set='settings/settings.html']")
+            .click();
+        </script>
+    </body>
+</html>

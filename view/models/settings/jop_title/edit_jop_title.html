@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Icon -->
+        <link rel="icon" href="images/cropped-fav_icon-32x32.png">
+        <link rel="shortcut" href="images/cropped-fav_icon-32x32.png">
+        <link rel="apple-touch" href="images/cropped-fav_icon-32x32.png">
+        <!-- Google Fonts 'Work sans' -->
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- Main File CSS -->
+        <link rel="stylesheet" href="../../../CSS/controlePanel.css">
+        <link rel="stylesheet" href="../../../CSS/style.css">
+        <!-- Bootstrap File CSS -->
+        <link rel="stylesheet" href="../../../CSS/bootstrap.min.css">
+        <!-- Normalize File CSS -->
+        <link rel="stylesheet" href="../../../CSS/normalize.css">
+        <!-- Font Awesome Library -->
+        <link rel="stylesheet" href="../../../CSS/all.min.css">
+        <title>Gizmo</title>
+    </head>
+    <body dir="rtl">
+        <div class="wrapper-two">
+            <h3 class="title-main">تعديل المسمى الوظيفي</h3>
+            <form class="row g-4 needs-validation" novalidate>
+              <div class="col-md-2">
+                <label for="validationCustom02" class="form-label">رقم</label>
+                <input type="text" class="form-control" id="validationCustom02" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-2">
+                <label for="validationCustom02" class="form-label">المسمى الوظيفي</label>
+                <input type="text" class="form-control" id="validationCustom02" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">حفظ</button>
+              </div>
+            </form>
+            
+            <hr>
+            <div class="box-table">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>الرقم</th>
+                          <th>المسمى الوظيفي</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="d-flex justify-content-center align-items-center">
+                              <a href="edit_jop_title.html" class="edit">
+                                <i class="fa-solid fa-pencil"></i>
+                              </a>
+
+                              <form action="../../PHP/script.php" method="POST">
+                                  <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
+                                  <i class="fa-solid fa-trash-can"></i>
+                                  </button>
+                              </form>
+                          </td>
+                          <td>1</td>
+                          <td>جهاد شرع الله</td>
+                      </tr>
+                      <tr>
+                          <td class="d-flex justify-content-center align-items-center">
+                              <a href="edit_jop_title.html"  id="edit" class="edit">
+                                  <i class="fa-solid fa-pencil"></i>
+                              </a>
+                              <form action="../../PHP/script.php" method="POST">
+                                  <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
+                                  <i class="fa-solid fa-trash-can"></i>
+                                  </button>
+                              </form>
+                          </td>
+                          <td>2</td>
+                          <td>علي</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+        </div>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../../js/indexPanel.js"></script>
+        <!-- <script src="../../js/all.min.js"></script> -->
+        <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+              'use strict'
+            
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.querySelectorAll('.needs-validation')
+            
+              // Loop over them and prevent submission
+              Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+                    }
+            
+                    form.classList.add('was-validated')
+                  }, false)
+                })
+            })()
+        </script>
+    </body>
+</html>

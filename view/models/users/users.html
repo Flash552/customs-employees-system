@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Icon -->
+        <link rel="icon" href="images/cropped-fav_icon-32x32.png">
+        <link rel="shortcut" href="images/cropped-fav_icon-32x32.png">
+        <link rel="apple-touch" href="images/cropped-fav_icon-32x32.png">
+        <!-- Google Fonts 'Work sans' -->
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- Main File CSS -->
+        <link rel="stylesheet" href="../../CSS/controlePanel.css">
+        <link rel="stylesheet" href="../../CSS/style.css">
+        <!-- Bootstrap File CSS -->
+        <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
+        <!-- Normalize File CSS -->
+        <link rel="stylesheet" href="../../CSS/normalize.css">
+        <!-- Font Awesome Library -->
+        <link rel="stylesheet" href="../../CSS/all.min.css">
+        <title>Gizmo</title>
+    </head>
+    <body dir="rtl">
+        <div class="wrapper-two">
+            <h3 class="title-main">إضافة المستخدمين</h3>
+            <hr>
+            <div class="content-wrapper">
+                <div class="card-header">
+                    <h1 class="title">كل المستخدمين</h1>
+                    <a href="add_user.html">إضافة مستخدم</a>
+                </div>
+                <div class="box-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الرقم</th>
+                                <th>الإسم</th>
+                                <th>اسم المستخدم</th>
+                                <th>كلمة السر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="d-flex justify-content-center align-items-center">
+                                    <a href="#" class="edit print">
+                                        <i class="fa-solid fa-print"></i>
+                                    </a>
+                                    <a href="#" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <form action="../../PHP/script.php" method="POST">
+                                        <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>1</td>
+                                <td>جهاد شرع الله</td>
+                                <td>JIHAD_LYX</td>
+                                <td>922502218</td>
+                            </tr>
+                            <tr>
+                                <td class="d-flex justify-content-center align-items-center">
+                                    <a href="#" class="edit print">
+                                        <i class="fa-solid fa-print"></i>
+                                    </a>
+                                    <a href="#" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <form action="../../PHP/script.php" method="POST">
+                                        <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>2</td>
+                                <td>علي</td>
+                                <td>ALI01</td>
+                                <td>922502219</td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
