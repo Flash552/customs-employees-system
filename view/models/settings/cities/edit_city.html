@@ -25,7 +25,7 @@
     </head>
     <body dir="rtl">
         <div class="wrapper-two">
-            <h3 class="title-main">إضافة مراكز العمل</h3>
+            <h3 class="title-main">تعديل المدينة</h3>
             <form class="row g-4 needs-validation" novalidate>
               <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
@@ -35,27 +35,17 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <label for="validationCustom02" class="form-label">المركز</label>
+                <label for="validationCustom02" class="form-label">المدينة</label>
                 <input type="text" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-              <div class="col-md-2">
-                <label for="validationCustom04" class="form-label">المدينة</label>
-                <select class="form-select" id="validationCustom04" required>
-                  <option selected disabled value="">اختر</option>
-                  <option value="0">زليتن</option>
-                  <option value="1">طرابلس</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid state.
-                </div>
-              </div>
               <div class="col-12">
-                <button class="btn btn-primary" type="submit">إضافة</button>
+                <button class="btn btn-success" type="submit">حفظ</button>
               </div>
             </form>
+            
             <hr>
             <div class="box-table">
               <table>
@@ -63,15 +53,16 @@
                       <tr>
                           <th>#</th>
                           <th>الرقم</th>
-                          <th>المركز</th>
+                          <th>المدينة</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td class="d-flex justify-content-center align-items-center">
-                              <a href="edit_station.html" class="edit">
-                                  <i class="fa-solid fa-pencil"></i>
+                              <a href="edit_city.html" class="edit">
+                                <i class="fa-solid fa-pencil"></i>
                               </a>
+
                               <form action="../../PHP/script.php" method="POST">
                                   <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
                                   <i class="fa-solid fa-trash-can"></i>
@@ -83,7 +74,7 @@
                       </tr>
                       <tr>
                           <td class="d-flex justify-content-center align-items-center">
-                              <a href="edit_station.html" class="edit">
+                              <a href="edit_city.html"  id="edit" class="edit">
                                   <i class="fa-solid fa-pencil"></i>
                               </a>
                               <form action="../../PHP/script.php" method="POST">

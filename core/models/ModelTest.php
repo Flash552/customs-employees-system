@@ -2,8 +2,6 @@
 include("City.php");
 
 
-
-
 class ModelTest extends Model {
 
     protected $table = "emps";

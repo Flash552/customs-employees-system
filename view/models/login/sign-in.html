@@ -15,7 +15,6 @@
     <!-- Main File CSS -->
     <link rel="stylesheet" href="../../CSS/controlePanel.css">
     <link rel="stylesheet" href="../../CSS/style.css">
-    <link rel="stylesheet" href="../../CSS/dataTables.bootstrap5.min.css">
     <!-- Bootstrap File CSS -->
     <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
     <!-- Normalize File CSS -->
@@ -33,29 +32,33 @@
       }
     </style>
 </head>
-  <body class="text-center">
+  <body class="text-center" dir="rtl">
     <div class="container w-25 ">
       <main class="form-signin">
         <form>
-          <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-  
+          <img class="mb-4" src="../../image/logo-removebg-preview.png" alt="" width="180" height="180">
+          <h1 class="h3 mb-3 fw-normal">الرجاء تسجيل الدخول</h1>
           <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <select class="form-control" id="floatingInput" required>
+              <option selected disabled value="">اختر</option>
+              <option value="0">jihadlyx</option>
+              <option value="1">ali021</option>
+            </select>
+            <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+            <label for="floatingInput">اسم المستخدم</label>
           </div>
           <div class="form-floating">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <label for="floatingPassword">كلمة السر</label>
           </div>
-  
           <div class="checkbox mb-3">
             <label>
-              <input type="checkbox" value="remember-me"> Remember me
+              <input type="checkbox" value="remember-me"> ذكرني
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">تسجل الدخول</button>
+          <p class="mt-5 mb-3 text-muted">&copy; جهاد شرع الله 218922502219+</p>
+          <p class="mb-3 text-muted">&copy; محمد قمو 218922502219+</p>
         </form>
       </main>
     </div>

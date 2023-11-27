@@ -3,18 +3,36 @@
     --main-bg-color: white;
     
 }
+iframe{
+    max-height: 100%;
+}
 .fc-edit{
     color: #198754;
+}
+.box-s{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.info h1{
+    margin: 0.67em 0 0;
+    color: var(--sidebar-color);
+    font-weight: 600;
+    font-size: 2.5em;
+}
+.info p{
+    margin-bottom: 2em;
+    color: #777;
+}
+.icon i{
+    color: var(--sidebar-color);
 }
 .page{
     display: flex;
     min-height: 100vh;
-    background-color: #f1f5f9;
+    background-color: #fff;
 }
 .sidebar{
     width:  250px;
     min-height: 100vh;
-    
     position: fixed;
     top: 0;
     right: 0 ;
@@ -80,11 +98,12 @@
     border: none;
 }
 }
-.page ul{
+.page .sidebar ul{
     padding: 20px 20px 20px 0px;
     width: 100%;
 }
-.page li{
+.page .sidebar li a{
+    text-decoration: none;
     position: relative;
     cursor: pointer;
     display: block;
@@ -94,18 +113,18 @@
     color: white;
     
 }
-.page li:not(.active):hover{
+.page .sidebar li a:not(.active):hover{
     transform: scale(1.04);
 }
-.page li:not(.active){
+.page .sidebar li a:not(.active){
     transition: 0.2s;
 }
-.page ul li.active{
+.page .sidebar ul li a.active{
     background-color: var(--main-bg-color);
     color: var(--sidebar-color);
 }
-.page ul li.active::before,
-.page ul li.active::after{
+.page .sidebar ul li a.active::before,
+.page .sidebar ul li a.active::after{
     content: "";
     position: absolute;
     left: 0;
@@ -116,26 +135,26 @@
     pointer-events: none;
     
 }
-.page ul li.active::before{
+.page ul li a.active::before{
     top: -50%;
     box-shadow: -15px 15px 0 5px var(--main-bg-color);
 }
-.page ul li.active::after{
+.page ul li a.active::after{
     bottom: -50%;
     box-shadow: -15px -15px 0 5px var(--main-bg-color);
 }
-.page ul li i{
+.page ul li a i{
     text-align: center;
     width: 1.25em;
 }
-.page ul li span{
+.page ul li a span{
     font-size: 20px;
 }
-.page ul li:not(.active):hover span{
+.page ul li a:not(.active):hover span{
     text-decoration: 1px solid underline black;
 }
 @media (max-width: 767px){
-    .page ul li span{
+    .page ul li a span{
         display: none;
     }
 }
@@ -233,10 +252,10 @@
     width: 50%;
     background-color: #111;
 }
-.content .wrapper{
+.wrapper{
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* grid-template-columns: 1fr; */
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -244,14 +263,14 @@
 }
 /* Table Employee */
 .wrapper-two{
-    padding: 30px 20px;
+    padding: 20px 30px;
     position: relative;
     z-index: 4;
 }
 .content-wrapper{
     border: 1px solid #ccc;
     background-color: #fff;
-    height: 600px;
+    height: 800px;
 }
 .wrapper-two .card-header{
     padding: 10px;
@@ -284,14 +303,16 @@
 }
 .wrapper-two .box-table{
     padding: 10px;
-    overflow-y: scroll;
-    /* min-width: 1500px; */
+    overflow: scroll;
+    height: 548px;
+    /* max-height: 100%; */
 }
 .wrapper-two table{
-    overflow-y: scroll;
+    /* overflow: scroll; */
     border-collapse: collapse;
     border: 2px solid #eee;
     width: 100%;
+    max-height: 100% !important;
 }
  .wrapper-two table thead{
     border-bottom: 2px solid black !important;
@@ -303,6 +324,7 @@
 .wrapper-two table td{
     text-align: right;
     padding: 10px 5px;
+    white-space: nowrap;
 }
 .wrapper-two table th,
 .wrapper-two table td{

@@ -23,11 +23,11 @@
         <link rel="stylesheet" href="../../CSS/all.min.css">
         <title>Gizmo</title>
     </head>
-    <body dir="rtl">
+    <body dir="rtl" style="height:100%">
       <div class="page">
         <div class="sidebar">
-            <h3>نظام شؤون الموظفين</h3>
-            <ul>
+          <h3>نظام شؤون الموظفين</h3>
+          <ul>
               <li> 
                   <a href="../dashboard/dashboard.html">
                       <i class="fa-regular fa-chart-bar fa-fw"></i>
@@ -42,7 +42,7 @@
                   
               </li>
               <li> 
-                  <a class="active"  href="users.html">
+                  <a href="../users/users.html">
                       <i class="fa-solid fa-users fa-fw"></i>
                       <span>المستخدمين</span>
                   </a>
@@ -76,19 +76,19 @@
                   </a>
               </li>
               <li>
-                <a href="../profile/profile.html">
-                    <i class="fa-regular fa-circle-user fa-fw"></i>
-                    <span>الحساب</span>
-                </a>
+                  <a class="active" href="profile.html">
+                      <i class="fa-regular fa-circle-user fa-fw"></i>
+                      <span>الحساب</span>
+                  </a>
               </li>
               <li>
-                  <a href="">
+                  <a href="../dashboard/dashboard.html">
                       <i class="fa-solid fa-arrow-right-to-bracket"></i>
                       <span>خروج</span>
                   </a>
               </li>
           </ul>
-        </div>
+      </div>
         <div id="hide"></div>
         <div class="content">
             <div class="head">
@@ -105,54 +105,62 @@
                 </div>
             </div>
             <div class="wrapper-two">
-              <h3 class="title-main">إضافة مستخدم</h3>
-              <form class="row g-4 needs-validation" novalidate>
-                <div class="col-md-2">
-                  <label for="validationCustom02" class="form-label">رقم المستخدم</label>
-                  <input type="text" class="form-control" id="validationCustom02" required>
-                  <div class="valid-feedback">
-                    Looks good!
+              <h3 class="title-main">بيانات شخصية</h3>
+              <hr>
+              <div class="content-wrapper h-auto" >
+                <div class="wrapper-two d-flex justify-content-around">
+                  <div class="image rounded-circle p-1" style="width: 200px;">
+                      <img style="max-width: 100%;" src="../../image/employees/avatar.png" alt="">
                   </div>
-                </div>
-                <div class="col-md-2">
-                  <label for="validationCustom02" class="form-label">رقم الموظف</label>
-                  <input type="text" class="form-control" id="validationCustom02" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label for="validationCustom01" class="form-label">الإسم</label>
-                  <input type="text" class="form-control" id="validationCustom01"  required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <label for="validationCustom03" class="form-label">اسم المستخدم</label>
-                  <input type="text" class="form-control" id="validationCustom03" required>
-                  <div class="invalid-feedback">
-                    Please provide a valid city.
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <label for="validationCustom03" class="form-label">كلمة السر</label>
-                  <input type="text" class="form-control" id="validationCustom03" required>
-                  <div class="invalid-feedback">
-                    Please provide a valid city.
-                  </div>
-                </div>
+                  <dir style="border: 0.5px solid gray; margin: 0 40px;" ></dir>
+                  <form class="row g-4 needs-validation" novalidate>
+                      <div class="col-md-2">
+                        <label for="validationCustom02" class="form-label">رقم المستخدم</label>
+                        <input type="text" class="form-control" id="validationCustom02" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="validationCustom02" class="form-label">رقم الموظف</label>
+                        <input type="text" class="form-control" id="validationCustom02" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">الإسم</label>
+                        <input type="text" class="form-control" id="validationCustom01"  required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationCustom03" class="form-label">اسم المستخدم</label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationCustom03" class="form-label">كلمة السر</label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                      <div class="col-12 ">
+                        <button class="btn btn-success" type="submit">حفظ</button>
+                      </div>
+                    </form>
   
-                <div class="col-12">
-                  <button class="btn btn-primary" type="submit">إضافة</button>
                 </div>
-              </form>
+              </div>
           </div>
         </div>
       </div>
         <script src="../../js/bootstrap.bundle.min.js"></script>
         <script src="../../js/indexPanel.js"></script>
-        <!-- <script src="../../js/all.min.js"></script> -->
         <script>
           // Example starter JavaScript for disabling form submissions if there are invalid fields
           (function () {

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Icon -->
+        <link rel="icon" href="images/cropped-fav_icon-32x32.png">
+        <link rel="shortcut" href="images/cropped-fav_icon-32x32.png">
+        <link rel="apple-touch" href="images/cropped-fav_icon-32x32.png">
+        <!-- Google Fonts 'Work sans' -->
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- Main File CSS -->
+        <link rel="stylesheet" href="../../CSS/controlePanel.css">
+        <link rel="stylesheet" href="../../CSS/style.css">
+        <link rel="stylesheet" href="../../CSS/dataTables.bootstrap5.min.css">
+        <!-- Bootstrap File CSS -->
+        <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
+        <!-- Normalize File CSS -->
+        <link rel="stylesheet" href="../../CSS/normalize.css">
+        <!-- Font Awesome Library -->
+        <link rel="stylesheet" href="../../CSS/all.min.css">
+        <title>Gizmo</title>
+    </head>
+    <body dir="rtl">
+        <div class="sidebar">
+            <h3>نظام شؤون الموظفين</h3>
+            <ul>
+                <li> 
+                    <a href="dashboard.html">
+                        <i class="fa-regular fa-chart-bar fa-fw"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="../emloyees/employees.html">
+                        <i class="fa-regular fa-user fa-fw"></i>
+                        <span>الموظفين</span>
+                    </a>
+                    
+                </li>
+                <li> 
+                    <a href="../users/users.html">
+                        <i class="fa-solid fa-users fa-fw"></i>
+                        <span>المستخدمين</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="../dashboard/dashboard.html">
+                        <i class="fa-brands fa-product-hunt fa-fw"></i>
+                        <span>التقارير</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="../dashboard/dashboard.html">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span>سجل الغياب</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="../certs/certs.html">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span>المؤهلات والدورات</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="../settings/settings.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>الإعدادات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../users/users.html">
+                        <i class="fa-regular fa-circle-user fa-fw"></i>
+                        <span>الحساب</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../dashboard/dashboard.html">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <span>خروج</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="hide"></div>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/indexPanel.js"></script>
+        <script>
+            document.querySelector("li[data-set='emloyees/employees.html']")
+            .click();
+        </script>
+    </body>
+</html>
