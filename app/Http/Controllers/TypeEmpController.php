@@ -62,9 +62,10 @@ class TypeEmpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id , TypeEmp $typeEmp)
     {
-        return $id;
+         $typeEmp = TypeEmp::find($id);
+        return view('settings.type_emp.edit_type_emp', compact('typeEmp'));
     }
 
     /**

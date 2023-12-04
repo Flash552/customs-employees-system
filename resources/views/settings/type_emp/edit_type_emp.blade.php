@@ -12,14 +12,14 @@
         <form class="row g-4 needs-validation" novalidate>
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
+                <input type="text" value="{{$typeEmp->id_type_emp}}" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">النوع</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
+                <input type="text" value="{{$typeEmp->title_type}}" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
