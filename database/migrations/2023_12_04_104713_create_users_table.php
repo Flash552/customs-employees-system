@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id_user')->primary();
             $table->integer('id_emp')->index('id_emp');
             $table->string('username');
-            $table->string('password');
+            $table->string('password');  $table->timestamps();
         });
     }
 

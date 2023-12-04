@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('id_emp')->index('id_emp');
             $table->integer('id_vacation_type')->index('id_vacation_type');
             $table->date('from_date');
-            $table->date('to_date');
+            $table->date('to_date');  $table->timestamps();
         });
     }
 

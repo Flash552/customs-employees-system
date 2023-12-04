@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('vacation_type', function (Blueprint $table) {
             $table->integer('id_vacation_type')->primary();
             $table->integer('id_emp');
-            $table->date('vacation_title');
+            $table->date('vacation_title');  $table->timestamps();
         });
     }
 

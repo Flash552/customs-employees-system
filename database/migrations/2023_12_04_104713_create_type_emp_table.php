@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('type_emp', function (Blueprint $table) {
             $table->integer('id_type_emp' )->primary();
             $table->string('title_type');
-            $table->timestamps();
+            $table->timestamps();  
 
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('id_emp')->index('id_emp');
             $table->string('title_certs');
             $table->integer('id_type_certs')->index('id_type_certs');
-            $table->char('certs_file', 16);
+            $table->char('certs_file', 16);  $table->timestamps();
         });
     }
 

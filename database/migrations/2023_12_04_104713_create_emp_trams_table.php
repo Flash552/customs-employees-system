@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('confirm_first');
             $table->date('confirm_date_first');
             $table->boolean('confirm_two');
-            $table->date('confirm_date_two');
+            $table->date('confirm_date_two');  $table->timestamps();
         });
     }
 

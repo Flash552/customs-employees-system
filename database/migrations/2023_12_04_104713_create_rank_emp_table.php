@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('rank_emp', function (Blueprint $table) {
             $table->integer('id_rank')->primary();
             $table->string('title_rank');
-            $table->integer('id_type_emp')->index('id_type_emp');
+            $table->integer('id_type_emp')->index('id_type_emp');  $table->timestamps();
         });
     }
 

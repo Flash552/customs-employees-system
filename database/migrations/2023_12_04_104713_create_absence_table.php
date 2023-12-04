@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id_absence')->primary();
             $table->integer('id_emp')->index('id_emp');
             $table->date('from_date');
-            $table->date('to_date');
+            $table->date('to_date');  $table->timestamps();
         });
     }
 

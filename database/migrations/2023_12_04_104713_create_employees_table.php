@@ -28,7 +28,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('stop_date');
             $table->date('remotion_date');
-            $table->string('end_duty_resson');
+            $table->string('end_duty_resson');  $table->timestamps();
         });
     }
 

@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TypeEmp extends Model
+class RankEmp extends Model
 {
     use HasFactory;
-    protected $table = "type_emp";
-    protected $fillable = ['id_type_emp','title_type'];
-
-
+    protected $table = "rank_emp";
+    protected $fillable = ['id_rank','title_rank' , 'id_type_emp'];
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id_duty')->primary();
             $table->integer('id_emp')->index('id_emp');
             $table->string('end_duty_resson');
-            $table->date('end_date');
+            $table->date('end_date');  $table->timestamps();
         });
     }
 

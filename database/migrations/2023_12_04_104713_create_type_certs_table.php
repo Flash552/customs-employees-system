@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('type_certs', function (Blueprint $table) {
             $table->integer('id_type_certs')->primary();
-            $table->string('title_certs');
+            $table->string('title_certs');  $table->timestamps();
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('status_emp', function (Blueprint $table) {
             $table->integer('id_status')->primary();
-            $table->bigInteger('title_status');
+            $table->bigInteger('title_status');  $table->timestamps();
         });
     }
 

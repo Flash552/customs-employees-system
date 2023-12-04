@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RankEmp;
 use Illuminate\Http\Request;
-
+use App\Models\TypeEmp;
 class RankEmpController extends Controller
 {
     /**
@@ -11,7 +12,9 @@ class RankEmpController extends Controller
      */
     public function index()
     {
-        return view('settings.rank_emp.rank_emp');
+        $types = TypeEmp::all();
+        $ranks = RankEmp::all();
+        return view('settings.rank_emp.rank_emp', compact("types" , "ranks"));
     }
 
     /**
@@ -27,7 +30,17 @@ class RankEmpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'id_rank' => $request->id_rank,
+            'title_rank' => $request->title_rank,
+            'id_type_emp' => $request->id_type_emp
+        ];
+
+        RankEmp::create($data);
+   
+        
+    //return response("ssssss");
+    return redirect()->route("rank_emp.index");
     }
 
     /**

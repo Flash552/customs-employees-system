@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id_record')->primary();
             $table->integer('PID_emp');
             $table->integer('id_user')->index('id_user');
-            $table->integer('id_type_record')->index('id_type_record');
+            $table->integer('id_type_record')->index('id_type_record');  $table->timestamps();
             $table->dateTime('date');
         });
     }
