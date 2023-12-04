@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('employees', function (Blueprint $table) {
-            $table->foreign(['id_station'], 'employees_ibfk_1')->references(['id_station'])->on('stations');
-            $table->foreign(['id_jop'], 'employees_ibfk_3')->references(['id_jop'])->on('jop_title');
             $table->foreign(['status_id'], 'employees_ibfk_2')->references(['id_status'])->on('status_emp');
             $table->foreign(['emp_type_id'], 'employees_ibfk_4')->references(['id_type_emp'])->on('type_emp');
+            $table->foreign(['id_station'], 'employees_ibfk_1')->references(['id_station'])->on('stations');
+            $table->foreign(['id_jop'], 'employees_ibfk_3')->references(['id_jop'])->on('jop_title');
         });
     }
 
@@ -29,10 +29,10 @@ return new class extends Migration
     public function down()
     {
         Schema::table('employees', function (Blueprint $table) {
-            $table->dropForeign('employees_ibfk_1');
-            $table->dropForeign('employees_ibfk_3');
             $table->dropForeign('employees_ibfk_2');
             $table->dropForeign('employees_ibfk_4');
+            $table->dropForeign('employees_ibfk_1');
+            $table->dropForeign('employees_ibfk_3');
         });
     }
 };

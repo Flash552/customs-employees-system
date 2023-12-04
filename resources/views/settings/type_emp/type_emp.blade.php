@@ -9,17 +9,18 @@
 @section('settings-content')
     <div class="wrapper-two">
         <h3 class="title-main">إضافة انواع الموظفين</h3>
-        <form class="row g-4 needs-validation" novalidate>
+        <form method="post" action="{{route("type_emp.store")}}" class="row g-4 needs-validation" novalidate>
+            @csrf
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
+                <input name = 'id_type_emp' type="text" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">النوع</label>
-                <input type="text" class="form-control" id="validationCustom02" required>
+                <input name = 'title_type' type="text" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -39,230 +40,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="type_emp/show" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="type_emp/show" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="edit_type_emp.html" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="type_emp/show" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="type_emp/show" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
+                    @foreach ($types as $type )
+                    <tr>
+                        <td class="d-flex justify-content-center align-items-center">
+                            <a href="{{route("type_emp.edit",$type->id_type_emp)}}" class="edit">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                            <form action="../../PHP/script.php" method="POST">
+                                <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td>{{$type->id_type_emp}}</td>
+                        <td>{{$type->title_type}}</td>
+                    </tr>
+                    @endforeach
+               
+                
                 </tbody>
             </table>
         </div>

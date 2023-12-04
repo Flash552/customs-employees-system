@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('type_emp', function (Blueprint $table) {
-            $table->integer('id_type_emp')->primary();
+            $table->integer('id_type_emp' )->primary();
             $table->string('title_type');
+            $table->timestamps();
+
         });
     }
 
