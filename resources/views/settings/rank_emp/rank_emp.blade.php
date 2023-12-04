@@ -11,7 +11,7 @@
 
     <div class="wrapper-two">
         <h3 class="title-main">إضافة رتبة الموظف</h3>
-        <form method="post" action="{{route("rank_emp.store")}}" class="row g-4 needs-validation" novalidate>
+        <form method="post" action="{{route("stations.store")}}" class="row g-4 needs-validation" novalidate>
             @csrf
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
@@ -71,7 +71,7 @@
                 </td>
                 <td>{{$rank->id_rank }}</td>
                 <td>{{$rank->title_rank }}</td>
-               حاح 
+                
             </tr>
                    
                @endforeach

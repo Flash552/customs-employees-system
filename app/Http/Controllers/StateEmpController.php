@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StateEmp;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\TryCatch;
 
 class StateEmpController extends Controller
 {
@@ -11,7 +13,8 @@ class StateEmpController extends Controller
      */
     public function index()
     {
-        return view('settings.status_emp.status_emp');
+        $status = StateEmp::all();
+        return view('settings.status_emp.status_emp' , compact('status'));
     }
 
     /**
@@ -27,7 +30,18 @@ class StateEmpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $data = [
+                'id_status' => $request->id_status,
+                'title_status' => $request->title_status
+            ];
+    
+            StateEmp::create($data);
+        } catch (\Throwable $th) {
+           return redirect()->back()->with('error', $th->getMessage());
+        }
+        
+    return redirect()->route("status_emp.index");
     }
 
     /**
