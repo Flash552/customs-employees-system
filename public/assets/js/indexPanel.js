@@ -12,20 +12,27 @@ let items = document.querySelectorAll(".sidebar ul li a");
     })
 // End Side Bar
 
-// Start Nav Bar
+// Start Popup
+let popup_btn = document.querySelector(".popup-btn");
+if(popup_btn != null){
+  popup_btn.addEventListener('click', (e) => {
+    let content = document.querySelector(".model-content");
+    if(!content.classList.contains('active')){
+      content.classList.add('active');
+    }
+  });
+}
+let btn_close_pop = document.querySelector('.model-content .btn-close-content');
 
-// let nave_items = document.querySelectorAll(".content-wrapper div .nav-tabs li");
-//     nave_items.forEach(item => {
-//       item.addEventListener("click", (e) => {
-//         document.querySelector("#iframe-nav-bar").setAttribute("src", item.getAttribute("data-set"));
-//         let itemActive =  document.querySelector(".content-wrapper div .nav-tabs li.active");
-//         console.log(itemActive);
-//         itemActive.classList.remove("active");
-//         item.classList.add("active");
-//       })
-//
-//     })
-// End Nave Bar
+btn_close_pop.addEventListener('click', e => {
+
+  let content = document.querySelector(".model-content");
+    if(content.classList.contains('active')){
+      content.classList.remove('active');
+    }
+})
+
+// End Popup
 
 
 

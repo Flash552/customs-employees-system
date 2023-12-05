@@ -6,6 +6,10 @@
 iframe{
     max-height: 100%;
 }
+button.edit{
+    border: none;
+    outline: none;
+}
 .fc-edit{
     color: #198754;
 }

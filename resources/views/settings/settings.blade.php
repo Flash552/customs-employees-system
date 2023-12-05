@@ -17,13 +17,4 @@
     </div>
 @endsection
 
-@section("scripts")
-    <script>
-        document.onload = () => {
-            let item = document.querySelector('.nav-link a[href="type_emp"]');
-            if (item != null){
-                item.click();
-            }
-        }
-    </script>
-@endsection
+
