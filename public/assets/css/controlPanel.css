@@ -268,7 +268,7 @@ button.edit{
 /* Table Employee */
 .wrapper-two{
     padding: 20px 30px;
-    position: relative;
+    /*position: relative;*/
     z-index: 4;
 }
 .nav-link a{
@@ -356,7 +356,7 @@ button.edit{
 .wrapper-two table .edit.print{
     background-color: #026CFF;
 }
-.wrapper-two table form .delete{
+.wrapper-two table .delete{
     font-size: 14px;
     padding: 5px;
     margin-right: 5px;

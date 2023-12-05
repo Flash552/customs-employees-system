@@ -7,6 +7,7 @@
     active
 @endsection
 @section('content')
+
     <div class="wrapper-two">
         <h3 class="title-main">الإعدادات</h3>
         <hr>

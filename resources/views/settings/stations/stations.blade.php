@@ -10,7 +10,7 @@
     <div class="wrapper-two">
         <h3 class="title-main">إضافة مراكز العمل</h3>
         <form method="post" action="{{route("stations.store")}}" class="row g-4 needs-validation" novalidate>
-        @csrf    
+        @csrf
         <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
                 <input name="id_station" type="text" class="form-control" id="validationCustom02" required>
@@ -31,7 +31,6 @@
                     <option selected disabled value="">اختر</option>
                     @foreach ($cities as $city )
                     <option value= "{{$city->id_city}}" >{{$city->city_name}}</option>
-
                     @endforeach
                 </select>
                 <div class="invalid-feedback">
@@ -54,25 +53,26 @@
 
                 </tr>
                 </thead>
-                
+
                 <tbody>
-               
+
                @foreach ($stations as $station )
                <tr>
-                <td class="d-flex justify-content-center align-items-center">
-                    <a href="station_emp.edit" class="edit">
-                        <i class="fa-solid fa-pencil"></i>
-                    </a>
-                    <form action="../../PHP/script.php" method="POST">
-                        <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-                    </form>
-                </td>
+                   <td class="d-flex justify-content-center align-items-center">
+                       <!-- Button to Open the Modal -->
+                       <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#StationEdit{{$state->id_status}}" data-bs-whatever="@mdo">
+                           <i class="fa-solid fa-edit"></i>
+                       </button>
+                       <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#StationDelete{{$state->id_status}}" data-bs-whatever="@mdo">
+                           <i class="fa-solid fa-trash-can"></i>
+                       </button>
+                   </td>
                 <td>{{$station->id_station }}</td>
                 <td>{{$station->name_station }}</td>
                 <td>{{$station->id_city }}</td>
             </tr>
+               @include('settings.stations.modal.edit_station')
+               @include('settings.stations.modal.delete_station')
             @endforeach
                 </tbody>
             </table>

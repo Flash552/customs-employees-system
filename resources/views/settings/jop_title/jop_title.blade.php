@@ -39,34 +39,23 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="jop_title/show" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
+                @foreach ($types as $type )
+                    <tr>
+                        <td class="d-flex justify-content-center align-items-center">
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#JopEdit{{$type->id_type_emp}}" data-bs-whatever="@mdo">
+                                <i class="fa-solid fa-edit"></i>
+                            </button>
+                            <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#JopDelete{{$type->id_type_emp}}" data-bs-whatever="@mdo">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
-                        </form>
-                    </td>
-                    <td>1</td>
-                    <td>جهاد شرع الله</td>
-                </tr>
-                <tr>
-                    <td class="d-flex justify-content-center align-items-center">
-                        <a href="jop_title/show" class="edit">
-                            <i class="fa-solid fa-pencil"></i>
-                        </a>
-                        <form action="../../PHP/script.php" method="POST">
-                            <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>2</td>
-                    <td>علي</td>
-                </tr>
+                        </td>
+                        <td>2</td>
+                        <td>علي</td>
+                    </tr>
+                    @include('settings.jop_title.modal.edit_jop')
+                    @include('settings.jop_title.modal.delete_jop')
+                @endforeach
                 </tbody>
             </table>
         </div>

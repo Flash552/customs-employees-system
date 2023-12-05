@@ -24,7 +24,7 @@
                 <label for="validationCustom04" class="form-label">النوع</label>
                 <select name = 'id_type_emp' class="form-select" id="validationCustom04" required>
                     <option selected disabled value="">اختر</option>
-                    
+
                     @foreach ($types as $type )
                     <option value={{$type->id_type_emp}}>{{$type->title_type}}</option>
                     @endforeach
@@ -56,24 +56,23 @@
                 </tr>
                 </thead>
                 <tbody>
-               
+
                @foreach ($ranks as $rank )
-               <tr>
-                <td class="d-flex justify-content-center align-items-center">
-                    <a href="rank_emp/show" class="edit">
-                        <i class="fa-solid fa-pencil"></i>
-                    </a>
-                    <form action="../../PHP/script.php" method="POST">
-                        <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-                    </form>
-                </td>
-                <td>{{$rank->id_rank }}</td>
-                <td>{{$rank->title_rank }}</td>
-                
-            </tr>
-                   
+                   <tr>
+                       <td class="d-flex justify-content-center align-items-center">
+                           <!-- Button to Open the Modal -->
+                           <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#RankEdit{{$state->id_status}}" data-bs-whatever="@mdo">
+                               <i class="fa-solid fa-edit"></i>
+                           </button>
+                           <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#RankDelete{{$state->id_status}}" data-bs-whatever="@mdo">
+                               <i class="fa-solid fa-trash-can"></i>
+                           </button>
+                       </td>
+                        <td>{{$rank->id_rank }}</td>
+                        <td>{{$rank->title_rank }}</td>
+                    </tr>
+                   @include('settings.rank_emp.modal.edit_rank')
+                   @include('settings.rank_emp.modal.delete_rank')
                @endforeach
                 </tbody>
             </table>

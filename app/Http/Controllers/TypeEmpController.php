@@ -37,18 +37,16 @@ class TypeEmpController extends Controller
      */
     public function store(Request $request)
     {
-       
-        
-            $data = [
-                'id_type_emp' => $request->id_type_emp,
-                'title_type' => $request->title_type
-            ];
+        $data = [
+            'id_type_emp' => $request->id_type_emp,
+            'title_type' => $request->title_type
+        ];
 
-            TypeEmp::create($data);
-       
-            
+        TypeEmp::create($data);
 
-        return redirect()->route("type_emp.index");
+        return redirect()
+            ->route("type_emp.index")
+            ->with('success', "تم الإضافة بنجاح");
     }
 
     /**
@@ -56,16 +54,15 @@ class TypeEmpController extends Controller
      */
     public function show(string $id)
     {
-        return view('settings.type_emp.edit_type_emp');
+//        return view('settings.type_emp.edit_type_emp');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id , TypeEmp $typeEmp)
+    public function edit(string $id)
     {
-         $typeEmp = TypeEmp::find($id);
-        return view('settings.type_emp.edit_type_emp', compact('typeEmp'));
+
     }
 
     /**
@@ -73,7 +70,13 @@ class TypeEmpController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $typeEmp = TypeEmp::find($id);
+        $typeEmp->update([
+            "title_type" => $request->title_type
+        ]);
+        return redirect()
+            ->route("type_emp.index")
+            ->with('success', "تم التعديل بنجاح");
     }
 
     /**
@@ -81,7 +84,8 @@ class TypeEmpController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        TypeEmp::destroy($id);
+        return redirect()->route("type_emp.index");
     }
 }
 

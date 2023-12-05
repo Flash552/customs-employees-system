@@ -10,7 +10,7 @@
     <div class="wrapper-two">
         <h3 class="title-main">إضافة حالات الموظفين</h3>
         <form method="post"  action="{{route("status_emp.store")}}" class="row g-4 needs-validation" novalidate>
-        @csrf    
+        @csrf
         <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
                 <input name ="id_status" type="text" class="form-control" id="validationCustom02" required>
@@ -43,18 +43,19 @@
                 @foreach ($status as $state )
                     <tr>
                         <td class="d-flex justify-content-center align-items-center">
-                            <a href="" class="edit">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                            <form action="../../PHP/script.php" method="POST">
-                                <button state="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </form>
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#StateEdit{{$state->id_status}}" data-bs-whatever="@mdo">
+                                <i class="fa-solid fa-edit"></i>
+                            </button>
+                            <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#StateDelete{{$state->id_status}}" data-bs-whatever="@mdo">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
                         </td>
                         <td>{{$state->id_status}}</td>
                         <td>{{$state->title_status}}</td>
                     </tr>
+                    @include('settings.status_emp.modal.edit_state')
+                    @include('settings.status_emp.modal.delete_state')
                     @endforeach
                 </tbody>
             </table>
