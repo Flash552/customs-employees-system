@@ -11,7 +11,7 @@
 
     <div class="wrapper-two">
         <h3 class="title-main">إضافة رتبة الموظف</h3>
-        <form method="post" action="{{route("stations.store")}}" class="row g-4 needs-validation" novalidate>
+        <form method="post" action="{{route("rank_emp.store")}}" class="row g-4 needs-validation" novalidate>
             @csrf
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
@@ -61,10 +61,10 @@
                    <tr>
                        <td class="d-flex justify-content-center align-items-center">
                            <!-- Button to Open the Modal -->
-                           <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#RankEdit{{$state->id_status}}" data-bs-whatever="@mdo">
+                           <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#RankEdit{{$rank->id_rank}}" data-bs-whatever="@mdo">
                                <i class="fa-solid fa-edit"></i>
                            </button>
-                           <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#RankDelete{{$state->id_status}}" data-bs-whatever="@mdo">
+                           <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#RankDelete{{$rank->id_rank}}" data-bs-whatever="@mdo">
                                <i class="fa-solid fa-trash-can"></i>
                            </button>
                        </td>

@@ -64,7 +64,16 @@ class RankEmpController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rankEmp = RankEmp::find($id);
+        $data = [
+         
+            'title_rank' => $request->title_rank,
+            'id_type_emp' => $request->id_type_emp
+        ];
+        $rankEmp->update($data);
+        return redirect()
+            ->route("rank_emp.index")
+            ->with('success', "تم التعديل بنجاح");
     }
 
     /**

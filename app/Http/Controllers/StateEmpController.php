@@ -37,8 +37,12 @@ class StateEmpController extends Controller
             ];
     
             StateEmp::create($data);
+
+            
         } catch (\Throwable $th) {
-           return redirect()->back()->with('error', $th->getMessage());
+          return response("sssssssss");
+          
+            return redirect()->back()->with('error', $th->getMessage());
         }
         
     return redirect()->route("status_emp.index");

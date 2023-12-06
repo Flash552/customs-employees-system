@@ -9,5 +9,7 @@ class RankEmp extends Model
 {
     use HasFactory;
     protected $table = "rank_emp";
+    protected $primaryKey = 'id_rank';
+
     protected $fillable = ['id_rank','title_rank' , 'id_type_emp'];
 }
