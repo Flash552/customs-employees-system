@@ -44,18 +44,18 @@
                     <tr>
                         <td class="d-flex justify-content-center align-items-center">
                             <!-- Button to Open the Modal -->
-                            <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#CityEdit{{$type->id_type_emp}}" data-bs-whatever="@mdo">
+                            <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#CityEdit{{$city->id_city}}" data-bs-whatever="@mdo">
                                 <i class="fa-solid fa-edit"></i>
                             </button>
-                            <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#CityDelete{{$type->id_type_emp}}" data-bs-whatever="@mdo">
+                            <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#CityDelete{{$city->id_city}}" data-bs-whatever="@mdo">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </td>
                         <td>{{$city->id_city}}</td>
                         <td>{{$city->city_name}}</td>
                     </tr>
-                    @include('$settings.cities.modal.edit_city')
-                    @include('$settings.cities.modal.delete_city')
+                    @include('settings.cities.modal.edit_city')
+                    @include('settings.cities.modal.delete_city')
                     @endforeach
                 </tbody>
             </table>

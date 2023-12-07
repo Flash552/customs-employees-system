@@ -3,6 +3,13 @@
     --main-bg-color: white;
 
 }
+.eye{
+    margin: 0 10px;
+    color: #20C997;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
 iframe{
     max-height: 100%;
 }

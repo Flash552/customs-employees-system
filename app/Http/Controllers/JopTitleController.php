@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobTitle;
 use Illuminate\Http\Request;
 
 class JopTitleController extends Controller
@@ -10,8 +11,9 @@ class JopTitleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('settings.jop_title.jop_title');
+    { 
+        $jobs = JobTitle::all();
+        return view('settings.jop_title.jop_title' , compact("jobs"));
     }
 
     /**
@@ -27,7 +29,7 @@ class JopTitleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response("sssssssss");
     }
 
     /**

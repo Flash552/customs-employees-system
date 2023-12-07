@@ -67,7 +67,16 @@ class StationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $station = Station::find($id);
+        ['id_station','name_station' ,'id_city'];
+        $data = [
+            "name_station" => $request->name_station,
+             "id_city" => $request->id_city
+        ];
+        $station->update($data);
+        return redirect()
+            ->route("stations.index")
+            ->with('success', "تم التعديل بنجاح");
     }
 
     /**
@@ -75,6 +84,7 @@ class StationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Station::destroy($id);
+        return redirect()->route("stations.index");
     }
 }

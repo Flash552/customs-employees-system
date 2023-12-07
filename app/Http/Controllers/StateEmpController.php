@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StateEmp;
 use Illuminate\Http\Request;
+use NunoMaduro\Collision\Adapters\Phpunit\State;
 use PhpParser\Node\Stmt\TryCatch;
 
 class StateEmpController extends Controller
@@ -69,7 +70,16 @@ class StateEmpController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $StateEmp = StateEmp::find($id);
+        
+        $data = [
+            "title_status" => $request->title_status,
+             
+        ];
+        $StateEmp->update($data);
+        return redirect()
+            ->route("status_emp.index")
+            ->with('success', "تم التعديل بنجاح");
     }
 
     /**
@@ -77,6 +87,7 @@ class StateEmpController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        StateEmp::destroy($id);
+        return redirect()->route("status_emp.index");
     }
 }

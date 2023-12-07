@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal fade" id="JopEdit{{$type->id_status}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="JopEdit{{$jobs->id_job}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,16 +7,16 @@
                 <button type="button" class="btn-close position-absolute " style="left: 10px" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{route('type_emp.update', $type->id_type_emp)}}" method="POST">
+                <form action="{{route('type_emp.update', $jobs->id_job)}}" method="POST">
                     @csrf
                     @method("PUT")
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">الرقم</label>
-                        <input type="text" name='id_type_emp'  value="{{$type->id_type_emp}}" class="form-control" id="recipient-name">
+                        <input type="text" name='id_job'  value="{{$jobs->id_job}}" class="form-control" id="recipient-name">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">الشريحة</label>
-                        <input type="text" name='title_type' value="{{$type->title_type}}" class="form-control" id="message-text">
+                        <input type="text" name='title_job' value="{{$jobs->title_job}}" class="form-control" id="message-text">
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">حفظ</button>

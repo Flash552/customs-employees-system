@@ -81,6 +81,7 @@ class RankEmpController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        RankEmp::destroy($id);
+        return redirect()->route("rank_emp.index");
     }
 }
