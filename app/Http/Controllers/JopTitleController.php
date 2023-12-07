@@ -11,9 +11,9 @@ class JopTitleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    { 
-        $jobs = JobTitle::all();
-        return view('settings.jop_title.jop_title' , compact("jobs"));
+    {
+        $jops = JobTitle::all();
+        return view('settings.jop_title.jop_title' , compact("jops"));
     }
 
     /**
@@ -32,12 +32,12 @@ class JopTitleController extends Controller
         $data = [
             'id_jop' => $request->id_jop,
             'title_jop' => $request->title_jop
-           
+
         ];
 
         JobTitle::create($data);
-   
-        
+
+
     //return response("ssssss");
     return redirect()->route("jop_title.index");
     }
@@ -48,7 +48,7 @@ class JopTitleController extends Controller
     public function show(string $id)
 
     {
-        $jobs =JobTitle::all();
+        $jobs = JobTitle::all();
 
         return view('settings.jop_title.edit_jop_title' ,   compact("jobs"));
 
@@ -71,7 +71,7 @@ class JopTitleController extends Controller
         $data = [
             'id_jop' => $request->id_jop,
             'title_jop' => $request->title_jop
-           
+
         ];
         $job->update($data);
         return redirect()

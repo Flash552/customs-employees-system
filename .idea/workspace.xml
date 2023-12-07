@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="452266e9-ed4c-4888-a5c8-0029b57138e0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/controlPanel.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/controlPanel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JopTitleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JopTitleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/modal/show_emp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/modal/show_emp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settings/jop_title/jop_title.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settings/jop_title/jop_title.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settings/jop_title/modal/delete_jop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settings/jop_title/modal/delete_jop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settings/jop_title/modal/edit_jop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settings/jop_title/modal/edit_jop.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +244,8 @@
       <workItem from="1701860685880" duration="40000" />
       <workItem from="1701860726648" duration="1962000" />
       <workItem from="1701863762688" duration="33000" />
-      <workItem from="1701871129032" duration="855000" />
+      <workItem from="1701871129032" duration="3034000" />
+      <workItem from="1701950987217" duration="1687000" />
     </task>
     <servers />
   </component>

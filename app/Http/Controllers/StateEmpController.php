@@ -15,7 +15,7 @@ class StateEmpController extends Controller
     public function index()
     {
         $status = StateEmp::all();
-        return view('settings.status_emp.status_emp' , compact('status'));
+        return view('settings.status_emp.state_emp' , compact('status'));
     }
 
     /**
@@ -36,16 +36,16 @@ class StateEmpController extends Controller
                 'id_status' => $request->id_status,
                 'title_status' => $request->title_status
             ];
-    
+
             StateEmp::create($data);
 
-            
+
         } catch (\Throwable $th) {
           return response("sssssssss");
-          
+
             return redirect()->back()->with('error', $th->getMessage());
         }
-        
+
     return redirect()->route("status_emp.index");
     }
 
@@ -71,10 +71,10 @@ class StateEmpController extends Controller
     public function update(Request $request, string $id)
     {
         $StateEmp = StateEmp::find($id);
-        
+
         $data = [
             "title_status" => $request->title_status,
-             
+
         ];
         $StateEmp->update($data);
         return redirect()

@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <h3>نظام شؤون الموظفين</h3>
+    <h3>نظام إدارة الموارد البشرية</h3>
     <ul>
         <li>
             <a class="@yield('active_dash')" href="/dashboard">
