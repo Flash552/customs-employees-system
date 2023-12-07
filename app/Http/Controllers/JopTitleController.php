@@ -29,15 +29,28 @@ class JopTitleController extends Controller
      */
     public function store(Request $request)
     {
-        return response("sssssssss");
+        $data = [
+            'id_jop' => $request->id_jop,
+            'title_jop' => $request->title_jop
+           
+        ];
+
+        JobTitle::create($data);
+   
+        
+    //return response("ssssss");
+    return redirect()->route("jop_title.index");
     }
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
+
     {
-        return view('settings.jop_title.edit_jop_title');
+        $jobs =JobTitle::all();
+
+        return view('settings.jop_title.edit_jop_title' ,   compact("jobs"));
 
     }
 
@@ -54,7 +67,16 @@ class JopTitleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $job = JobTitle::find($id);
+        $data = [
+            'id_jop' => $request->id_jop,
+            'title_jop' => $request->title_jop
+           
+        ];
+        $job->update($data);
+        return redirect()
+            ->route("jop_title.index")
+            ->with('success', "تم التعديل بنجاح");
     }
 
     /**
@@ -62,6 +84,7 @@ class JopTitleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        JobTitle::destroy($id);
+        return redirect()->route("jop_title.index");
     }
 }

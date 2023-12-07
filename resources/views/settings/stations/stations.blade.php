@@ -60,10 +60,10 @@
                <tr>
                    <td class="d-flex justify-content-center align-items-center">
                        <!-- Button to Open the Modal -->
-                       <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#StationEdit{{$state->id_status}}" data-bs-whatever="@mdo">
+                       <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#StationEdit{{$station->id_station}}" data-bs-whatever="@mdo">
                            <i class="fa-solid fa-edit"></i>
                        </button>
-                       <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#StationDelete{{$state->id_status}}" data-bs-whatever="@mdo">
+                       <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#StationDelete{{$station->id_station}}" data-bs-whatever="@mdo">
                            <i class="fa-solid fa-trash-can"></i>
                        </button>
                    </td>

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="StationDelete{{$type->id_type_emp}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="StationDelete{{$station->id_station}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,11 +7,11 @@
                 <button type="button" class="btn-close position-absolute" style="left: 10px" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                هل تريد حذف المركز "{{$type->title_type}}"
+                هل تريد حذف المركز "{{$station->name_station}}"
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                <form action="{{route('type_emp.destroy', $type->id_type_emp)}}" method="POST">
+                <form action="{{route('stations.destroy', $station->id_station)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <button type="submit" class="btn btn-danger">حذف</button>
