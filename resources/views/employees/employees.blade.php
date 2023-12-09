@@ -105,11 +105,21 @@
                         </td>
                         <td>{{$employee->id_emp}}</td>
                         <td>{{$employee->name}}</td>
+                        <td>-----</td>
+                        <td>-----</td>
+                        <td>-----</td>
+                        <td>{{$employee->rank_id}}</td>
+                        {{-- <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td> --}}
                         <td>اعزب</td>
                         <td>ذكر</td>
                         <td>ليسبلس</td>
                         <td>1</td>
-                        protected $fillable = ['id_emp','PID_emp','name','phone','id_jop','status_id','emp_type_id','rank_id','image','id_station','isDeleted','start_date','stop_date','remotion_date','end_duty_resson'];
+                        {{-- protected $fillable = ['id_emp','PID_emp','name','phone','id_jop','status_id','emp_type_id','rank_id','image','id_station','isDeleted','start_date','stop_date','remotion_date','end_duty_resson']; --}}
 
                         @include('employees.modal.show_emp')
                         @include('employees.modal.delete_emp')

@@ -41,7 +41,7 @@ class StateEmpController extends Controller
 
 
         } catch (\Throwable $th) {
-          return response("sssssssss");
+        
 
             return redirect()->back()->with('error', $th->getMessage());
         }
@@ -78,7 +78,7 @@ class StateEmpController extends Controller
         ];
         $StateEmp->update($data);
         return redirect()
-            ->route("status_emp.index")
+            ->route("state_emp.index")
             ->with('success', "تم التعديل بنجاح");
     }
 
