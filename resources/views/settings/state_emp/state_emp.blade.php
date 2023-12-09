@@ -9,7 +9,7 @@
 @section('settings-content')
     <div class="wrapper-two">
         <h3 class="title-main">إضافة حالات الموظفين</h3>
-        <form method="post"  action="{{route("status_emp.store")}}" class="row g-4 needs-validation" novalidate>
+        <form method="post"  action="{{route("state_emp.store")}}" class="row g-4 needs-validation" novalidate>
         @csrf
         <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
@@ -54,8 +54,8 @@
                         <td>{{$state->id_status}}</td>
                         <td>{{$state->title_status}}</td>
                     </tr>
-                    @include('settings.status_emp.modal.edit_state')
-                    @include('settings.status_emp.modal.delete_state')
+                    @include('$settings.state.modal.edit_state')
+                    @include('settings.state_emp.modal.delete_state')
                     @endforeach
                 </tbody>
             </table>
