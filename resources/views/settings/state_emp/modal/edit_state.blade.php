@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close position-absolute " style="left: 10px" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{route('type_emp.update', $type->id_type_emp)}}" method="POST">
+                <form action="{{route('state.update', $type->id_type_emp)}}" method="POST">
                     @csrf
                     @method("PUT")
                     <div class="mb-3">

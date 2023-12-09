@@ -42,7 +42,7 @@ Route::resource("certs",CertController::class);
 Route::resource("settings",SettingsController::class);
 Route::resource("type_emp",TypeEmpController::class);
 Route::resource("rank_emp",RankEmpController::class);
-Route::resource("status_emp",StateEmpController::class);
+Route::resource("state_emp",StateEmpController::class);
 Route::resource("jop_title",JopTitleController::class);
 Route::resource("stations",StationController::class);
 Route::resource("cities",CityController::class);

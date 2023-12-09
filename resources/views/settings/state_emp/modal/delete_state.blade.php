@@ -11,7 +11,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                <form action="{{route('type_emp.destroy', $type->id_type_emp)}}" method="POST">
+                <form action="{{route('state.destroy', $type->id_type_emp)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <button type="submit" class="btn btn-danger">حذف</button>
