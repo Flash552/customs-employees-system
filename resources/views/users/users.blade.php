@@ -34,7 +34,7 @@
             </div>
             <div class="card-header">
                 <h1 class="title">كل المستخدمين</h1>
-                <a href="users/create">إضافة مستخدم</a>
+                <a class="add" href="users/create">إضافة مستخدم</a>
             </div>
             <div class="box-table">
                 <table>

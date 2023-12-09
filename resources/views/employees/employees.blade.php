@@ -11,7 +11,7 @@
     <div class="wrapper-two">
         <h3 class="title-main">إدارة الموظفين</h3>
         <hr>
-        <div class="content-wrapper">
+        <div class="content-wrapper h-100">
             <div class="wrapper-two">
                 <form class="row g-4 needs-validation" novalidate>
                     <div class="col-md-2">
@@ -42,7 +42,15 @@
             </div>
             <div class="card-header">
                 <h1 class="title">كل الموظفين</h1>
-                <a href="employees/create">إضافة موظف</a>
+                <div class="card-btn">
+                    <button class="btn btn-success">اختر</button>
+                    <button class="btn btn-dark">تحديد الكل</button>
+                    <button class="btn btn-primary">طباعة</button>
+                    <a href="{{route('certs.index')}}" class="btn btn-danger">عرض المؤهل العلمي</a>
+                    <a href="{{route('absence.index')}}" class="btn btn-warning">عرض سجل الغياب</a>
+{{--                    <button href="">تحديد الكل</button>--}}
+                </div>
+                <a class="add" href="employees/create">إضافة موظف</a>
             </div>
             <div class="box-table">
                 <table >
@@ -83,7 +91,8 @@
                     <tr>
                         <td class="text-center">
                             <form action="">
-                                <input type="checkbox" style="width: 16px; height: 16px;    ">
+                                <input type="checkbox" value="true" style="width: 16px; height: 16px;    ">
+                                <input type="checkbox" value="true" class="d-none" style="width: 16px; height: 16px;    ">
                             </form>
                         </td>
                         <td class="d-flex justify-content-center align-items-center">

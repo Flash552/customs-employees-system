@@ -37,12 +37,12 @@ class StationController extends Controller
                 'name_station' => $request->name_station,
                 'id_city' => $request->id_city
             ];
-    
+
             Station::create($data);
         } catch (\Throwable $th) {
            return redirect()->back()->with('error', $th->getMessage());
         }
-        
+
     return redirect()->route("stations.index");
     }
 
@@ -87,4 +87,5 @@ class StationController extends Controller
         Station::destroy($id);
         return redirect()->route("stations.index");
     }
+    
 }

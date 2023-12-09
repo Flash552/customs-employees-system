@@ -8,10 +8,12 @@ use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RankEmpController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\StateEmpController;
 use App\Http\Controllers\StationController;
 use App\Http\Controllers\TypeEmpController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VacationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +41,8 @@ Route::resource("users",UserController::class);
 
 Route::resource("certs",CertController::class);
 
+Route::resource('absence', AbsenceController::class);
+
 Route::resource("settings",SettingsController::class);
 Route::resource("type_emp",TypeEmpController::class);
 Route::resource("rank_emp",RankEmpController::class);
@@ -46,6 +50,7 @@ Route::resource("state_emp",StateEmpController::class);
 Route::resource("jop_title",JopTitleController::class);
 Route::resource("stations",StationController::class);
 Route::resource("cities",CityController::class);
+Route::resource('vacation', VacationController::class);
 Route::get("profile",ProfileController::class);
 Route::resource("login",LogInController::class);
 

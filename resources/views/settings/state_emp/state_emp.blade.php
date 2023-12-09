@@ -54,7 +54,7 @@
                         <td>{{$state->id_status}}</td>
                         <td>{{$state->title_status}}</td>
                     </tr>
-                    @include('$settings.state.modal.edit_state')
+                    @include('settings.state_emp.modal.edit_state')
                     @include('settings.state_emp.modal.delete_state')
                     @endforeach
                 </tbody>

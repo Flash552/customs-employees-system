@@ -41,7 +41,7 @@
             </div>
             <div class="card-header">
                 <h1 class="title">كل المؤهلات العملية والدورات</h1>
-                <a href="add_emp.html">إضافة</a>
+                <a class="add" href="add_emp.html">إضافة</a>
             </div>
             <div class="box-table">
                 <table>

@@ -50,7 +50,6 @@
                     <th>الرقم</th>
                     <th>المركز</th>
                     <th>المدينه</th>
-
                 </tr>
                 </thead>
 
@@ -69,7 +68,7 @@
                    </td>
                 <td>{{$station->id_station }}</td>
                 <td>{{$station->name_station }}</td>
-                <td>{{$station->id_city }}</td>
+                <td>{{$station->city->city_name}}</td>
             </tr>
                @include('settings.stations.modal.edit_station')
                @include('settings.stations.modal.delete_station')

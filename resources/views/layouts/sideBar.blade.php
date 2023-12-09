@@ -29,7 +29,7 @@
 
         </li>
         <li>
-            <a class="@yield('active_')" href="">
+            <a class="@yield('active_absence')" href="/absence">
                 <i class="fa-solid fa-box-open"></i>
                 <span>سجل الغياب</span>
             </a>

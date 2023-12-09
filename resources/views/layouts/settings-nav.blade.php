@@ -18,5 +18,8 @@
         <li class="nav-item nav-link @yield('settings-active-cities')">
             <a href="/cities">المدن</a>
         </li>
+        <li class="nav-item nav-link @yield('settings-active-vacation')">
+            <a href="/vacation">انواع الاجازات</a>
+        </li>
     </ul>
 </div>
