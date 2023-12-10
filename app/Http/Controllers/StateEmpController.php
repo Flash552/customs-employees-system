@@ -33,8 +33,8 @@ class StateEmpController extends Controller
     {
         try {
             $data = [
-                'id_status' => $request->id_status,
-                'title_status' => $request->title_status
+                'id_state' => $request->title_state,
+                'title_state' => $request->title_state
             ];
 
             StateEmp::create($data);
