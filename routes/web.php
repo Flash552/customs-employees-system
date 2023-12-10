@@ -51,6 +51,7 @@ Route::resource("jop_title",JopTitleController::class);
 Route::resource("stations",StationController::class);
 Route::resource("cities",CityController::class);
 Route::resource('vacation', VacationController::class);
+
 Route::get("profile",ProfileController::class);
 Route::resource("login",LogInController::class);
 

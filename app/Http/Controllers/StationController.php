@@ -16,6 +16,7 @@ class StationController extends Controller
         $stations = Station::all();
         $cities = City::all();
         return view('settings.stations.stations' , compact('cities','stations'));
+//        return $stations->city->id_city;
     }
 
     /**
@@ -87,5 +88,5 @@ class StationController extends Controller
         Station::destroy($id);
         return redirect()->route("stations.index");
     }
-    
+
 }

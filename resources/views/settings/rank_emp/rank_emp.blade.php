@@ -26,7 +26,7 @@
                     <option selected disabled value="">اختر</option>
 
                     @foreach ($types as $type )
-                    <option value={{$type->id_type_emp}}>{{$type->title_type}}</option>
+                        <option value={{$type->id_type_emp}}>{{$type->title_type}}</option>
                     @endforeach
                 </select>
                 <div class="invalid-feedback">
@@ -70,6 +70,7 @@
                        </td>
                         <td>{{$rank->id_rank }}</td>
                         <td>{{$rank->title_rank }}</td>
+                        <td>{{$rank->type->title_type}}</td>
                     </tr>
                    @include('settings.rank_emp.modal.edit_rank')
                    @include('settings.rank_emp.modal.delete_rank')

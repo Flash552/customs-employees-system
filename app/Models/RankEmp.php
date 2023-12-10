@@ -12,4 +12,8 @@ class RankEmp extends Model
     protected $primaryKey = 'id_rank';
 
     protected $fillable = ['id_rank','title_rank' , 'id_type_emp'];
+
+    public function type(){
+        return $this->belongsTo(TypeEmp::class, 'id_type_emp');
+    }
 }

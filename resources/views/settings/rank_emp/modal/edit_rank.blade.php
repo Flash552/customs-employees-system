@@ -18,13 +18,15 @@
                         <label for="message-text" class="col-form-label">الرتبة</label>
                         <input type="text" name='title_rank' value="{{$rank->title_rank}}" class="form-control" id="message-text">
                     </div>
-                    <div class="col-md-2">
+                    <div class="mb-3">
                         <label for="validationCustom04" class="form-label">النوع</label>
                         <select name = 'id_type_emp' class="form-select" id="validationCustom04" required>
-                            <option selected disabled value="">اختر</option>
-        
+                            <option selected value="{{$rank->type->id_type_emp}}">{{$rank->type->title_type}}</option>
+
                             @foreach ($types as $type )
-                            <option value={{$type->id_type_emp}}>{{$type->title_type}}</option>
+                                @if($type != $rank->type)
+                                    <option value={{$type->id_type_emp}}>{{$type->title_type}}</option>
+                                @endif
                             @endforeach
                         </select>
                         <div class="invalid-feedback">

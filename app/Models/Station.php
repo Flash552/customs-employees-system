@@ -13,6 +13,6 @@ class Station extends Model
     protected $fillable = ['id_station','name_station' ,'id_city'];
 
     public function city(){
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(City::class, 'id_city');
     }
 }

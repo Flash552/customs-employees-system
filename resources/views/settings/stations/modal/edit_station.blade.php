@@ -21,9 +21,11 @@
                     <div class="mb-3">
                         <label for="validationCustom04" class="col-form-label">المدينة</label>
                         <select name="id_city" class="form-select" id="validationCustom04" required>
-                            <option selected disabled value="">اختر</option>
+                            <option selected value="{{$station->id_station}}">{{$station->city->city_name}}</option>
                             @foreach ($cities as $city )
-                                <option value= "{{$city->id_city}}" >{{$city->city_name}}</option>
+                                @if($city != $station->city)
+                                    <option value= "{{$city->id_city}}" >{{$city->city_name}}</option>
+                                @endif
                             @endforeach
                         </select>
                         <div class="invalid-feedback">
