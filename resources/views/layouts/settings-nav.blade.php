@@ -7,7 +7,7 @@
             <a href="/rank_emp">الرتبة</a>
         </li>
         <li  class="nav-item nav-link @yield('settings-active-status')">
-            <a href="/status_emp">الحالة</a>
+            <a href="/state_emp">الحالة</a>
         </li>
         <li class="nav-item nav-link @yield('settings-active-jop')">
             <a href="/jop_title">الشريحة</a>

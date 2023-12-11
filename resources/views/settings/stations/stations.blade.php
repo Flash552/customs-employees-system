@@ -69,7 +69,7 @@
                    </td>
                 <td>{{$station->id_station }}</td>
                 <td>{{$station->name_station }}</td>
-                <td>{{$station->id_city }}</td>
+                <td>{{$station->getCity->city_name }}</td>
             </tr>
                @include('settings.stations.modal.edit_station')
                @include('settings.stations.modal.delete_station')

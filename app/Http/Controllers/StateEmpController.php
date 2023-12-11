@@ -15,7 +15,7 @@ class StateEmpController extends Controller
     public function index()
     {
         $status = StateEmp::all();
-        return view('settings.status_emp.state_emp' , compact('status'));
+        return view('settings.state_emp.state_emp' , compact('status'));
     }
 
     /**
@@ -31,22 +31,24 @@ class StateEmpController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         try {
             $data = [
-                'id_status' => $request->id_status,
-                'title_status' => $request->title_status
+                'id_state' => $request->id_state,
+                'title_state' => $request->title_state
             ];
 
             StateEmp::create($data);
 
 
         } catch (\Throwable $th) {
-          return response("sssssssss");
+        
 
             return redirect()->back()->with('error', $th->getMessage());
         }
 
-    return redirect()->route("status_emp.index");
+    return redirect()->route("state_emp.index");
     }
 
     /**
@@ -54,7 +56,7 @@ class StateEmpController extends Controller
      */
     public function show(string $id)
     {
-        return view('settings.status_emp.edit_state_emp');
+        return view('settings.state_emp.edit_state_emp');
     }
 
     /**
@@ -78,7 +80,7 @@ class StateEmpController extends Controller
         ];
         $StateEmp->update($data);
         return redirect()
-            ->route("status_emp.index")
+            ->route("state_emp.index")
             ->with('success', "تم التعديل بنجاح");
     }
 
@@ -88,6 +90,6 @@ class StateEmpController extends Controller
     public function destroy(string $id)
     {
         StateEmp::destroy($id);
-        return redirect()->route("status_emp.index");
+        return redirect()->route("state_emp.index");
     }
 }

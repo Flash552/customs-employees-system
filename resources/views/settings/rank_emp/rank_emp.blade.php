@@ -70,6 +70,7 @@
                        </td>
                         <td>{{$rank->id_rank }}</td>
                         <td>{{$rank->title_rank }}</td>
+                        <td>{{$rank->getEmpType->title_type }}</td>
                     </tr>
                    @include('settings.rank_emp.modal.edit_rank')
                    @include('settings.rank_emp.modal.delete_rank')

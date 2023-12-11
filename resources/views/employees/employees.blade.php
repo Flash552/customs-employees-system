@@ -80,6 +80,7 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach ($employes as $employee )
                     <tr>
                         <td class="text-center">
                             <form action="">
@@ -102,15 +103,28 @@
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </td>
-                        <td>1</td>
-                        <td>جهاد شرع الله</td>
+                        <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>-----</td>
+                        <td>-----</td>
+                        <td>-----</td>
+                        <td>{{$employee->rank_id}}</td>
+                        {{-- <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>{{$employee->id_emp}}</td>
+                        <td>{{$employee->name}}</td> --}}
                         <td>اعزب</td>
                         <td>ذكر</td>
                         <td>ليسبلس</td>
                         <td>1</td>
+                        {{-- protected $fillable = ['id_emp','PID_emp','name','phone','id_jop','status_id','emp_type_id','rank_id','image','id_station','isDeleted','start_date','stop_date','remotion_date','end_duty_resson']; --}}
+
                         @include('employees.modal.show_emp')
                         @include('employees.modal.delete_emp')
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
