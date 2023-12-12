@@ -47,7 +47,7 @@ class EmployeeController extends Controller
 
        $this->validate($request, []);
         $employes = Employee::create($request->all());
-        return "redirect()->route('employees.add_employee')->with('success', '')";
+        return redirect()->route('employees.index')->with('success', '');
     }
 
     /**
@@ -84,7 +84,7 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-      
+
         Employee::destroy($id);
         return redirect()->route("jop_title.index");
     }
