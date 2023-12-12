@@ -68,11 +68,7 @@
                    </td>
                 <td>{{$station->id_station }}</td>
                 <td>{{$station->name_station }}</td>
-<<<<<<< HEAD
                 <td>{{$station->city->city_name}}</td>
-=======
-                <td>{{$station->getCity->city_name }}</td>
->>>>>>> 0b39e7ae21d61a433e07cdaff606732c0c27284c
             </tr>
                @include('settings.stations.modal.edit_station')
                @include('settings.stations.modal.delete_station')

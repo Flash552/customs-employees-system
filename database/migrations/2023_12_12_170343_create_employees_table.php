@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->integer('id_emp')->primary();
+            $table->integer('id_emp')->autoIncrement();
             $table->integer('PID_emp')->nullable();
             $table->string('name')->nullable();
             $table->integer('phone')->nullable();
@@ -33,10 +33,13 @@ return new class extends Migration
             $table->string('mother_name', 100)->nullable();
             $table->tinyInteger('sex')->nullable();
             $table->string('national_number', 20)->nullable();
+            $table->string('marital_status', 20)->nullable();
             $table->string('id_number', 20)->nullable();
             $table->string('passport_number', 20)->nullable();
             $table->string('decision_number', 20)->nullable();
+            $table->date('decision_date')->nullable();
             $table->date('birthdate')->nullable();
+            $table->date('start_duty_date')->nullable();
             $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();

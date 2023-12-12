@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Employee;
+use App\Models\JobTitle;
+use App\Models\RankEmp;
+use App\Models\StateEmp;
+use App\Models\Station;
+use App\Models\TypeEmp;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -13,7 +19,10 @@ class EmployeeController extends Controller
     public function index()
     {
         $employes = Employee::all();
-        return view('employees.employees', compact('employes'));
+        $cities = City::all();
+        $jobRanks = RankEmp::all();
+        $typeEmps = TypeEmp::all();
+        return view('employees.employees', compact('employes' ,'cities','jobRanks','typeEmps'));
     }
 
     /**
@@ -21,7 +30,13 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.add_employee');
+        $cities = City::all();
+        $jobRanks = RankEmp::all();
+        $typeEmps = TypeEmp::all();
+        $stations = Station::all();
+        $status = StateEmp::all();
+        $jopTitles =  JobTitle::all();
+        return view('employees.add_employee', compact('cities','jobRanks','typeEmps','stations','status','jopTitles'));
     }
 
     /**
@@ -30,9 +45,9 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, []);
+       $this->validate($request, []);
         $employes = Employee::create($request->all());
-        return redirect()->route('')->with('success', '');
+        return "redirect()->route('employees.add_employee')->with('success', '')";
     }
 
     /**
