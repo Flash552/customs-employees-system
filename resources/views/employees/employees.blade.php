@@ -101,7 +101,7 @@
                             <a href="#" class="edit print h-100" >
                                 <i class="fa-solid fa-print"></i>
                             </a>
-                            <a href="employees/edit" class="edit">
+                            <a href="{{route('employees.edit', $employee->id_emp)}}" class="edit">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
 
@@ -112,9 +112,9 @@
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </td>
-                       
-                       
-                        <td>{{$employee->PID_emp}}</td>                                      
+
+
+                        <td>{{$employee->PID_emp}}</td>
                         <td>{{$employee->name}}</td>
                         <td>{{$employee->marital_status}}</td>
                         <td>{{$employee->sex}}</td>
@@ -127,7 +127,7 @@
                         <td>{{$employee->start_date}}</td>
                         <td>{{$employee->birthdate}}</td>
                         <td>{{$employee->last_premotion_date}}</td>
-                        
+
                         <td>{{$employee->id_number}}</td>
                         <td>{{$employee->passport_number}}</td>
                         <td>{{$employee->national_number}}</td>
@@ -143,7 +143,7 @@
 
 
 
-                        
+
                         {{-- <td>{{$employee->id_emp}}</td>
                         <td>{{$employee->name}}</td>
                         <td>{{$employee->id_emp}}</td>

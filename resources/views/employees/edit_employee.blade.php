@@ -11,11 +11,11 @@
         <h3 class="title-main fc-edit">تعديل الموظف</h3>
         <div class="content-wrapper h-auto" >
             <div class="wrapper-two">
-                <form method="post" action="{{route("employees.update")}}" class="row g-3 needs-validation" novalidate>
+                <form method="post" action="{{route("employees.update", $employee->id_emp)}}" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">رقم الموظف</label>
-                        <input name="PID_emp" type="text" class="form-control" id="validationCustom02" required>
+                        <input name="PID_emp" value="{{$employee->PID_emp}}" type="text" class="form-control" id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -24,10 +24,10 @@
                         <label for="validationCustom04" class="form-label">نوع التوظيف</label>
                         <select name="id_type_emp" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                           @foreach ($typeEmps as $jobType )
-                           <option value="{{$jobType->id_type_emp}}">{{$jobType->title_type}}</option>
-                           @endforeach
-                            
+{{--                           @foreach ($typeEmps as $jobType )--}}
+{{--                            <option value="{{$jobType->id_type_emp}}">{{$jobType->title_type}}</option>--}}
+{{--                           @endforeach--}}
+
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -37,9 +37,9 @@
                         <label for="validationCustom04" class="form-label">الرتبة</label>
                         <select name="id_rank" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            @foreach ($jobRanks as $jobRank )
-                            <option value="{{$jobRank->id_rank}}">{{$jobRank->title_rank}}</option>
-                            @endforeach
+{{--                            @foreach ($jobRanks as $jobRank )--}}
+{{--                            <option value="{{$jobRank->id_rank}}">{{$jobRank->title_rank}}</option>--}}
+{{--                            @endforeach--}}
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -49,9 +49,9 @@
                         <label for="validationCustom04" class="form-label">المدينة</label>
                         <select name="id_city" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            @foreach ($cities as $city )
-                           <option value="{{$city->id_city}}">{{$city->city_name}}</option>
-                           @endforeach
+{{--                            @foreach ($cities as $city )--}}
+{{--                           <option value="{{$city->id_city}}">{{$city->city_name}}</option>--}}
+{{--                           @endforeach--}}
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -61,9 +61,9 @@
                         <label for="validationCustom04" class="form-label">مكان العمل</label>
                         <select name="id_station" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            @foreach ($stations as $station )
-                            <option value="{{$station->id_station}}">{{$station->name_station}}</option>
-                            @endforeach
+{{--                            @foreach ($stations as $station )--}}
+{{--                            <option value="{{$station->id_station}}">{{$station->name_station}}</option>--}}
+{{--                            @endforeach--}}
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -142,21 +142,21 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                   
-                    
+
+
                     <div class="col-md-3">
                         <label for="validationCustom04" class="form-label">حالة العمل</label>
                         <select name="id_state" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            @foreach ($status as $state )
-                            <option value="{{$state->id_state}}">{{$state->title_state}}</option>
-                            @endforeach
+{{--                            @foreach ($status as $state )--}}
+{{--                            <option value="{{$state->id_state}}">{{$state->title_state}}</option>--}}
+{{--                            @endforeach--}}
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
                         </div>
                     </div>
-                   
+
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ التعين</label>
                         <input name="start_date"  type="date" class="form-control" id="validationCustom05" required>
@@ -170,8 +170,8 @@
                         <div class="invalid-feedback">
                             Please provide a valid zip.
                         </div>
-                    </div> 
-                    
+                    </div>
+
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ المباشرة</label>
                         <input name="start_duty_date"  type="date" class="form-control" id="validationCustom05" required>
@@ -209,9 +209,9 @@
                         <label for="validationCustom04" class="form-label">المسمى الوظيفي</label>
                         <select name="id_jop" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            @foreach ($jopTitles as $jobTitle )
-                            <option value="{{$jobTitle->id_jop}}">{{$jobTitle->title_jop}}</option>
-                            @endforeach
+{{--                            @foreach ($jopTitles as $jobTitle )--}}
+{{--                            <option value="{{$jobTitle->id_jop}}">{{$jobTitle->title_jop}}</option>--}}
+{{--                            @endforeach--}}
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
