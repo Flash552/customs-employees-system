@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('certs_emp', function (Blueprint $table) {
-            $table->integer('id_certs')->primary();
-            $table->integer('id_emp')->nullable()->index('id_emp');
-            $table->string('title_certs')->nullable();
-            $table->integer('id_type_certs')->nullable()->index('id_type_certs');
-            $table->char('certs_file', 16)->nullable();
+        Schema::create('vacation_type', function (Blueprint $table) {
+            $table->integer('id_vacation_type')->primary();
+            $table->date('vacation_title')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('certs_emp');
+        Schema::dropIfExists('vacation_type');
     }
 };

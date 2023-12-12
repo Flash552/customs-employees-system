@@ -27,8 +27,17 @@ return new class extends Migration
             $table->boolean('isDeleted')->nullable();
             $table->date('start_date')->nullable();
             $table->date('stop_date')->nullable();
-            $table->date('remotion_date')->nullable();
+            $table->date('premotion_date')->nullable();
+            $table->date('last_premotion_date')->nullable();
             $table->string('end_duty_resson')->nullable();
+            $table->string('mother_name', 100)->nullable();
+            $table->tinyInteger('sex')->nullable();
+            $table->string('national_number', 20)->nullable();
+            $table->string('id_number', 20)->nullable();
+            $table->string('passport_number', 20)->nullable();
+            $table->string('decision_number', 20)->nullable();
+            $table->date('birthdate')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });

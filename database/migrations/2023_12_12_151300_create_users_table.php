@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->integer('id_city')->primary();
-            $table->string('city_name')->nullable();
+        Schema::create('users', function (Blueprint $table) {
+            $table->integer('id_user')->primary();
+            $table->integer('id_emp')->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('users');
     }
 };

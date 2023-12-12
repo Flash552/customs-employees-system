@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('type_certs', function (Blueprint $table) {
-            $table->integer('id_type_certs')->primary();
-            $table->string('title_certs')->nullable();
+        Schema::create('rank_emp', function (Blueprint $table) {
+            $table->integer('id_rank')->primary();
+            $table->string('title_rank')->nullable();
+            $table->integer('id_type_emp')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_certs');
+        Schema::dropIfExists('rank_emp');
     }
 };

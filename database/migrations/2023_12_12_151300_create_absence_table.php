@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vacations', function (Blueprint $table) {
-            $table->integer('id_vacations')->primary();
-            $table->integer('id_emp')->nullable()->index('id_emp');
-            $table->integer('id_vacation_type')->nullable()->index('id_vacation_type');
+        Schema::create('absence', function (Blueprint $table) {
+            $table->integer('id_absence')->primary();
+            $table->integer('id_emp')->nullable();
             $table->date('from_date')->nullable();
             $table->date('to_date')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacations');
+        Schema::dropIfExists('absence');
     }
 };

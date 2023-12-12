@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stations', function (Blueprint $table) {
-            $table->integer('id_station')->primary();
-            $table->string('name_station')->nullable();
-            $table->integer('id_city')->nullable()->index('id_city');
+        Schema::create('jop_title', function (Blueprint $table) {
+            $table->integer('id_jop')->primary();
+            $table->string('title_jop')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stations');
+        Schema::dropIfExists('jop_title');
     }
 };

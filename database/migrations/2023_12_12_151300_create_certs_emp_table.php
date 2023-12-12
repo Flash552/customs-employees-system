@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('status_emp', function (Blueprint $table) {
-            $table->integer('id_state')->primary();
-            $table->string('title_state')->nullable();
+        Schema::create('certs_emp', function (Blueprint $table) {
+            $table->integer('id_certs')->primary();
+            $table->integer('id_emp')->nullable()->index('id_emp');
+            $table->string('title_certs')->nullable();
+            $table->integer('id_type_certs')->nullable()->index('id_type_certs');
+            $table->char('certs_file', 16)->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status_emp');
+        Schema::dropIfExists('certs_emp');
     }
 };

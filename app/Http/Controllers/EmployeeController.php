@@ -12,9 +12,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employes= Employee::all();
-        return view('employees.employees' , compact('employes'));
-        
+        $employes = Employee::all();
+        return view('employees.employees', compact('employes'));
     }
 
     /**
@@ -30,29 +29,10 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-       
-        $data = [
-            'id_emp' => $request->id_emp,
-            'PID_emp' => $request->PID_emp,
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'id_jop' => $request->id_jop,
-            'status_id' => $request->status_id,
-            'emp_type_id' => $request->emp_type_id,
-            'rank_id' => $request->rank_id,
-            'image' => $request->image,
-            'id_station' => $request->id_station,
-            'isDeleted' => $request->isDeleted,
-            'start_date' => $request->start_date,
-            'remotion_date' => $request->remotion_date,
-            'end_duty_resson' => $request->end_duty_resson
 
-        ];
-
-        Employee::create($data);
-        return redirect()
-            ->route("jop_title.index")
-            ->with('success', "تم التعديل بنجاح");
+        $this->validate($request, []);
+        $employes = Employee::create($request->all());
+        return redirect()->route('')->with('success', '');
     }
 
     /**
@@ -68,7 +48,7 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
     {
-//        return view('employees.edit_employee');
+        //        return view('employees.edit_employee');
     }
 
     /**
@@ -76,26 +56,9 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $emp = Employee::find($id);
-        $data = [
-            'id_emp' => $request->id_emp,
-            'PID_emp' => $request->PID_emp,
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'id_jop' => $request->id_jop,
-            'status_id' => $request->status_id,
-            'emp_type_id' => $request->emp_type_id,
-            'rank_id' => $request->rank_id,
-            'image' => $request->image,
-            'id_station' => $request->id_station,
-            'isDeleted' => $request->isDeleted,
-            'start_date' => $request->start_date,
-            'remotion_date' => $request->remotion_date,
-            'end_duty_resson' => $request->end_duty_resson
-
-        ];
-
-        $emp->update($data);
+        $this->validate($request, []);
+        $employes = Employee::find($id);
+        $employes->update($request->all());
         return redirect()
             ->route("jop_title.index")
             ->with('success', "تم التعديل بنجاح");

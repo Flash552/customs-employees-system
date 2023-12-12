@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('absence', function (Blueprint $table) {
-            $table->integer('id_absence')->primary();
+        Schema::create('end_duty_emp', function (Blueprint $table) {
+            $table->integer('id_duty')->primary();
             $table->integer('id_emp')->nullable();
-            $table->date('from_date')->nullable();
-            $table->date('to_date')->nullable();
+            $table->string('end_duty_resson')->nullable();
+            $table->date('end_date')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absence');
+        Schema::dropIfExists('end_duty_emp');
     }
 };

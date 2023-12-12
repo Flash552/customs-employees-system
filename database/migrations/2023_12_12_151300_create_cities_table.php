@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rank_emp', function (Blueprint $table) {
-            $table->integer('id_rank')->primary();
-            $table->string('title_rank')->nullable();
-            $table->integer('id_type_emp')->nullable();
+        Schema::create('cities', function (Blueprint $table) {
+            $table->integer('id_city')->primary();
+            $table->string('city_name')->nullable();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rank_emp');
+        Schema::dropIfExists('cities');
     }
 };
