@@ -112,12 +112,38 @@
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </td>
-                        <td>{{$employee->id_emp}}</td>
+                       
+                       
+                        <td>{{$employee->PID_emp}}</td>                                      
                         <td>{{$employee->name}}</td>
-                        <td>-----</td>
-                        <td>-----</td>
-                        <td>-----</td>
-                        <td>{{$employee->rank_id}}</td>
+                        <td>{{$employee->marital_status}}</td>
+                        <td>{{$employee->sex}}</td>
+                        <td>{{$employee->mother_name}}</td>
+                        <td>{{$employee->id_rank}}</td>
+                        <td>----</td>
+                        <td>{{$employee->id_rank}}</td>
+                        <td>{{$employee->id_state}}</td>
+                        <td>{{$employee->id_station}}</td>
+                        <td>{{$employee->start_date}}</td>
+                        <td>{{$employee->birthdate}}</td>
+                        <td>{{$employee->last_premotion_date}}</td>
+                        
+                        <td>{{$employee->id_number}}</td>
+                        <td>{{$employee->passport_number}}</td>
+                        <td>{{$employee->national_number}}</td>
+                        <td>{{$employee->start_duty_date}}</td>
+                        <td>{{$employee->id_jop}}</td>
+                        <td>-------------------</td>
+                        <td>-------------------</td>
+                        <td>-------------------</td>
+                        <td>-------------------</td>
+                        <td>{{$employee->decision_date}}</td>
+                        <td>{{$employee->decision_number}}</td>
+
+
+
+
+                        
                         {{-- <td>{{$employee->id_emp}}</td>
                         <td>{{$employee->name}}</td>
                         <td>{{$employee->id_emp}}</td>
@@ -127,8 +153,7 @@
                         <td>اعزب</td>
                         <td>ذكر</td>
                         <td>ليسبلس</td>
-                        <td>1</td>
-                        {{-- protected $fillable = ['id_emp','PID_emp','name','phone','id_jop','status_id','emp_type_id','rank_id','image','id_station','isDeleted','start_date','stop_date','remotion_date','end_duty_resson']; --}}
+                        <td>1</td> --}}
 
                         @include('employees.modal.show_emp')
                         @include('employees.modal.delete_emp')
