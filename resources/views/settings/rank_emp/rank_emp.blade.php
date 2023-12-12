@@ -70,7 +70,11 @@
                        </td>
                         <td>{{$rank->id_rank }}</td>
                         <td>{{$rank->title_rank }}</td>
+<<<<<<< HEAD
                         <td>{{$rank->type->title_type}}</td>
+=======
+                        <td>{{$rank->getEmpType->title_type }}</td>
+>>>>>>> 0b39e7ae21d61a433e07cdaff606732c0c27284c
                     </tr>
                    @include('settings.rank_emp.modal.edit_rank')
                    @include('settings.rank_emp.modal.delete_rank')

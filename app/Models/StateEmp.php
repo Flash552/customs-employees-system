@@ -9,6 +9,6 @@ class StateEmp extends Model
 {
     use HasFactory;
     protected $table = "status_emp";
-    protected $primaryKey   ="id_status";
-    protected $fillable = ['id_status','title_status'];
+    protected $primaryKey   ="id_state";
+    protected $fillable = ['id_state','title_state'];
 }

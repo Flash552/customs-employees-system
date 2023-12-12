@@ -31,9 +31,11 @@ class StateEmpController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         try {
             $data = [
-                'id_state' => $request->title_state,
+                'id_state' => $request->id_state,
                 'title_state' => $request->title_state
             ];
 

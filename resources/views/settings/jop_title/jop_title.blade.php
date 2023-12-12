@@ -52,7 +52,7 @@
                             </button>
                         </td>
                         <td>{{$jop->id_jop}}</td>
-                        <td>{{$jop->title_job}}</td>
+                        <td>{{$jop->title_jop}}</td>
                     </tr>
                     @include('settings.jop_title.modal.edit_jop')
                     @include('settings.jop_title.modal.delete_jop')

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="StateDelete{{$state->id_status}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="StateDelete{{$state->id_state}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,7 +11,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                <form action="{{route('state_emp.destroy', $state->id_status)}}" method="POST">
+                <form action="{{route('state_emp.destroy', $state->id_state)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <button type="submit" class="btn btn-danger">حذف</button>

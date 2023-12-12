@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">الحالة</label>
-                <input name ="title_status" type="text" class="form-control" id="validationCustom02" required>
+                <input name ="title_state" type="text" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -51,8 +51,8 @@
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </td>
-                        <td>{{$state->id_status}}</td>
-                        <td>{{$state->title_status}}</td>
+                        <td>{{$state->id_state}}</td>
+                        <td>{{$state->title_state}}</td>
                     </tr>
                     @include('settings.state_emp.modal.edit_state')
                     @include('settings.state_emp.modal.delete_state')
