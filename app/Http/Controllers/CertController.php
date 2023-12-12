@@ -19,7 +19,7 @@ class CertController extends Controller
      */
     public function create()
     {
-        //
+        return view('certs.add_cert');
     }
 
     /**
@@ -35,7 +35,8 @@ class CertController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // نقل الموظف بعد الإضافة الى صفحة المؤهلات العلمية
+        return $id;
     }
 
     /**

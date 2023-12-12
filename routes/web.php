@@ -54,4 +54,3 @@ Route::resource('vacation', VacationController::class);
 
 Route::get("profile",ProfileController::class);
 Route::resource("login",LogInController::class);
-

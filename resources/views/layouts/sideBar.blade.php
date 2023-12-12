@@ -36,7 +36,7 @@
 
         </li>
         <li>
-            <a class="@yield('active_cert')" href="certs">
+            <a class="@yield('active_cert')" href="/certs">
                 <i class="fa-solid fa-box-open"></i>
                 <span>المؤهلات والدورات</span>
             </a>

@@ -21,7 +21,9 @@
 <body class="text-center" dir="rtl">
 <div class="container w-25 ">
     <main class="form-signin">
-        <form>
+        <form action="/dashboard" method="get">
+            @csrf
+            @method('get')
             <img class="mb-4" src="{{asset('assets/images/logo.png')}}" alt="" width="180" height="180">
             <h1 class="h3 mb-3 fw-normal">الرجاء تسجيل الدخول</h1>
             <div class="form-floating">
@@ -53,4 +55,9 @@
 @include("layouts.footer-scripts")
 </body>
 </html>
+    @section('scripts')
+        <script>
+
+        </script>
+    @endsection
 

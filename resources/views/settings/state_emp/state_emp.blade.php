@@ -13,7 +13,7 @@
         @csrf
         <div class="col-md-2">
                 <label for="validationCustom02" class="form-label">رقم</label>
-                <input name ="id_status" type="text" class="form-control" id="validationCustom02" required>
+                <input name ="id_state" type="text" class="form-control" id="validationCustom02" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
