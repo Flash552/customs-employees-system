@@ -82,7 +82,7 @@ class EmployeeController extends Controller
         $employes = Employee::find($id);
         $employes->update($request->all());
         return redirect()
-            ->route("jop_title.index")
+            ->route("employees.index")
             ->with('success', "تم التعديل بنجاح");
     }
 
@@ -93,6 +93,6 @@ class EmployeeController extends Controller
     {
 
         Employee::destroy($id);
-        return redirect()->route("jop_title.index");
+        return redirect()->route("employees.index");
     }
 }

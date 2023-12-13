@@ -11,7 +11,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لا</button>
-                <form action="{{route('employees.destroy', 1)}}" method="POST">
+                <form action="{{route('employees.destroy', $employee->id_emp)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <button type="submit" class="btn btn-danger">حذف</button>
