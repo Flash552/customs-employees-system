@@ -303,5 +303,9 @@
 @include('employees.modal.success_add_emp')
 @endsection
 @section('scripts')
-
+        <script>
+            // var list = @json($jobRanks)
+            let list_rank = document.querySelectorAll('select[name="id_type_emp"] option')
+            console.log(list_rank);
+        </script>
 @endsection
