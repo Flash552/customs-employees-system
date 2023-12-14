@@ -10,6 +10,8 @@ use App\Models\StateEmp;
 use App\Models\Station;
 use App\Models\TypeEmp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+
 use function Sodium\add;
 
 class EmployeeController extends Controller
@@ -58,38 +60,59 @@ class EmployeeController extends Controller
      */
     public function show(Request $request)
     {
-        $employes = null;
+        
         $cities = City::all();
         $jobRanks = RankEmp::all();
         $typeEmps = TypeEmp::all();
         $status = StateEmp::all();
         $stations = Station::all();
+        $search = [];      
+        $empData = array_filter($request->all(), function( $value) {           
+                 return !is_null($value);         
+        }); 
+        array_shift($empData);
+        array_shift($empData);
+        $employes = Employee::Where($empData)->get();
+        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps' ,'employes'));
 
-        $employes = Employee::Where('PID_emp', '=', $request->PID_emp)
-            ->orWhere('national_number', '=', $request->national_number)
-            ->orwhere('name', 'LIKE', '%'.$request->name.'%')
-            ->get();
-        return $employes;
 
-//        if($request->PID_emp)
-//            $employes = Employee::where('PID_emp', '=', $request->PID_emp)->get();
-//        if($request->name)
-//            $employes = Employee::where('name', 'LIKE', '%'.$request->name.'%')->get();
-//        if($request->national_number)
-//            $employes = Employee::where('national_number', '=', $request->national_number)->get();
-//
-//        if($request->name && $request->PID_emp && $request->national_number)
-//            $employes = Employee::where('name', 'LIKE', '%'.$request->name.'%')
-//                                ->orWhere('PID_emp', '=', $request->PID_emp)
-//                                ->orWhere('national_number', '=', $request->national_number)
-//                                ->get();
-        if($employes == null || $employes->count() == 0 ){
-            return redirect()
-                    ->route('employees.index')
-                    ->with("notFound", "هذا الموظف غير موجود");
-        }
-            return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
-//        return view('employees.edit_employee');
+        
+//         return response(json_encode($employes));
+//         foreach ($request->all() as $key => $value){
+          
+//           if ($value !==''){
+//              $search =  Arr::add($search , $key ,$value);
+//           }               
+//         }
+       
+        
+//     return $employes;
+
+//         // $employes = Employee::Where('PID_emp', '=', $request->PID_emp)
+//         //     ->orWhere('national_number', '=', $request->national_number)
+//         //     ->orwhere('name', 'LIKE', '%'.$request->name.'%')
+//         //     ->get();
+//         // return $employes;
+
+// //        if($request->PID_emp)
+// //            $employes = Employee::where('PID_emp', '=', $request->PID_emp)->get();
+// //        if($request->name)
+// //            $employes = Employee::where('name', 'LIKE', '%'.$request->name.'%')->get();
+// //        if($request->national_number)
+// //            $employes = Employee::where('national_number', '=', $request->national_number)->get();
+// //
+// //        if($request->name && $request->PID_emp && $request->national_number)
+// //            $employes = Employee::where('name', 'LIKE', '%'.$request->name.'%')
+// //                                ->orWhere('PID_emp', '=', $request->PID_emp)
+// //                                ->orWhere('national_number', '=', $request->national_number)
+// //                                ->get();
+//         if($employes == null || $employes->count() == 0 ){
+//             return redirect()
+//                     ->route('employees.index')
+//                     ->with("notFound", "هذا الموظف غير موجود");
+//         }
+//             return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
+// //        return view('employees.edit_employee');
     }
     public function searchAdvanced(Request $request,string $id)
     {

@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="{{route('employees.searchAdvanced', 1)}}" method="POST" class="row g-4">
+                    <form action="{{route('employees.show', 1)}}" method="POST" class="row g-4">
                         @csrf
                         @method('GET')
                         <div class="col-md-3">
