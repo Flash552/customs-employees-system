@@ -55,7 +55,7 @@
                         <select name="id_rank" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
                             @foreach ($jobRanks as $jobRank )
-                            <option value="{{$jobRank->id_rank}}">{{$jobRank->title_rank}}</option>
+                                <option value="{{$jobRank->id_rank}}">{{$jobRank->title_rank}}</option>
                             @endforeach
                         </select>
                         <div class="invalid-feedback">

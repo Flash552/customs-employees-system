@@ -13,32 +13,32 @@
         <hr>
         <div class="content-wrapper h-100">
             <div class="wrapper-two">
-                <form class="row g-4 needs-validation" novalidate>
+                @if(Session::has('notFound'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ Session::get('notFound') }}
+                    </div>
+                @endif
+                <form action="{{route('employees.show',-1)}}" method="POST" class="row g-4" >
+                    @csrf
+                    @method('GET')
                     <div class="col-md-2">
                         <label for="validationCustom02" class="form-label">رقم الموظف</label>
-                        <input type="text" class="form-control" id="validationCustom02" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <input type="text" name="PID_emp" class="form-control" id="validationCustom02">
                     </div>
                     <div class="col-md-2">
                         <label for="validationCustom01" class="form-label">الرقم الوطني</label>
-                        <input type="text" class="form-control" id="validationCustom01"  required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <input type="text" name="national_number" class="form-control" id="validationCustom01">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="validationCustom01" class="form-label">الإسم</label>
-                        <input type="text" class="form-control" id="validationCustom01"  required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <input type="text" name="name" class="form-control" id="validationCustom01">
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">بحث</button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#EmpSearch">بحث متقدم</button>
                     </div>
                 </form>
+                @include('employees.modal.search_advanced_emp')
             </div>
             <div class="card-header">
                 <h1 class="title">كل الموظفين</h1>

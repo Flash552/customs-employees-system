@@ -36,7 +36,8 @@ Route::get('dashboard', function (){
     return view('dashboard.dashboard');
 });
 Route::resource("employees",EmployeeController::class);
-
+Route::get('employees/searchAdvanced/{id}', [EmployeeController::class, 'searchAdvanced'])
+    ->name('employees.searchAdvanced');
 Route::resource("users",UserController::class);
 
 Route::resource("certs",CertController::class);
