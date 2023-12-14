@@ -87,6 +87,30 @@
                         </div>
                     </div>
                     <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">المسمى الوظيفي</label>
+                        <select name="id_jop" class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">اختر</option>
+                            @foreach ($jopTitles as $jobTitle )
+                            <option value="{{$jobTitle->id_jop}}">{{$jobTitle->title_jop}}</option>
+                            @endforeach
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">حالة العمل</label>
+                        <select name="id_state" class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">اختر</option>
+                            @foreach ($status as $state )
+                            <option value="{{$state->id_state}}">{{$state->title_state}}</option>
+                            @endforeach
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <label for="validationCustom01" class="form-label">الإسم</label>
                         <input name="name"  type="text" class="form-control" id="validationCustom01"  required>
                         <div class="valid-feedback">
@@ -103,7 +127,7 @@
                     <div class="col-md-3">
                         <label for="validationCustom04" class="form-label">الجنس</label>
                         <select name="sex" class="form-select" id="validationCustom04" required>
-                            <!-- <option selected disabled value="">اختر</option> -->
+                            <option selected disabled value="">اختر</option>
                             <option selected value="0">ذكر</option>
                             <option value="1">انثى</option>
                         </select>
@@ -161,19 +185,43 @@
                     </div>
                    
                     
+                   
                     <div class="col-md-3">
-                        <label for="validationCustom04" class="form-label">حالة العمل</label>
-                        <select name="id_state" class="form-select" id="validationCustom04" required>
-                            <option selected disabled value="">اختر</option>
-                            @foreach ($status as $state )
-                            <option value="{{$state->id_state}}">{{$state->title_state}}</option>
-                            @endforeach
-                        </select>
+                        <label for="validationCustom03" class="form-label">مجال الخبرة</label>
+                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
                         <div class="invalid-feedback">
-                            Please select a valid state.
+                            Please provide a valid city.
                         </div>
                     </div>
-                   
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">تاريخ بدء العمل في مجال الخبرة</label>
+                        <input name="start_date"  type="date" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">اسم المصرف</label>
+                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">الفرع</label>
+                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">رقم الحساب</label>
+                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ التعين</label>
                         <input name="start_date"  type="date" class="form-control" id="validationCustom05" required>
@@ -188,7 +236,13 @@
                             Please provide a valid zip.
                         </div>
                     </div> 
-                    
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">الايميل</label>
+                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ المباشرة</label>
                         <input name="start_duty_date"  type="date" class="form-control" id="validationCustom05" required>
@@ -196,18 +250,7 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">المؤهل العلمي</label>
-                        <input name=""  type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">المؤهل</label>
-                        <input name=""  type="file" class="form-control" aria-label="file example" required>
-                        <div class="invalid-feedback">Example invalid form file feedback</div>
-                    </div>
+                    
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ القرار</label>
                         <input name="decision_date"  type="date" class="form-control" id="validationCustom05" required>
@@ -222,46 +265,8 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom04" class="form-label">المسمى الوظيفي</label>
-                        <select name="id_jop" class="form-select" id="validationCustom04" required>
-                            <option selected disabled value="">اختر</option>
-                            @foreach ($jopTitles as $jobTitle )
-                            <option value="{{$jobTitle->id_jop}}">{{$jobTitle->title_jop}}</option>
-                            @endforeach
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid state.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">مدة الإستحقاق</label>
-                        <input name=""  type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">الإستحقاق القادم</label>
-                        <input name=""  type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">تاريخها</label>
-                        <input name=""  type="date" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationTextarea" class="form-label">سببها</label>
-                        <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
-                        <div class="invalid-feedback">
-                            Please enter a message in the textarea.
-                        </div>
-                    </div>
+                    
+                   
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">الصفة</label>
                         <input name=""  type="text" class="form-control" id="validationCustom05" required>
@@ -303,5 +308,9 @@
 @include('employees.modal.success_add_emp')
 @endsection
 @section('scripts')
-
+        <script>
+            // var list = @json($jobRanks)
+            let list_rank = document.querySelectorAll('select[name="id_type_emp"] option')
+            console.log(list_rank);
+        </script>
 @endsection
