@@ -23,7 +23,7 @@
                     @method('GET')
                     <div class="col-md-2">
                         <label for="validationCustom02" class="form-label">رقم الموظف</label>
-                        <input type="text" name="PID_emp" class="form-control" id="validationCustom02">
+                        <input type="text" name="PID_emp" value="" class="form-control" id="validationCustom02">
                     </div>
                     <div class="col-md-2">
                         <label for="validationCustom01" class="form-label">الرقم الوطني</label>

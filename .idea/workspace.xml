@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="452266e9-ed4c-4888-a5c8-0029b57138e0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/add_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/add_employee.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employees/edit_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/edit_employee.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +170,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Test/PHP-Laravel/Test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/My projects/hospital-management-system&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -179,10 +182,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\employees\modal" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\settings" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\absence\modal" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\absence" />
-      <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\employees\modal" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\settings\cities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -246,7 +249,12 @@
       <workItem from="1702118906928" duration="7029000" />
       <workItem from="1702134052990" duration="1072000" />
       <workItem from="1702404058862" duration="395000" />
-      <workItem from="1702415869090" duration="1485000" />
+      <workItem from="1702415869090" duration="2931000" />
+      <workItem from="1702470609563" duration="4833000" />
+      <workItem from="1702484870847" duration="6841000" />
+      <workItem from="1702552684972" duration="1523000" />
+      <workItem from="1702566468760" duration="2447000" />
+      <workItem from="1702632402848" duration="7570000" />
     </task>
     <servers />
   </component>
