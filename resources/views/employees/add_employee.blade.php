@@ -149,6 +149,7 @@
                             Looks good!
                         </div>
                     </div>
+                    {{--//TODO add for --}}
                     <div class="col-md-3">
                         <label for="validationCustom04" class="form-label">الحالة الإجتماعية</label>
                         <select name="marital_status" class="form-select" id="validationCustom04" required>
@@ -188,21 +189,21 @@
                    
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">مجال الخبرة</label>
-                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <input name="expertise"  type="text" class="form-control" id="validationCustom03" required>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ بدء العمل في مجال الخبرة</label>
-                        <input name="start_date"  type="date" class="form-control" id="validationCustom05" required>
+                        <input name="expertise_start_date"  type="date" class="form-control" id="validationCustom05" required>
                         <div class="invalid-feedback">
                             Please provide a valid zip.
                         </div>
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">اسم المصرف</label>
-                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <input name="bank_name"  type="text" class="form-control" id="validationCustom03" required>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
@@ -210,14 +211,14 @@
                     
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">الفرع</label>
-                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <input name="bank_branch"  type="text" class="form-control" id="validationCustom03" required>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">رقم الحساب</label>
-                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <input name="bank_account_id"  type="text" class="form-control" id="validationCustom03" required>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
@@ -238,7 +239,7 @@
                     </div> 
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">الايميل</label>
-                        <input name="mother_name"  type="text" class="form-control" id="validationCustom03" required>
+                        <input name="email"  type="text" class="form-control" id="validationCustom03" required>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
@@ -267,13 +268,7 @@
                     </div>
                     
                    
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">الصفة</label>
-                        <input name=""  type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
+                  
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">صورة شخصية</label>
                         <input name=""  type="file" class="form-control" aria-label="file example" required>

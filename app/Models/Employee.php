@@ -41,7 +41,13 @@ class Employee extends Model
         'national_number',
         'id_number',
         'passport_number',
-        'birthdate'
+        'birthdate',
+        'email',
+        'bank_name',
+        'bank_branch',
+        'bank_account_id',
+        'expertise',
+        'expertise_start_date'
 
 
     ];

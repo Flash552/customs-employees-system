@@ -27,7 +27,14 @@ class EmployeeController extends Controller
         $typeEmps = TypeEmp::all();
         $status = StateEmp::all();
         $stations = Station::all();
-        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
+        $jopTitles =  JobTitle::all();
+
+
+        
+
+
+
+        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps','jopTitles'));
     }
 
     /**
@@ -51,7 +58,10 @@ class EmployeeController extends Controller
     {
 
         $this->validate($request, []);
-        $employes = Employee::create($request->all());
+        $employee = Employee::create($request->all());
+        
+       
+        // return response(   json_encode($employee)     );
         return redirect()->route('employees.index')->with('success', '');
     }
 
@@ -66,18 +76,26 @@ class EmployeeController extends Controller
         $typeEmps = TypeEmp::all();
         $status = StateEmp::all();
         $stations = Station::all();
-        $search = [];      
+        $jopTitles =  JobTitle::all();
+
+        $search= [];
         $empData = array_filter($request->all(), function( $value) {           
                  return !is_null($value);         
         }); 
-        array_shift($empData);
-        array_shift($empData);
-        $employes = Employee::Where($empData)->get();
-        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps' ,'employes'));
+        foreach ($empData as $key => $value) {
+            array_push($search ,[$key ,'LIKE','%'.$value.'%' ]);
+        }
+        array_shift($search);
+        array_shift($search);
+      
+        $employes = Employee::Where($search )->get();
+        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps' ,'jopTitles','employes'));
 
 
-        
-//         return response(json_encode($employes));
+ // foreach ($empData as $key => $value) {
+        //     $sss[$key] ='LIKE'.'%'.$value.'%';
+        // }
+//          return response(json_encode($sss));
 //         foreach ($request->all() as $key => $value){
           
 //           if ($value !==''){

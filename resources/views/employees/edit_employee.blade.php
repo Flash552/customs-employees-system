@@ -54,7 +54,7 @@
                         <select name="id_city" class="form-select" id="validationCustom04" required>
                             <option selected disabled hidden value="">اختر</option>
                             @foreach ($cities as $city)
-                                <option value="{{ $city->id_city }}">
+                                <option @if ($city->id_city === $employee->station->id_city) selected @endif value="{{ $city->id_city }}">
                                     {{ $city->city_name }}</option>
                             @endforeach
                         </select>
@@ -91,10 +91,11 @@
                             Please provide a valid city.
                         </div>
                     </div>
+
                     <div class="col-md-3">
                         <label for="validationCustom04" class="form-label">الجنس</label>
                         <select name="sex" class="form-select" id="validationCustom04" required>
-                            <!-- <option selected disabled value="">اختر</option> -->
+                           <option selected disabled value="">اختر</option> 
                             <option selected value="0">ذكر</option>
                             <option  value="1">انثى</option>
                         </select>
@@ -108,6 +109,13 @@
                             id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">الايميل</label>
+                        <input name="email"  type="text" value="{{ $employee->email }}" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -141,7 +149,7 @@
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">رقم الجواز</label>
-                        <input name="passport_number" {{ $employee->passport_number }} type="text"
+                        <input name="passport_number" value="{{ $employee->passport_number }}"  type="text"
                             class="form-control" id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
@@ -170,7 +178,42 @@
                             Please select a valid state.
                         </div>
                     </div>
-
+<div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">مجال الخبرة</label>
+                        <input name="expertise"  type="text" value="{{ $employee->expertise }}" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">تاريخ بدء العمل في مجال الخبرة</label>
+                        <input name="expertise_start_date" value="{{ $employee->expertise_start_date }}" type="date" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">اسم المصرف</label>
+                        <input name="bank_name"  type="text" value="{{ $employee->bank_name }}" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">الفرع</label>
+                        <input name="bank_branch" value="{{ $employee->bank_branch }}" type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom03" class="form-label">رقم الحساب</label>
+                        <input name="bank_account_id" value="{{ $employee->bank_account_id }}" type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ التعين</label>
                         <input name="start_date" value="{{ $employee->start_date }}" type="date"
@@ -196,21 +239,10 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">المؤهل العلمي</label>
-                        <input name="" type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">المؤهل</label>
-                        <input name="" type="file" class="form-control" aria-label="file example" required>
-                        <div class="invalid-feedback">Example invalid form file feedback</div>
-                    </div>
+                   
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ القرار</label>
-                        <input name="decision_date" {{ $employee->decision_date }} type="date" class="form-control"
+                        <input name="decision_date" value="{{ $employee->decision_date }}" type="date" class="form-control"
                             id="validationCustom05" required>
                         <div class="invalid-feedback">
                             Please provide a valid zip.
@@ -237,41 +269,7 @@
                             Please select a valid state.
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">مدة الإستحقاق</label>
-                        <input name="" type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">الإستحقاق القادم</label>
-                        <input name="" type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">تاريخها</label>
-                        <input name="" type="date" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationTextarea" class="form-label">سببها</label>
-                        <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
-                        <div class="invalid-feedback">
-                            Please enter a message in the textarea.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">الصفة</label>
-                        <input name="" type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
-                    </div>
+                    
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">صورة شخصية</label>
                         <input name="" type="file" class="form-control" aria-label="file example" required>

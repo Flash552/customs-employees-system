@@ -41,7 +41,7 @@ return new class extends Migration
             $table->string('email', 20)->nullable();
             $table->string('bank_name', 50)->nullable();
             $table->string('bank_branch', 50)->nullable();
-            $table->string('bank account_id', 20)->nullable();
+            $table->string('bank_account_id', 20)->nullable();
             $table->date('decision_date')->nullable();
             $table->date('birthdate')->nullable();
             $table->date('start_duty_date')->nullable();
