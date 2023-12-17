@@ -55,6 +55,11 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index')->with('success', '');
     }
 
+    public function print(string $id){
+        $emp = Employee::find($id)->first();
+        return view("employees.modal.print_emp", compact("emp"));
+    }
+
     /**
      * Display the specified resource.
      */

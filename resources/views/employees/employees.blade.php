@@ -45,7 +45,7 @@
                 <div class="card-btn">
                     <button class="btn btn-success">اختر</button>
                     <button class="btn btn-dark">تحديد الكل</button>
-                    <button class="btn btn-primary">طباعة</button>
+                    <a href="{{route('employees.print', 1)}}" class="btn btn-primary">طباعة</a>
                     <a href="{{route('certs.index')}}" class="btn btn-danger">عرض المؤهل العلمي</a>
                     <a href="{{route('absence.index')}}" class="btn btn-warning">عرض سجل الغياب</a>
 {{--                    <button href="">تحديد الكل</button>--}}
@@ -98,7 +98,7 @@
                         </td>
                         <td class="d-flex justify-content-center align-items-center">
 
-                            <a href="#" class="edit print h-100" >
+                            <a href="{{route('employees.print', $employee->id_emp)}}" class="edit print h-100" >
                                 <i class="fa-solid fa-print"></i>
                             </a>
                             <a href="{{route('employees.edit', $employee->id_emp)}}" class="edit">

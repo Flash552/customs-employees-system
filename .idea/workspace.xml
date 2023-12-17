@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="452266e9-ed4c-4888-a5c8-0029b57138e0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/employees/modal/print_emp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employees/add_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/add_employee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employees/edit_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/edit_employee.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/modal/print_emp.blade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +256,9 @@
       <workItem from="1702484870847" duration="6841000" />
       <workItem from="1702552684972" duration="1523000" />
       <workItem from="1702566468760" duration="2447000" />
-      <workItem from="1702632402848" duration="7570000" />
+      <workItem from="1702632402848" duration="8097000" />
+      <workItem from="1702814342895" duration="2634000" />
+      <workItem from="1702823439630" duration="336000" />
     </task>
     <servers />
   </component>

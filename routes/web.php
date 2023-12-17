@@ -38,6 +38,8 @@ Route::get('dashboard', function (){
 Route::resource("employees",EmployeeController::class);
 Route::get('employees/searchAdvanced/{id}', [EmployeeController::class, 'searchAdvanced'])
     ->name('employees.searchAdvanced');
+Route::get('employees/print/{id}', [EmployeeController::class, 'print'])
+    ->name('employees.print');
 Route::resource("users",UserController::class);
 
 Route::resource("certs",CertController::class);

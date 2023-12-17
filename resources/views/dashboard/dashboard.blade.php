@@ -68,7 +68,7 @@
                             span.innerHTML++
                             if(span.innerHTML === maxValue)
                                 clearInterval(start)
-                        }, 1 / maxValue)
+                        }, 0.1/ maxValue)
                         selected = true
                     })
             }
