@@ -60,18 +60,27 @@ class EmployeeController extends Controller
         return view("employees.modal.print_emp", compact("emp"));
     }
 
+    public function printAll(Request $request, string $id){
+        $list = $request->check;
+        return $request;
+//        foreach ($list as $item){
+//            $emp = Employee::where("id_emp", "=", $item)->first();
+////            return $emp;
+//            return view("employees.modal.print_emp", compact('emp'));
+//        }
+
+    }
+
     /**
      * Display the specified resource.
      */
     public function show(Request $request)
     {
-
         $cities = City::all();
         $jobRanks = RankEmp::all();
         $typeEmps = TypeEmp::all();
         $status = StateEmp::all();
         $stations = Station::all();
-        $search = [];
         $empData = array_filter($request->all(), function( $value) {
                  return !is_null($value);
         });

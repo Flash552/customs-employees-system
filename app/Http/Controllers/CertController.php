@@ -33,9 +33,10 @@ class CertController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
         // نقل الموظف بعد الإضافة الى صفحة المؤهلات العلمية
+        $id = $request->check[0];
         return $id;
     }
 

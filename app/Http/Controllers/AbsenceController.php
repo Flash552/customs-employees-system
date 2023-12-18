@@ -33,9 +33,10 @@ class AbsenceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-        //
+        $id = $request->check[0];
+        return $id;
     }
 
     /**
