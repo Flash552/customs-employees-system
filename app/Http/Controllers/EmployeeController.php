@@ -224,9 +224,9 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update( string $id,Request $request)
     {
-        $this->validate($request, []);
+       // $this->validate($request, []);
         $employes = Employee::find($id);
         $employes->update($request->all());
         return redirect()

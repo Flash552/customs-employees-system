@@ -5,9 +5,9 @@
         </form>
     </div>
     <div class="icons">
-                            <span class="notification">
-                                <i class="fa-regular fa-bell fa-lg"></i>
-                            </span>
-        <img src="{{asset('assets/images/avatar.png')}}" alt="">
+        <span class="notification">
+            <i class="fa-regular fa-bell fa-lg"></i>
+        </span>
+        <img src="{{ asset('assets/images/avatar.png') }}" alt="">
     </div>
 </div>

@@ -11,7 +11,8 @@
         <h3 class="title-main fc-edit">تعديل الموظف</h3>
         <div class="content-wrapper h-auto">
             <div class="wrapper-two">
-                <form method="post" action="{{ route('employees.update', $employee->id_emp) }}"
+                <form action="{{route('employees.update', $employee->id_emp)}}" method="POST"
+              
                     class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
@@ -294,9 +295,8 @@
                                       </div>
                                     </div> -->
                     <div class="col-12">
-                        <input name="" class="btn btn-success ms-2" type="submit" name=""
-                            value="إضافة ثم إضافة دورة">
-                        <input name="" class="btn btn-primary" type="submit" name="" value="اضافة">
+                       
+                        <input name="" class="btn btn-primary" type="submit" name="submit" value="اضافة">
                     </div>
                 </form>
             </div>

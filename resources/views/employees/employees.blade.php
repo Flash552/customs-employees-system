@@ -48,7 +48,7 @@
                     <button class="btn btn-primary">طباعة</button>
                     <a href="{{route('certs.index')}}" class="btn btn-danger">عرض المؤهل العلمي</a>
                     <a href="{{route('absence.index')}}" class="btn btn-warning">عرض سجل الغياب</a>
-{{--                    <button href="">تحديد الكل</button>--}}
+
                 </div>
                 <a class="add" href="employees/create">إضافة موظف</a>
             </div>
@@ -76,10 +76,7 @@
                         <th>الرقم الوطني</th>
                         <th>تاريخ المباشرة</th>
                         <th>الشريحة</th>
-                        <th>مدة الإستحقاق</th>
-                        <th>الاستحقاق القادم</th>
-                        <th>تاريخها</th>
-                        <th>سببها</th>
+                       
                         <th>تاريخ القرار</th>
                         <th>رقم القرار</th>
                         <th>صورة شخصية</th>
@@ -133,10 +130,7 @@
                         <td>{{$employee->national_number}}</td>
                         <td>{{$employee->start_duty_date}}</td>
                         <td>{{$employee->id_jop}}</td>
-                        <td>-------------------</td>
-                        <td>-------------------</td>
-                        <td>-------------------</td>
-                        <td>-------------------</td>
+                       
                         <td>{{$employee->decision_date}}</td>
                         <td>{{$employee->decision_number}}</td>
 
@@ -144,16 +138,8 @@
 
 
 
-                        {{-- <td>{{$employee->id_emp}}</td>
-                        <td>{{$employee->name}}</td>
-                        <td>{{$employee->id_emp}}</td>
-                        <td>{{$employee->name}}</td>
-                        <td>{{$employee->id_emp}}</td>
-                        <td>{{$employee->name}}</td> --}}
-                        <td>اعزب</td>
-                        <td>ذكر</td>
-                        <td>ليسبلس</td>
-                        <td>1</td> --}}
+                      
+                      
 
                         @include('employees.modal.show_emp')
                         @include('employees.modal.delete_emp')
