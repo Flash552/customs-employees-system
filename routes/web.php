@@ -8,6 +8,7 @@ use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RankEmpController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\TramsController;
 use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\StateEmpController;
 use App\Http\Controllers\StationController;
@@ -38,6 +39,10 @@ Route::get('dashboard', function (){
 Route::resource("employees",EmployeeController::class);
 Route::get('employees/searchAdvanced/{id}', [EmployeeController::class, 'searchAdvanced'])
     ->name('employees.searchAdvanced');
+Route::get('employees/print/{id}', [EmployeeController::class, 'print'])
+    ->name('employees.print');
+Route::get('employees/printAll/{id}', [EmployeeController::class, 'printAll'])
+    ->name('employees.printAll');
 Route::resource("users",UserController::class);
 
 Route::resource("certs",CertController::class);
@@ -45,6 +50,7 @@ Route::resource("certs",CertController::class);
 Route::resource('absence', AbsenceController::class);
 
 Route::resource("settings",SettingsController::class);
+Route::resource("trams",TramsController::class);
 Route::resource("type_emp",TypeEmpController::class);
 Route::resource("rank_emp",RankEmpController::class);
 Route::resource("state_emp",StateEmpController::class);

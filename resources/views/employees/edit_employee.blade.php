@@ -17,7 +17,7 @@
                     @csrf
                     <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">رقم الموظف</label>
-                        <input name="PID_emp" value="{{ $employee->PID_emp }}" type="text" class="form-control"
+                        <input name="PID_emp" type="text" class="form-control"
                             id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
@@ -295,8 +295,9 @@
                                       </div>
                                     </div> -->
                     <div class="col-12">
-                       
-                        <input name="" class="btn btn-primary" type="submit" name="submit" value="اضافة">
+                        <input name="" class="btn btn-success ms-2" type="submit" name=""
+                            value="إضافة ثم إضافة دورة">
+                        <input name="" class="btn btn-primary" type="submit" name="" value="اضافة">
                     </div>
                 </form>
             </div>

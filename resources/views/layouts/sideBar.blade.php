@@ -33,6 +33,12 @@
                 <i class="fa-solid fa-box-open"></i>
                 <span>سجل الغياب</span>
             </a>
+        </li>
+        <li>
+            <a class="@yield('active_trams')" href="/trams">
+                <i class="fa-solid fa-box-open"></i>
+                <span>الانتقالات</span>
+            </a>
 
         </li>
         <li>

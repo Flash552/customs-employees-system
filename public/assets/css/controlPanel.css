@@ -3,6 +3,12 @@
     --main-bg-color: white;
 
 }
+.disabled-btn{
+    cursor: context-menu !important;
+    background-color: #bebebe !important;
+    color: #ffffff !important;
+    border-color: #bebebe !important;
+}
 .eye{
     margin: 0 10px;
     color: #20C997;
@@ -179,7 +185,7 @@ button.edit{
 
 /* Start Content */
 .page .content .head{
-    padding: 20px 15px;
+    padding: 15px 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -281,7 +287,7 @@ button.edit{
 }
 /* Table Employee */
 .wrapper-two{
-    padding: 20px 30px;
+    padding: 15px 30px;
     /*position: relative;*/
     z-index: 4;
 }
@@ -325,28 +331,33 @@ button.edit{
     box-shadow: 0px 0px 7px 1px #026bff9f;
 }
 .wrapper-two .box-table{
-    padding: 10px;
     overflow: scroll;
-    height: 548px;
+    height: 500px;
     /* max-height: 100%; */
 }
 .wrapper-two table{
-    /* overflow: scroll; */
     border-collapse: collapse;
     border: 2px solid #eee;
     width: 100%;
     max-height: 100% !important;
 }
- .wrapper-two table thead{
+.wrapper-two table th {
+    position: sticky;
+    top: -1px;
+    background: #49a4ea;
+    /*background: var(--sidebar-color);*/
+    color: white;
+    border-right: 2px solid #eee !important;
     border-bottom: 2px solid black !important;
 }
  .wrapper-two table tr:nth-child(even){
     background-color: #f5f5f5;
 }
- .wrapper-two table th,
+.wrapper-two table th,
 .wrapper-two table td{
-    text-align: right;
-    padding: 10px 5px;
+    text-align: center;
+    padding: 6px 4px;
+    min-height: 42px !important;
     white-space: nowrap;
 }
 .wrapper-two table th,

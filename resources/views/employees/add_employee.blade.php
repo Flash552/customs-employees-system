@@ -44,7 +44,7 @@
                            @foreach ($typeEmps as $jobType )
                            <option value="{{$jobType->id_type_emp}}">{{$jobType->title_type}}</option>
                            @endforeach
-                            
+
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -184,9 +184,9 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                   
-                    
-                   
+
+
+
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">مجال الخبرة</label>
                         <input name="expertise"  type="text" class="form-control" id="validationCustom03" required>
@@ -208,7 +208,7 @@
                             Please provide a valid city.
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">الفرع</label>
                         <input name="bank_branch"  type="text" class="form-control" id="validationCustom03" required>
@@ -236,7 +236,7 @@
                         <div class="invalid-feedback">
                             Please provide a valid zip.
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-md-3">
                         <label for="validationCustom03" class="form-label">الايميل</label>
                         <input name="email"  type="text" class="form-control" id="validationCustom03" required>
@@ -251,7 +251,7 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">تاريخ القرار</label>
                         <input name="decision_date"  type="date" class="form-control" id="validationCustom05" required>
@@ -268,7 +268,13 @@
                     </div>
                     
                    
-                  
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">الصفة</label>
+                        <input name=""  type="text" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">صورة شخصية</label>
                         <input name=""  type="file" class="form-control" aria-label="file example" required>
@@ -304,8 +310,20 @@
 @endsection
 @section('scripts')
         <script>
-            // var list = @json($jobRanks)
-            let list_rank = document.querySelectorAll('select[name="id_type_emp"] option')
-            console.log(list_rank);
+
+            let list_type = document.querySelector('select[name="id_type_emp"]');
+            let list_rank = document.querySelector('select[name="id_rank"]');
+            list_type.addEventListener('change', (e) => {
+                let type_value = e.target.value;
+                list_rank.children.item(e.target.value);
+                let list = @json($jobRanks);
+                let ranks = list.filter((item) => item["id_type_emp"] == type_value);
+                list_rank.innerHTML = '<option selected disabled value="">اختر</option>';
+                ranks.forEach((e) => {
+                    list_rank.innerHTML += `
+                        <option value="${e['id_rank']}">${e['title_rank']}</option>
+                        `;
+                })
+            })
         </script>
 @endsection

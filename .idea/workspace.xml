@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="452266e9-ed4c-4888-a5c8-0029b57138e0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employees/edit_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/edit_employee.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AbsenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AbsenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CertController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/controlPanel.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/controlPanel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sideBar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sideBar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,29 +167,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Test/PHP-Laravel/Test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/xampp/htdocs/Test/PHP-Laravel/Test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\trams" />
+      <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\employees\modal" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\settings" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\absence\modal" />
       <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\absence" />
-      <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\employees\modal" />
-      <recent name="C:\xampp\htdocs\My projects\customs-employees-system\resources\views\settings\cities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\My projects\System\Customs-Employees-System\resources\views\settings\type_emp" />
@@ -246,11 +252,33 @@
       <workItem from="1702118906928" duration="7029000" />
       <workItem from="1702134052990" duration="1072000" />
       <workItem from="1702404058862" duration="395000" />
-      <workItem from="1702415869090" duration="1485000" />
+      <workItem from="1702415869090" duration="2931000" />
+      <workItem from="1702470609563" duration="4833000" />
+      <workItem from="1702484870847" duration="6841000" />
+      <workItem from="1702552684972" duration="1523000" />
+      <workItem from="1702566468760" duration="2447000" />
+      <workItem from="1702632402848" duration="8097000" />
+      <workItem from="1702814342895" duration="2634000" />
+      <workItem from="1702823439630" duration="2161000" />
+      <workItem from="1702832133030" duration="9118000" />
+      <workItem from="1702842107520" duration="4054000" />
+      <workItem from="1702897501410" duration="5305000" />
+      <workItem from="1702909517702" duration="6190000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/employees/employees.blade.php</url>
+          <line>62</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
