@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('confirm_date_first')->nullable();
             $table->boolean('confirm_two')->nullable();
             $table->date('confirm_date_two')->nullable();
-            $table->dateTime('deleted_at')->nullable();
+            $table->softDeletes();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });

@@ -103,15 +103,7 @@ class TramsController extends Controller
      */
     public function destroy(string $id)
     {
-//        Trams::destroy($id);
-//        return redirect()->back()->with("message", [
-//            "type" => "danger",
-//            "msg" => "تم الحذف بنجاح"
-//        ]);
-//        return Trams::where("id_tran", $id)->first();
-        Trams::withTrashed()
-            ->where("id_tran", $id)
-            ->forceDelete();
+        Trams::destroy($id);
         return redirect()->back()->with("message", [
             "type" => "danger",
             "msg" => "تم الحذف بنجاح"
