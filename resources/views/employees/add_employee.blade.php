@@ -154,10 +154,10 @@
                         <label for="validationCustom04" class="form-label">الحالة الإجتماعية</label>
                         <select name="marital_status" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            <option value="0">اعزب</option>
+                            {{-- <option value="0">اعزب</option>
                             <option value="1">متزوج</option>
                             <option value="2">مطلق</option>
-                            <option value="3">ارملة</option>
+                            <option value="3">ارملة</option> --}}
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.

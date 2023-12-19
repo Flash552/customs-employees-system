@@ -10,8 +10,9 @@ class Trams extends Model
     use HasFactory;
     protected $table = "emp_trams";
     protected $primaryKey   ="id_tran";
+    //  protected  $softDelete = true;
     protected $fillable = ["id_tran", "id_emp", "id_from_station", "id_to_station",
-        "confirm_first","confirm_date_first", "confirm_two", "confirm_date_two"];
+        "confirm_first","confirm_date_first", "confirm_two", "confirm_date_two" , "deleted_at","created_at" ,"updated_at" ];
 
     public function employee(){
         return $this->belongsTo(Employee::class, "id_emp");

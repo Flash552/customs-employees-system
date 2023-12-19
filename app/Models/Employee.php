@@ -51,6 +51,7 @@ class Employee extends Model
 
 
     ];
+    
     public function jobTitle()
     {
         return $this->belongsTo(JobTitle::class, 'id_jop');
