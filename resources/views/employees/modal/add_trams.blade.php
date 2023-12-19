@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal fade" id="TramsAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="TramsAdd{{$employee->id_emp}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,21 +10,24 @@
                 <form action="{{route("trams.store")}}" method="post">
                     @csrf
 {{--                    @method("POST")--}}
+                    <div class="mb-3 d-none" >
+                        <label for="recipient-name" class="col-form-label">الرقم</label>
+                        <input type="number" name='id_emp' value="{{$employee->id_emp}}" class="form-control" id="recipient-name">
+                    </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">الرقم</label>
-                        <input type="number" name='id_emp'  value="" class="form-control" id="recipient-name">
+                        <input type="number" name='PID_emp' disabled value="{{$employee->PID_emp}}" class="form-control" id="recipient-name">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">الاسم</label>
-                        <input type="text" name='name_emp' value="" class="form-control" id="message-text">
+                        <input type="text" name='name_emp' disabled value="{{$employee->name}}" class="form-control" id="message-text">
                     </div>
                     <div class="mb-3">
                         <label for="validationCustom04" class="form-label">من</label>
                         <select name='id_from_station' class="form-select" id="validationCustom04" required>
-                            <option selected disabled >اختر</option>
-                            @foreach ($stations as $station )
-                                <option value="{{$station->id_station }}">{{$station->name_station }}</option>
-                            @endforeach
+                             <option selected value="{{$employee->id_station}}">
+                                 {{$employee->station->name_station }}
+                             </option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.

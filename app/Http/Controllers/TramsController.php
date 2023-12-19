@@ -24,7 +24,7 @@ class TramsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,34 +33,25 @@ class TramsController extends Controller
     public function store(Request $request)
     {
         try {
-            $find = Trams::where("id_emp", "=", $request->id_emp)->first();
-            if($find){
-                return redirect()
-                    ->route("trams.index")->with("message", [
-                        "type" => "warning",
-                        "msg" => "هذا الموظف موجود"
-                    ]);
-            }
-            else {
-                $data = [
-                    "id_emp" => $request->id_emp,
-                    "id_from_station" => $request->id_from_station,
-                    "id_to_station" => $request->id_to_station,
-                    "confirm_first" => $request->confirm_first == 1 ? 1 : 0,
-                    "confirm_date_first" => $request->confirm_first ==1 ? Date("Y-m-d") : null,
-                    "confirm_two" => $request->confirm_two == 1 ? 1 : 0,
-                    "confirm_date_two" => $request->confirm_two == 1 ? Date("Y-m-d") : null,
-                ];
-                $data = array_filter($data, function( $value) {
-                    return !is_null($value);
-                });
-                Trams::create($data);
-                return redirect()
-                    ->route("trams.index")->with("message", [
-                        "type" => "success",
-                        "msg" => "تم الإضافة بنجاح"
-                    ]);
-            }
+//            $tms = Trams::where("id_emp", "=", $request->id_emp)->first();
+            $data = [
+                "id_emp" => $request->id_emp,
+                "id_from_station" => $request->id_from_station,
+                "id_to_station" => $request->id_to_station,
+                "confirm_first" => $request->confirm_first == 1 ? 1 : 0,
+                "confirm_date_first" => $request->confirm_first ==1 ? Date("Y-m-d") : null,
+                "confirm_two" => $request->confirm_two == 1 ? 1 : 0,
+                "confirm_date_two" => $request->confirm_two == 1 ? Date("Y-m-d") : null,
+            ];
+            $data = array_filter($data, function( $value) {
+                return !is_null($value);
+            });
+            Trams::create($data);
+            return redirect()
+                ->route("employees.index")->with("message", [
+                    "type" => "primary",
+                    "msg" => "تم اضافة طلب انتقال للموظف"
+                ]);
         } catch (Exception $e){
             return redirect()
                 ->route("trams.index")->with("message", [
@@ -73,9 +64,10 @@ class TramsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request,string $id)
     {
-        //
+//        $stations = Station::all();
+//        return view("employees.modal.add_trams", compact("stations"));
     }
 
     /**
@@ -111,6 +103,11 @@ class TramsController extends Controller
      */
     public function destroy(string $id)
     {
+//        Trams::destroy($id);
+//        return redirect()->back()->with("message", [
+//            "type" => "danger",
+//            "msg" => "تم الحذف بنجاح"
+//        ]);
 //        return Trams::where("id_tran", $id)->first();
         Trams::withTrashed()
             ->where("id_tran", $id)

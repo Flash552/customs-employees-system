@@ -52,7 +52,12 @@ class EmployeeController extends Controller
 
         $this->validate($request, []);
         $employes = Employee::create($request->all());
-        return redirect()->route('employees.index')->with('success', '');
+        return redirect()
+            ->route('employees.index')
+            ->with("message", [
+                "type" => "primary",
+                "msg" => "تم الموظف"
+            ]);
     }
 
     public function print(string $id){
@@ -91,7 +96,10 @@ class EmployeeController extends Controller
         if($employes == null || $employes->count() == 0 ){
              return redirect()
                      ->route('employees.index')
-                     ->with("notFound", "هذا الموظف غير موجود");
+                     ->with("message", [
+                         "type" => "primary",
+                         "msg" => "هذا الموظف غير موجود"
+                     ]);
          }
         else {
              return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
@@ -119,7 +127,10 @@ class EmployeeController extends Controller
         if($employes == null || $employes->count() == 0 ){
             return redirect()
                 ->route('employees.index')
-                ->with("notFound", "هذا الموظف غير موجود");
+                ->with("message", [
+                    "type" => "primary",
+                    "msg" => "هذا الموظف غير موجود"
+                ]);
         }
         else {
             return view('employees.employees', compact('request','stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
@@ -151,7 +162,10 @@ class EmployeeController extends Controller
         $employes->update($request->all());
         return redirect()
             ->route("employees.index")
-            ->with('success', "تم التعديل بنجاح");
+            ->with("message", [
+                "type" => "success",
+                "msg" => "تم النعديل بنجاخ"
+            ]);
     }
 
     /**
@@ -159,7 +173,6 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-
         Employee::destroy($id);
         return redirect()->route("employees.index");
     }

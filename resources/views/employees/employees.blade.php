@@ -13,9 +13,9 @@
         <hr>
         <div class="content-wrapper h-100">
             <div class="wrapper-two">
-                @if(Session::has('notFound'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ Session::get('notFound') }}
+                @if(Session::has('message'))
+                    <div class="alert alert-{{ Session::get('message')["type"] }}" role="alert">
+                        {{ Session::get('message')["msg"] }}
                     </div>
                 @endif
                 <form action="{{route('employees.show',-1)}}" method="POST" class="row g-4" >
@@ -48,7 +48,6 @@
                     <button type="submit" class="btn btn-primary print-selected">طباعة</button>
                     <button class="btn btn-danger btn-show-cert ds-all">عرض المؤهل العلمي</button>
                     <button class="btn btn-warning btn-show-absence ds-all">عرض سجل الغياب</button>
-                    <button class="btn btn-info btn-show-absence ds-all">نقل</button>
                     <button class="btn btn-success btn-show-absence ds-all">تسجيل غياب</button>
 {{--                    <button href="">تحديد الكل</button>--}}
                 </div>
@@ -100,14 +99,18 @@
                                         <input type="checkbox" name="check[]" class="check_emp" value="{{$employee->id_emp}}" style="width: 16px; height: 16px;    ">
                                     </td>
                                     <td class="d-flex justify-content-center align-items-center">
-
-                                        <a href="{{route('employees.print', $employee->id_emp)}}" class="edit print h-100" >
-                                            <i class="fa-solid fa-print"></i>
-                                        </a>
+{{--                                        <a href="{{route('employees.print', $employee->id_emp)}}" class="edit print h-100" >--}}
+{{--                                            <i class="fa-solid fa-print"></i>--}}
+{{--                                        </a>--}}
                                         <a href="{{route('employees.edit', $employee->id_emp)}}" class="edit">
                                             <i class="fa-solid fa-pencil"></i>
                                         </a>
-
+                                        <button type="button" class="trams btn-info" data-bs-toggle="modal" data-bs-target="#TramsAdd{{$employee->id_emp}}" title="نقل">
+                                            <i class="fa-solid fa-right-left"></i>
+                                        </button>
+                                        <button type="button" class="trams btn-success" data-bs-toggle="modal" data-bs-target="#TramsAdd{{$employee->id_emp}}" title="تسجيل غياب">
+                                            <i class="fa-solid fa-user-slash"></i>
+                                        </button>
                                         <button  type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete" data-bs-whatever="@mdo">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
@@ -150,9 +153,9 @@
                                     <td>ذكر</td>
                                     <td>ليسبلس</td>
                                     <td>1</td>
-
                                     @include('employees.modal.show_emp')
                                     @include('employees.modal.delete_emp')
+                                    @include('employees.modal.add_trams');
                                 </tr>
                             @endforeach
                         </tbody>
