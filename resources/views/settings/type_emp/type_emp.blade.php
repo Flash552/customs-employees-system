@@ -31,7 +31,8 @@
             </div>
         </div>
         <div class="col-12">
-            <button class="btn btn-primary" type="submit">إضافة</button>
+            <input class="btn btn-primary" name="add" type="submit" value="إضافة">
+            <input class="btn btn-success" name="search" type="submit" value="بحث">
         </div>
     </form>
     <hr>

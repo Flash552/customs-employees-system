@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="452266e9-ed4c-4888-a5c8-0029b57138e0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TramsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TramsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/controlPanel.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/controlPanel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/employees.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trams/modal/add_trams.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/modal/add_trams.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trams/trams.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trams/trams.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Trams.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Trams.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_12_14_104020_create_emp_trams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_12_14_104020_create_emp_trams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settings/type_emp/type_emp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settings/type_emp/type_emp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -265,6 +263,7 @@
       <workItem from="1702897501410" duration="5305000" />
       <workItem from="1702909517702" duration="6277000" />
       <workItem from="1702927047543" duration="3430000" />
+      <workItem from="1703006747955" duration="1654000" />
     </task>
     <servers />
   </component>
