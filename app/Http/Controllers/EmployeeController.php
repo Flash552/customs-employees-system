@@ -207,7 +207,7 @@ class EmployeeController extends Controller
             'id_type_emp' =>  ['required','numeric','exists:type_emp,id_type_emp'],
             'id_rank' =>  ['required','numeric','exists:rank_emp,id_rank'],
             'image'=>  ['nullable'],
-            'id_station' =>  ['required','numeric','exists:stations,id_station'],          
+            'id_station' =>  ['required','numeric'],          
             'premotion_date'  =>  ['nullable','date'],
             'last_premotion_date' =>  ['nullable','date'],
             'start_duty_date' =>  ['nullable','date'],
@@ -216,6 +216,7 @@ class EmployeeController extends Controller
             'marital_status'=>  ['nullable'],
             'sex'=>  ['nullable'],
             'decision_number'=>  ['nullable'],
+
             'decision_date' =>  ['nullable','date'],
             'mother_name'=>  ['nullable'],
             'national_number'=>  ['nullable', 'max:20','numeric'],
