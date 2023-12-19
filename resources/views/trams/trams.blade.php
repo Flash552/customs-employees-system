@@ -63,7 +63,7 @@
             </div>
             <div class="card-header">
                 <h1 class="title">كل الانتقالات</h1>
-                <a class="add" href="users/create" data-bs-toggle="modal" data-bs-target="#TramsAdd">إضافة</a>
+{{--                <a class="add" href="users/create" >إضافة</a>--}}
             </div>
             <div class="box-table">
                 <table>
@@ -107,7 +107,7 @@
                     </tbody>
                 </table>
             </div>
-            @include('trams.modal.add_trams');
+
         </div>
     </div>
 @endsection

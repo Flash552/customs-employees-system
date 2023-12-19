@@ -11,6 +11,8 @@ use App\Models\Station;
 use App\Models\TypeEmp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Illuminate\Validation\Validator;
 
 use function Sodium\add;
 
@@ -56,12 +58,47 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-
-        $this->validate($request, []);
-        $employee = Employee::create($request->all());
-        
        
-        // return response(   json_encode($employee)     );
+        $validateRules = [
+
+           
+            'PID_emp' =>  ['required', 'unique:employees', 'max:11'],
+            'name' =>  ['required',  'max:150'],
+            'phone'=>  ['nullable', 'max:11'],
+            'id_jop' =>  ['required'],
+            'id_state' =>  ['required'],
+            'id_type_emp' =>  ['required'],
+            'id_rank' =>  ['required'],
+            'image'=>  ['nullable'],
+            'id_station' =>  ['required'],          
+            'premotion_date'  =>  ['nullable','date'],
+            'last_premotion_date' =>  ['nullable','date'],
+            'start_duty_date' =>  ['nullable','date'],
+            'start_date' =>  ['nullable','date'],
+            'end_duty_resson'=>  ['nullable'],
+            'marital_status'=>  ['nullable'],
+            'sex'=>  ['nullable'],
+            'decision_number'=>  ['nullable'],
+            'decision_date' =>  ['nullable','date'],
+            'mother_name'=>  ['nullable'],
+            'national_number'=>  ['nullable', 'max:20'],
+            'id_number'=>  ['nullable', 'max:20'],
+            'passport_number'=>  ['nullable'],
+            'birthdate' =>  ['nullable','date'],
+            'email'=>  ['nullable'],
+            'bank_name'=>  ['nullable'],
+            'bank_branch'=>  ['nullable'],
+            'bank_account_id'=>  ['nullable'],
+            'expertise'=>  ['nullable'],
+            'expertise_start_date' =>  ['nullable','date']
+    
+    
+        ];
+       $this->validate($request, $validateRules);
+       //$request->validate($validateRules);
+      // $validator = FacadesValidator::make($request->all(),$validateRules);
+       
+        $employes = Employee::create($request->all());
         return redirect()->route('employees.index')->with('success', '');
     }
 
@@ -91,61 +128,24 @@ class EmployeeController extends Controller
         $typeEmps = TypeEmp::all();
         $status = StateEmp::all();
         $stations = Station::all();
-        $jopTitles =  JobTitle::all();
+        $empData = array_filter($request->all(), function( $value) {
+                 return !is_null($value);
+        });
+        array_shift($empData);
+        array_shift($empData);
 
-        $search= [];
-        $empData = array_filter($request->all(), function( $value) {           
-                 return !is_null($value);         
-        }); 
-        foreach ($empData as $key => $value) {
-            array_push($search ,[$key ,'LIKE','%'.$value.'%' ]);
+        $employes = Employee::Where($empData)->get();
+        if($employes == null || $employes->count() == 0 ){
+             return redirect()
+                     ->route('employees.index')
+                     ->with("notFound", "هذا الموظف غير موجود");
+         }
+        else {
+             return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
         }
-        array_shift($search);
-        array_shift($search);
-      
-        $employes = Employee::Where($search )->get();
-        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps' ,'jopTitles','employes'));
+//        return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps' ,'employes'));
 
 
- // foreach ($empData as $key => $value) {
-        //     $sss[$key] ='LIKE'.'%'.$value.'%';
-        // }
-//          return response(json_encode($sss));
-//         foreach ($request->all() as $key => $value){
-          
-//           if ($value !==''){
-//              $search =  Arr::add($search , $key ,$value);
-//           }               
-//         }
-       
-        
-//     return $employes;
-
-//         // $employes = Employee::Where('PID_emp', '=', $request->PID_emp)
-//         //     ->orWhere('national_number', '=', $request->national_number)
-//         //     ->orwhere('name', 'LIKE', '%'.$request->name.'%')
-//         //     ->get();
-//         // return $employes;
-
-// //        if($request->PID_emp)
-// //            $employes = Employee::where('PID_emp', '=', $request->PID_emp)->get();
-// //        if($request->name)
-// //            $employes = Employee::where('name', 'LIKE', '%'.$request->name.'%')->get();
-// //        if($request->national_number)
-// //            $employes = Employee::where('national_number', '=', $request->national_number)->get();
-// //
-// //        if($request->name && $request->PID_emp && $request->national_number)
-// //            $employes = Employee::where('name', 'LIKE', '%'.$request->name.'%')
-// //                                ->orWhere('PID_emp', '=', $request->PID_emp)
-// //                                ->orWhere('national_number', '=', $request->national_number)
-// //                                ->get();
-//         if($employes == null || $employes->count() == 0 ){
-//             return redirect()
-//                     ->route('employees.index')
-//                     ->with("notFound", "هذا الموظف غير موجود");
-//         }
-//             return view('employees.employees', compact('stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
-// //        return view('employees.edit_employee');
     }
     public function searchAdvanced(Request $request,string $id)
     {
@@ -166,7 +166,10 @@ class EmployeeController extends Controller
         if($employes == null || $employes->count() == 0 ){
             return redirect()
                 ->route('employees.index')
-                ->with("notFound", "هذا الموظف غير موجود");
+                ->with("message", [
+                    "type" => "primary",
+                    "msg" => "هذا الموظف غير موجود"
+                ]);
         }
         else {
             return view('employees.employees', compact('request','stations','status','employes', 'cities', 'jobRanks', 'typeEmps'));
@@ -193,12 +196,50 @@ class EmployeeController extends Controller
      */
     public function update( string $id,Request $request)
     {
-       // $this->validate($request, []);
+        $validateRules = [
+
+           
+            'PID_emp' =>  ['required', 'unique:employees', 'numeric','max:11'],
+            'name' =>  ['required',  'max:150'],
+            'phone'=>  ['nullable', 'max:11' ,'numeric'],
+            'id_jop' =>  ['required','numeric','exists:jop_title'],
+            'id_state' =>  ['required','numeric','exists:status_emp,id_state'],
+            'id_type_emp' =>  ['required','numeric','exists:type_emp,id_type_emp'],
+            'id_rank' =>  ['required','numeric','exists:rank_emp,id_rank'],
+            'image'=>  ['nullable'],
+            'id_station' =>  ['required','numeric','exists:stations,id_station'],          
+            'premotion_date'  =>  ['nullable','date'],
+            'last_premotion_date' =>  ['nullable','date'],
+            'start_duty_date' =>  ['nullable','date'],
+            'start_date' =>  ['nullable','date'],
+            'end_duty_resson'=>  ['nullable'],
+            'marital_status'=>  ['nullable'],
+            'sex'=>  ['nullable'],
+            'decision_number'=>  ['nullable'],
+            'decision_date' =>  ['nullable','date'],
+            'mother_name'=>  ['nullable'],
+            'national_number'=>  ['nullable', 'max:20','numeric'],
+            'id_number'=>  ['nullable', 'max:20'],
+            'passport_number'=>  ['nullable'],
+            'birthdate' =>  ['nullable','date'],
+            'email'=>  ['nullable'],
+            'bank_name'=>  ['nullable'],
+            'bank_branch'=>  ['nullable'],
+            'bank_account_id'=>  ['nullable'],
+            'expertise'=>  ['nullable'],
+            'expertise_start_date' =>  ['nullable','date']
+    
+    
+        ];
+        $this->validate($request, $validateRules);
         $employes = Employee::find($id);
         $employes->update($request->all());
         return redirect()
             ->route("employees.index")
-            ->with('success', "تم التعديل بنجاح");
+            ->with("message", [
+                "type" => "success",
+                "msg" => "تم النعديل بنجاخ"
+            ]);
     }
 
     /**
@@ -206,7 +247,6 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-
         Employee::destroy($id);
         return redirect()->route("employees.index");
     }

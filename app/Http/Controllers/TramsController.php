@@ -24,7 +24,7 @@ class TramsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -32,7 +32,7 @@ class TramsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // try {
             $find = Trams::where("id_emp", "=", $request->id_emp)->first();
             if($find){
                 return redirect()
@@ -61,8 +61,7 @@ class TramsController extends Controller
                         "msg" => "تم الإضافة بنجاح"
                     ]);
             }
-      
-        // catch (Exception $e){
+        // } catch (Exception $e){
         //     return redirect()
         //         ->route("trams.index")->with("message", [
         //             "type" => "danger",
@@ -74,9 +73,10 @@ class TramsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request,string $id)
     {
-        //
+//        $stations = Station::all();
+//        return view("employees.modal.add_trams", compact("stations"));
     }
 
     /**
@@ -112,8 +112,10 @@ class TramsController extends Controller
      */
     public function destroy(string $id)
     {
-       $emp = Trams::find($id);
-       $emp->delete();
+//        return Trams::where("id_tran", $id)->first();
+        Trams::withTrashed()
+            ->where("id_tran", $id)
+            ->forceDelete();
         return redirect()->back()->with("message", [
             "type" => "danger",
             "msg" => "تم الحذف بنجاح"

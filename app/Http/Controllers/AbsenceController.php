@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Absence;
 use Illuminate\Http\Request;
 
 class AbsenceController extends Controller
@@ -27,7 +28,25 @@ class AbsenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ValidationRules = [
+            "id_emp" => ['required','numeric'],
+            "from_date" => ['required','date'],
+            "to_date" => ['required','date'],
+        ];
+        $this->validate($request, $ValidationRules);
+
+        $data = [
+            "id_emp" => $request->id_emp,
+            "from_date" => $request->id_from_station,
+            "to_date" => $request->id_to_station,
+
+        ];
+        Absence::create($data);
+        return redirect()
+            ->route("Absence.index")->with("message", [
+                "type" => "success",
+                "msg" => "تم الإضافة بنجاح"
+            ]);
     }
 
     /**

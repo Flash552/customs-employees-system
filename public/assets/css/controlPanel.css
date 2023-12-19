@@ -392,7 +392,17 @@ button.edit{
     border: none;
     cursor: pointer;
 }
-
+.wrapper-two table .trams{
+    font-size: 14px;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 6px;
+    /*background-color: #EB4540;*/
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
 /* Table Employee */
 .content .wrapper .box form {
     display: grid;

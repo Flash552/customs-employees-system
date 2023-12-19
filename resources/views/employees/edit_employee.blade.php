@@ -7,12 +7,20 @@
     active
 @endsection
 @section('content')
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <div class="wrapper-two">
         <h3 class="title-main fc-edit">تعديل الموظف</h3>
         <div class="content-wrapper h-auto">
             <div class="wrapper-two">
-                <form action="{{route('employees.update', $employee->id_emp)}}" method="POST"
-              
+                <form action="{{route('employees.update', $employee->id_emp)}}" method="POST"           
                     class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
