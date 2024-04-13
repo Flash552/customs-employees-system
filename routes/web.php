@@ -10,6 +10,7 @@ use App\Http\Controllers\RankEmpController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TramsController;
 use App\Http\Controllers\AbsenceController;
+use App\Http\Controllers\MaritalStatusController;
 use App\Http\Controllers\StateEmpController;
 use App\Http\Controllers\StationController;
 use App\Http\Controllers\TypeEmpController;
@@ -58,6 +59,6 @@ Route::resource("jop_title",JopTitleController::class);
 Route::resource("stations",StationController::class);
 Route::resource("cities",CityController::class);
 Route::resource('vacation', VacationController::class);
-
+Route::resource('marital_status', MaritalStatusController::class);
 Route::get("profile",ProfileController::class);
 Route::resource("login",LogInController::class);

@@ -35,9 +35,17 @@
             </a>
         </li>
         <li>
+            <a class="@yield('active_absence')" href="/absence">
+                <i class="fa-solid fa-box-open"></i>
+                <span>قرارات الفصل</span>
+            </a>
+        </li>
+        
+        
+        <li>
             <a class="@yield('active_trams')" href="/trams">
                 <i class="fa-solid fa-box-open"></i>
-                <span>الانتقالات</span>
+                <span>قرارات النقل</span>
             </a>
 
         </li>

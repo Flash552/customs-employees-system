@@ -12,14 +12,18 @@
         <li class="nav-item nav-link @yield('settings-active-jop')">
             <a href="/jop_title">الشريحة</a>
         </li>
-        <li  class="nav-item nav-link @yield('settings-active-stations')">
-            <a href="/stations">مراكز العمل</a>
-        </li>
         <li class="nav-item nav-link @yield('settings-active-cities')">
             <a href="/cities">المدن</a>
         </li>
+        <li  class="nav-item nav-link @yield('settings-active-stations')">
+            <a href="/stations">مراكز العمل</a>
+        </li>
+        
         <li class="nav-item nav-link @yield('settings-active-vacation')">
             <a href="/vacation">انواع الاجازات</a>
+        </li>
+        <li class="nav-item nav-link @yield('settings-active-marital_status')">
+            <a href="/marital_status">الحالة الاجتماعية </a>
         </li>
     </ul>
 </div>

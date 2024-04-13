@@ -17,12 +17,12 @@ class Trams extends Model
         "confirm_first","confirm_date_first", "confirm_two", "confirm_date_two" , "deleted_at","created_at" ,"updated_at" ];
 
     public function employee(){
-        return $this->belongsTo(Employee::class, "id_emp");
+        return $this->belongsTo(Employee::class, "id_emp")->withDefault();
     }
     public function fromStation(){
-        return $this->belongsTo(Station::class, "id_from_station");
+        return $this->belongsTo(Station::class, "id_from_station")->withDefault();
     }
     public function toStation(){
-        return $this->belongsTo(Station::class, "id_to_station");
+        return $this->belongsTo(Station::class, "id_to_station")->withDefault();
     }
 }

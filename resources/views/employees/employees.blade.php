@@ -10,11 +10,14 @@
 @section('content')
 @if (count($errors) > 0)
     <div class="alert alert-danger">
-        <ul>
+       
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <div class="alert alert-danger" role="alert">
+            {{ $error }}
+            </div>
+                
             @endforeach
-        </ul>
+      
     </div>
 @endif
     <div class="wrapper-two">
@@ -63,7 +66,7 @@
                 <a class="add" href="employees/create">إضافة موظف</a>
             </div>
             <div class="box-table">
-                <table>
+                <table id="tablejs">
                     <thead>
                         <tr>
                             <th>اختر</th>
@@ -123,8 +126,8 @@
                                 </td>
                                 <td>{{ $employee->PID_emp }}</td>
                                 <td>{{ $employee->name }}</td>
-                                <td>{{ $employee->marital_status }}</td>
-                                <td>{{ $employee->sex }}</td>
+                                <td>{{ $employee->marital_status->marital_state_title }}</td>
+                                <td>{{ $employee->sex =="0"?"ذكر":"انثى" }}</td>
                                 <td>{{ $employee->mother_name }}</td>
                                 <td>{{ $employee->rank->title_rank }}</td>
 
@@ -142,8 +145,8 @@
                                 <td>{{ $employee->id_jop }}</td>
 
                                 <td>{{ $employee->decision_date }}</td>
-                                <td>{{ $employee->decision_number }}</td>
-
+                              <td>{{ $employee->decision_number }}</td>
+                              <td></td>
 
 
 

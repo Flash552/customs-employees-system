@@ -25,11 +25,14 @@
     </div> --}}
     @if (count($errors) > 0)
     <div class="alert alert-danger">
-        <ul>
+
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <div class="alert alert-danger" role="alert">
+            {{ $error }}
+            </div>
+
             @endforeach
-        </ul>
+
     </div>
 @endif
     <div class="wrapper-two">
@@ -37,11 +40,12 @@
         <hr>
         <div class="content-wrapper h-auto" >
             <div class="wrapper-two">
-                <form method="post" action="{{route("employees.store")}}" class="row g-3 needs-validation" novalidate>
+                <form method="post" enctype="multipart/form-data" action="{{route("employees.store")}}" class="row g-3 needs-validation" novalidate>
                     @csrf
+
                     <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">رقم الموظف</label>
-                        <input name="PID_emp" type="text" class="form-control" id="validationCustom02" required>
+                        <input name="PID_emp" type="number" class="form-control" id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -146,14 +150,14 @@
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">رقم الهاتف</label>
-                        <input name="phone"  type="text" class="form-control" id="validationCustom02" required>
+                        <input name="phone"  type="number" class="form-control" id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">الرقم الوطني</label>
-                        <input name="national_number"  type="text" class="form-control" id="validationCustom02" required>
+                        <input name="national_number"  type="number" class="form-control" id="validationCustom02" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -161,12 +165,11 @@
                     {{--//TODO add for --}}
                     <div class="col-md-3">
                         <label for="validationCustom04" class="form-label">الحالة الإجتماعية</label>
-                        <select name="marital_status" class="form-select" id="validationCustom04" required>
+                        <select name="id_marital_state" class="form-select" id="validationCustom04" required>
                             <option selected disabled value="">اختر</option>
-                            {{-- <option value="0">اعزب</option>
-                            <option value="1">متزوج</option>
-                            <option value="2">مطلق</option>
-                            <option value="3">ارملة</option> --}}
+                            @foreach ($marital_status as $marital_state )
+                           <option value="{{$marital_state->id_marital_state}}">{{$marital_state->marital_state_title}}</option>
+                           @endforeach
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -275,8 +278,8 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    
-                   
+
+
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">الصفة</label>
                         <input name=""  type="text" class="form-control" id="validationCustom05" required>
@@ -286,7 +289,7 @@
                     </div>
                     <div class="col-md-3">
                         <label for="validationCustom05" class="form-label">صورة شخصية</label>
-                        <input name=""  type="file" class="form-control" aria-label="file example" required>
+                        <input   type="file" name="image" id="image" class="form-control" aria-label="file example" required>
                         <div class="invalid-feedback">Example invalid form file feedback</div>
                     </div>
                     <div class="col-md-3">

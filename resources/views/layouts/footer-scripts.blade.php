@@ -7,5 +7,7 @@
             item.click();
         }
     }
+    
 </script>
+
 @yield('scripts')

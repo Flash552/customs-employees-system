@@ -29,16 +29,18 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        try {
+       $validateRules = [
+            'city_name' =>  ['required', 'unique:cities', 'max:35'],    
+        ];
+        $this->validate($request, $validateRules);
             $data = [
-                'id_city' => $request->id_city,
+                
                 'city_name' => $request->city_name
             ];
 
             City::create($data);
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error', $th->getMessage());
-        }
+        
+        
 
         return redirect()->route("cities.index");
     }
@@ -64,7 +66,11 @@ class CityController extends Controller
      */
     public function update(Request $request, string $id)
     {
-     
+        $validateRules = [
+            'id_city' => ['required', 'exists:cities', 'max:11'],
+            'city_name' =>  ['required', 'unique:cities,city_name', 'max:35'],    
+        ];
+        $this->validate($request, $validateRules);
         $city = City::find($id); 
         $data = [
             "city_name" => $request->city_name
