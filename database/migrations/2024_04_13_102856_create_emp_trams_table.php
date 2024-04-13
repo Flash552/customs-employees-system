@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('emp_trams', function (Blueprint $table) {
             $table->integer('id_tran', true);
             $table->integer('id_emp')->nullable()->index('id_emp');
+            $table->integer('id_transfer_order')->nullable()->index('id_transfer_order');
             $table->integer('id_from_station')->nullable()->index('id_from_station');
             $table->integer('id_to_station')->nullable()->index('id_to_station');
             $table->boolean('confirm_first')->nullable();
             $table->date('confirm_date_first')->nullable();
             $table->boolean('confirm_two')->nullable();
             $table->date('confirm_date_two')->nullable();
-            $table->softDeletes();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });

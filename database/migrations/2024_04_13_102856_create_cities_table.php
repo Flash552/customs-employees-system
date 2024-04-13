@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->integer('id_city', true);
+            $table->integer('id_administrations')->nullable()->index('id_administrations');
             $table->string('city_name')->nullable();
-            $table->softDeletes();
+            $table->dateTime('deleted_at')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
         });
