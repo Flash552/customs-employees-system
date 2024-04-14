@@ -61,7 +61,7 @@ class EmployeeController extends Controller
         $validateRules = [
          //   'PID_emp' =>  ['required', 'unique:employees', 'numeric', 'max:11'],
             'name' =>  ['required',  'max:150'],
-          //  'phone' =>  ['nullable','unique:employees ,phone', 'max:11', 'numeric'],
+           'phone' =>  ['nullable', 'numeric','unique:employees,phone', 'max:11'],
             'id_jop' =>  ['required', 'numeric', 'exists:jop_title,id_jop'],
             'id_state' =>  ['required', 'numeric', 'exists:status_emp,id_state'],
             'id_type_emp' =>  ['required', 'numeric', 'exists:type_emp,id_type_emp'],
@@ -90,10 +90,13 @@ class EmployeeController extends Controller
             'expertise_start_date' =>  ['nullable', 'date'],
         ];
 
-        $this->validate($request, $validateRules);
+        // $this->validate($request, $validateRules);
         //$request->validate($validateRules);
-        // $validator = FacadesValidator::make($request->all(),$validateRules);
-
+        $validator = FacadesValidator::make($request->all(),$validateRules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)
+                        ->withInput();
+        }
         $employe = Employee::create($request->all());
 
         if($request->hasFile("image")){
