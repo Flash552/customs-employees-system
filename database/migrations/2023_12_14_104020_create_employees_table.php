@@ -37,7 +37,7 @@ return new class extends Migration
             $table->string('passport_number', 20)->nullable();
             $table->string('decision_number', 20)->nullable();
             $table->string('expertise', 100)->nullable();
-            $table->date('expertise_start_date')->nullable();
+            $table->dateTime('expertise_start_date')->nullable();
             $table->string('email', 20)->nullable();
             $table->string('bank_name', 50)->nullable();
             $table->string('bank_branch', 50)->nullable();
