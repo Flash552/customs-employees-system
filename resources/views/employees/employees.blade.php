@@ -10,19 +10,19 @@
 @section('content')
 @if (count($errors) > 0)
     <div class="alert alert-danger">
-       
+
             @foreach ($errors->all() as $error)
             <div class="alert alert-danger" role="alert">
             {{ $error }}
             </div>
-                
+
             @endforeach
-      
+
     </div>
 @endif
+<h3 class="title-main">إدارة الموظفين</h3>
+<hr>
     <div class="wrapper-two">
-        <h3 class="title-main">إدارة الموظفين</h3>
-        <hr>
         <div class="content-wrapper h-100">
             <div class="wrapper-two">
                 @if (Session::has('notFound'))
@@ -77,7 +77,7 @@
                             <th>الجنس</th>
                             <th>اسم الأم</th>
                             <th>الدرجة الوظيفية او الرتبة</th>
-                           
+
                             <th>حالة العمل</th>
 
                             <th>جهة العمل</th>
@@ -92,7 +92,7 @@
 
                             <th>تاريخ القرار</th>
                             <th>رقم القرار</th>
-                         
+
                             <th>ملاحظة</th>
                         </tr>
                     </thead>
@@ -131,7 +131,7 @@
                                 <td>{{ $employee->mother_name }}</td>
                                 <td>{{ $employee->rank->title_rank }}</td>
 
-                               
+
                                 <td>{{ $employee->stateEmp->title_state }}</td>
                                 <td>{{ $employee->station->name_station }}</td>
                                 <td>{{ $employee->start_date }}</td>
