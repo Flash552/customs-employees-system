@@ -1,4 +1,4 @@
-<div class="head position-relative">
+<!-- <div class="head position-relative"> -->
     <!-- <div class="input-box">
         <form>
             <input disabled class="search" type="text" name="search" placeholder="بحث" id="">
@@ -10,4 +10,4 @@
         </span>
         <img src="{{ asset('assets/images/avatar.png') }}" alt="">
     </div> -->
-</div>
+<!-- </div> -->

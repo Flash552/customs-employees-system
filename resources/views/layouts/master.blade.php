@@ -17,10 +17,10 @@
       @include('layouts.head')
 
 </head>
-<body dir="rtl">
+<body >
     <div class="page">
         @include('layouts.sideBar')
-        <div id="hide"></div>
+        <!-- <div id="hide"></div> -->
         <div class="content">
             @include('layouts.main-headerBar')
             @yield('content')

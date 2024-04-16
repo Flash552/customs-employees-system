@@ -22,9 +22,9 @@
 @endif
 <h3 class="title-main">إدارة الموظفين</h3>
 <hr>
-    <div class="wrapper-two">
-        <div class="content-wrapper h-100">
-            <div class="wrapper-two">
+    <!-- <div class="wrapper-two"> -->
+<div class="row ">
+            <div class="wrapper-two  m-5 ">
                 @if (Session::has('notFound'))
                     <div class="alert alert-danger" role="alert">
                         {{ Session::get('notFound') }}
@@ -33,27 +33,34 @@
                 <form action="{{ route('employees.show', -1) }}" method="POST" class="row g-4">
                     @csrf
                     @method('GET')
-                    <div class="col-md-2">
-                        <label for="validationCustom02" class="form-label">رقم الموظف</label>
+                    <div class="col-md-3 mt-5 pt-2 text-end">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal"
+                            data-bs-target="#EmpSearch">بحث متقدم</button>
+                        <button class="btn btn-primary" type="submit">بحث</button>
+                    </div>
+                    <div class="col-md-2 text-end">
+
+                        <label for="validationCustom02" class="form-label ">رقم الموظف</label>
                         <input type="text" name="PID_emp" value="{{old('PID_emp')}}" class="form-control" id="validationCustom02">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 text-end">
                         <label for="validationCustom01" class="form-label">الرقم الوطني</label>
                         <input type="text" name="national_number" class="form-control" id="validationCustom01">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 text-end">
                         <label for="validationCustom01" class="form-label">الإسم</label>
                         <input type="text" name="name" class="form-control" id="validationCustom01">
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">بحث</button>
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal"
-                            data-bs-target="#EmpSearch">بحث متقدم</button>
+
+                    <div class="col-md-2    addemp text-center">
+                        <!-- <button href="employees/create" class="btn btn-primary" type="submit">بحث</button> -->
+                        <a class="add " href="employees/create">إضافة موظف</a>
+
                     </div>
                 </form>
                 @include('employees.modal.search_advanced_emp')
             </div>
-            <div class="card-header">
+            <!-- <div class="card-header">
                 <h1 class="title">كل الموظفين</h1>
                 <div class="card-btn">
                     <button class="btn btn-success">اختر</button>
@@ -64,22 +71,30 @@
                     {{--                    <button href="">تحديد الكل</button> --}}
                 </div>
                 <a class="add" href="employees/create">إضافة موظف</a>
-            </div>
-            <div class="box-table">
-                <table id="tablejs">
-                    <thead>
-                        <tr>
-                            <th>اختر</th>
-                            <th>#</th>
+            </div> -->
+
+
+
+
+
+
+            <table id="example" class="table  col-12  pt-5 m-3" style="width:50wv"  dir="rtl" >
+        <thead>
+            <tr>
+                <!-- <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th> -->
+                <th>#</th>
                             <th>الرقم</th>
                             <th>الإسم</th>
                             <th>الحالة الإجتماعية</th>
                             <th>الجنس</th>
                             <th>اسم الأم</th>
                             <th>الدرجة الوظيفية او الرتبة</th>
-
                             <th>حالة العمل</th>
-
                             <th>جهة العمل</th>
                             <th>تاريخ التعيين</th>
                             <th>تاريخ الميلاد</th>
@@ -89,28 +104,25 @@
                             <th>الرقم الوطني</th>
                             <th>تاريخ المباشرة</th>
                             <th>الشريحة</th>
-
                             <th>تاريخ القرار</th>
                             <th>رقم القرار</th>
-
                             <th>ملاحظة</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($employes as $employee)
+            </tr>
+        </thead>
+        <tbody>
+        @foreach ($employes as $employee)
                             <tr>
-                                <td class="text-center">
+                                <!-- <td>
                                     <form action="">
-                                        <input type="checkbox" value="true" style="width: 16px; height: 16px;    ">
-                                        <input type="checkbox" value="true" class="d-none"
-                                            style="width: 16px; height: 16px;    ">
+                                        <input type="checkbox" value="true" >
+                                        <input type="checkbox" value="true" class="d-none">
                                     </form>
-                                </td>
-                                <td class="d-flex justify-content-center align-items-center">
+                                </td> -->
+                                <td >
 
-                                    <a href="{{ route('employees.print', $employee->id_emp) }}" class="edit print h-100">
+                                    <!-- <a href="{{ route('employees.print', $employee->id_emp) }}" class="edit print h-100">
                                         <i class="fa-solid fa-print"></i>
-                                    </a>
+                                    </a> -->
                                     <a href="{{ route('employees.edit', $employee->id_emp) }}" class="edit">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
@@ -130,20 +142,16 @@
                                 <td>{{ $employee->sex =="0"?"ذكر":"انثى" }}</td>
                                 <td>{{ $employee->mother_name }}</td>
                                 <td>{{ $employee->rank->title_rank }}</td>
-
-
                                 <td>{{ $employee->stateEmp->title_state }}</td>
                                 <td>{{ $employee->station->name_station }}</td>
                                 <td>{{ $employee->start_date }}</td>
                                 <td>{{ $employee->birthdate }}</td>
                                 <td>{{ $employee->last_premotion_date }}</td>
-
                                 <td>{{ $employee->id_number }}</td>
                                 <td>{{ $employee->passport_number }}</td>
                                 <td>{{ $employee->national_number }}</td>
                                 <td>{{ $employee->start_duty_date }}</td>
                                 <td>{{ $employee->id_jop }}</td>
-
                                 <td>{{ $employee->decision_date }}</td>
                               <td>{{ $employee->decision_number }}</td>
                               <td></td>
@@ -157,17 +165,39 @@
                                 @include('employees.modal.delete_emp')
                             </tr>
                         @endforeach
-                    </tbody>
-                </table>
-                </form>
+        </tbody>
+        <!-- <tfoot>
+            <tr>
+            <th>#</th>
+                            <th>الرقم</th>
+                            <th>الإسم</th>
+                            <th>الحالة الإجتماعية</th>
+                            <th>الجنس</th>
+                            <th>اسم الأم</th>
+                            <th>الدرجة الوظيفية او الرتبة</th>
+                            <th>حالة العمل</th>
+                            <th>جهة العمل</th>
+                            <th>تاريخ التعيين</th>
+                            <th>تاريخ الميلاد</th>
+                            <th>تاريخ اخر ترقية</th>
+                            <th>رقم البطاقة</th>
+                            <th>رقم الجواز</th>
+                            <th>الرقم الوطني</th>
+                            <th>تاريخ المباشرة</th>
+                            <th>الشريحة</th>
+                            <th>تاريخ القرار</th>
+                            <th>رقم القرار</th>
+                            <th>ملاحظة</th>
+            </tr>
+        </tfoot> -->
+            </table>
             </div>
+    <!-- </div> -->
 
-        </div>
-    </div>
 @endsection
 
 @section('scripts')
-    <script>
+    <!-- <script>
         let form_emp = document.querySelector('#checked');
         let inputs = document.querySelectorAll('.check_emp');
         let count_checked = document.querySelectorAll("input.check_emp:checked").length;
@@ -236,5 +266,5 @@
                     }
                 })
         }
-    </script>
+    </script> -->
 @endsection
