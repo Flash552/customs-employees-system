@@ -25,7 +25,7 @@
     		new DataTable('#example', {
         layout: {
             topStart: {
-                buttons: [ 'excel', 'pdf', 'colvis']
+                buttons: [ 'excel', 'print', 'colvis' ]
             }
         },scrollX: true
 
