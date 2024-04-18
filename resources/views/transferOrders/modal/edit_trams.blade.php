@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal fade" id="TramsEdit{{$tms->id_tran}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="transferOrdersEdit{{$tms->id_tran}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close position-absolute " style="left: 10px" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{route("trams.update", $tms->id_tran)}}" method="POST">
+                <form action="{{route("transferOrders.update", $tms->id_tran)}}" method="POST">
                     @csrf
                     @method("PUT")
                     <div class="mb-3">

@@ -3,7 +3,7 @@
 @section('title')
     الانتقالات
 @endsection
-@section('active_trams')
+@section('active_transferOrders')
     active
 @endsection
 @section('content')
@@ -87,14 +87,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($trams as $tms )
+                    @foreach ($transferOrders as $tms )
                         <tr>
                             <td class="d-flex justify-content-center align-items-center">
                                 <!-- Button to Open the Modal -->
-                                <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#TramsEdit{{$tms->id_tran}}" data-bs-whatever="@mdo">
+                                <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#transferOrdersEdit{{$tms->id_tran}}" data-bs-whatever="@mdo">
                                     <i class="fa-solid fa-edit"></i>
                                 </button>
-                                <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#TramsDelete{{$tms->id_tran}}" data-bs-whatever="@mdo">
+                                <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#transferOrdersDelete{{$tms->id_tran}}" data-bs-whatever="@mdo">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </td>
@@ -107,8 +107,8 @@
                             <td>{{$tms->confirm_two == 1 ? "تم التأكيد" : "لم يتم التأكيد"}}</td>
                             <td>{{$tms->confirm_two == 1 ?  $tms->confirm_date_two : "----"}}</td>
                         </tr>
-                        @include('trams.modal.edit_trams')
-                        @include('trams.modal.delete_trams')
+                        @include('transferOrders.modal.edit_transferOrders')
+                        @include('transferOrders.modal.delete_transferOrders')
                     @endforeach
                     </tbody>
                 </table>

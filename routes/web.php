@@ -13,6 +13,7 @@ use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\MaritalStatusController;
 use App\Http\Controllers\StateEmpController;
 use App\Http\Controllers\StationController;
+use App\Http\Controllers\TransferOrderController;
 use App\Http\Controllers\TypeEmpController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VacationController;
@@ -51,7 +52,7 @@ Route::resource("certs",CertController::class);
 Route::resource('absence', AbsenceController::class);
 
 Route::resource("settings",SettingsController::class);
-Route::resource("trams",TramsController::class);
+Route::resource("transferOrders",TransferOrderController::class);
 Route::resource("type_emp",TypeEmpController::class);
 Route::resource("rank_emp",RankEmpController::class);
 Route::resource("state_emp",StateEmpController::class);

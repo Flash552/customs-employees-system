@@ -43,7 +43,7 @@
 
 
         <li>
-            <a class="@yield('active_trams')" href="/trams">
+            <a class="@yield('active_transferOrders')" href="/transferOrders">
                 <i class="fa-solid fa-box-open"></i>
                 <span>قرارات النقل</span>
             </a>
