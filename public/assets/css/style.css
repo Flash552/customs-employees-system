@@ -9,7 +9,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    font-family: 'Noto Sans Arabic', sans-serif;
+    font-family: 'Cairo', sans-serif !important
 }
 
 a{

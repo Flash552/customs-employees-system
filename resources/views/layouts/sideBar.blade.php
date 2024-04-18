@@ -1,5 +1,6 @@
-<div class="sidebar">
-    <h3>نظام إدارة الموارد البشرية</h3>
+<div class="sidebar"  dir="rtl">
+    <!-- <h3>نظام إدارة الموارد البشرية</h3> -->
+    <a href="/dashboard"><img src="{{ asset('assets/images/long_customs.png') }}" alt="" width="231" height="51" class="m-2 mt-5 mb-5"></a>
     <ul>
         <li>
             <a class="@yield('active_dash')" href="/dashboard">
@@ -19,7 +20,6 @@
                 <i class="fa-solid fa-users fa-fw"></i>
                 <span>المستخدمين</span>
             </a>
-
         </li>
         <li>
             <a class="@yield('active_')" href="">
@@ -40,8 +40,8 @@
                 <span>قرارات الفصل</span>
             </a>
         </li>
-        
-        
+
+
         <li>
             <a class="@yield('active_trams')" href="/trams">
                 <i class="fa-solid fa-box-open"></i>

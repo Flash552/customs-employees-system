@@ -1,5 +1,7 @@
 :root{
-    --sidebar-color: #211C69;
+    --sidebar-color: #1a4581;
+    --maina-color: #295da7;
+    /* --sidebar-color: #211C69; */
     --main-bg-color: white;
 
 }
@@ -8,6 +10,7 @@
     background-color: #bebebe !important;
     color: #ffffff !important;
     border-color: #bebebe !important;
+
 }
 .eye{
     margin: 0 10px;
@@ -34,17 +37,24 @@ button.edit{
     color: #198754;
 }
 .box-s{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    background-color: #1a4581e3;
+}
+.info {
+    text-align: center;
 }
 .info h1{
-    margin: 0.67em 0 0;
-    color: var(--sidebar-color);
+    /* margin: 0.67em 0 0; */
+    color: white;
     font-weight: 600;
     font-size: 2.5em;
 }
 .info p{
-    margin-bottom: 2em;
-    color: #777;
+    font-size: 1.5em;
+    margin-top: .5em;
+    /* margin-bottom: 2em; */
+    color: white;
+    font-weight: 650;
 }
 .icon i{
     color: var(--sidebar-color);
@@ -81,34 +91,35 @@ button.edit{
     }
 }
 .page .sidebar h3{
-    position: relative;
+    /* position: relative;
     padding: 20px;
     text-align: center;
     margin-bottom: 60px;
     font-size: 22px;
     font-weight: 600;
-    color: white;
+    color: white; */
 }
+
 .page .sidebar h3::before,
 .page .sidebar h3::after{
-    content: '';
+    /* content: '';
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
 }
 .page .sidebar h3::before{
-    top: calc(100% + 20px);
+    /* top: calc(100% + 20px);
     width: 50%;
     height: 3px;
-    background-color: white;
+    background-color: white; */
 }
 .page .sidebar h3::after{
-    top: calc(100% + 12px);
+    /* top: calc(100% + 12px);
     width: 14px;
     height: 14px;
     border: 3px solid white;
     border-radius: 50%;
-    background-color: var(--sidebar-color);
+    background-color: var(--sidebar-color); */
 }
 @media (max-width: 767px){
     .page .sidebar h3{
@@ -123,7 +134,8 @@ button.edit{
 }
 }
 .page .sidebar ul{
-    padding: 20px 20px 20px 0px;
+    /* padding: 20px 20px 20px 0px; */
+    margin: 0 15px;
     width: 100%;
 }
 .page .sidebar li a{
@@ -133,8 +145,9 @@ button.edit{
     display: block;
     width: 100%;
     padding: 10px 5px;
-    border-radius: 8px;
+    border-radius: 25px;
     color: white;
+    /* text-align: center; */
 
 }
 .page .sidebar li a:not(.active):hover{
@@ -149,14 +162,14 @@ button.edit{
 }
 .page .sidebar ul li a.active::before,
 .page .sidebar ul li a.active::after{
-    content: "";
+    /* content: "";
     position: absolute;
     left: 0;
     background-color: transparent;
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    pointer-events: none;
+    pointer-events: none; */
 
 }
 .page ul li a.active::before{
@@ -169,6 +182,7 @@ button.edit{
 }
 .page ul li a i{
     text-align: center;
+    margin-left: 8px ;
     width: 1.25em;
 }
 .page ul li a span{
@@ -253,8 +267,11 @@ button.edit{
 }
 .content .title-main{
     margin: 20px 20px 40px;
+    padding-bottom: 10px;
     position: relative;
-    width: fit-content;
+    text-align: center;
+    /* width: fit-content; */
+    width: 100%;
     font-size: 35px;
     font-weight: 600;
 }
@@ -269,12 +286,12 @@ button.edit{
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
+    background-color: transparent;
 }
 .content .title-main::after{
-    right: 0%;
+    right: 25%;
     width: 50%;
-    background-color: #111;
+    background-color: var(--sidebar-color);
 }
 .wrapper{
     display: grid;
@@ -312,6 +329,10 @@ button.edit{
     font-size: 20px;
     margin-bottom: 20px;
 }
+.form-floating>label {
+
+    left:  840px !important;
+}
  .card-header .title{
      font-size: 22px;
     margin: 0;
@@ -326,6 +347,32 @@ button.edit{
     color: white;
     transition: 0.3s;
 }
+.addemp a.add{
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: var(--maina-color);
+    color: white;
+    transition: 0.3s;
+}
+.addemp a.search{
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #0D6EFD;
+    color: white;
+    transition: 0.3s;
+}
+.addemp a.add:hover{
+
+    background-color: var(--sidebar-color);
+}
+.addemp {
+
+    margin-top: 4rem !important;
+}
 .card-header a.add:hover{
     color: white;
     box-shadow: 0px 0px 7px 1px #026bff9f;
@@ -336,10 +383,10 @@ button.edit{
     /* max-height: 100%; */
 }
 .wrapper-two table{
-    border-collapse: collapse;
+    /* border-collapse: collapse;
     border: 2px solid #eee;
     width: 100%;
-    max-height: 100% !important;
+    max-height: 100% !important; */
 }
 .wrapper-two table th {
     position: sticky;

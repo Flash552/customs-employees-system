@@ -7,17 +7,22 @@
     active
 @endsection
 @section('content')
-    <div class="wrapper-two">
-        <h3 class="title-main">الانتقالات</h3>
-        <hr>
-        <div class="content-wrapper">
-            <div class="wrapper-two">
+<h3 class="title-main">الانتقالات</h3>
+<hr>
+
+            <div class="wrapper-two  mb-5" dir="rtl">
                 @if(Session::has('message'))
                     <div class="alert alert-{{ Session::get('message')["type"] }}" role="alert">
                         {{ Session::get('message')["msg"] }}
                     </div>
                 @endif
                 <form class="row g-4 needs-validation" novalidate>
+                    <div class="col-md-1 addemp">
+                        <!-- <a href="" class="search">بحث</a> -->
+
+                        <a class="add" href="users/create" >إضافة</a>
+
+                    </div>
                     <div class="col-md-2">
                         <label for="validationCustom01" class="form-label">رقم الموظف</label>
                         <input type="text" class="form-control" id="validationCustom01"  required>
@@ -25,7 +30,7 @@
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="validationCustom02" class="form-label">الإسم</label>
                         <input type="text" class="form-control" id="validationCustom02"  required>
                         <div class="valid-feedback">
@@ -56,28 +61,29 @@
                             Please select a valid state.
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">بحث</button>
+
+                    <div class="col-md-2 addemp">
+                        <a href="" class="search">بحث</a>
+
+                        <!-- <a class="add" href="users/create" >إضافة</a> -->
+
                     </div>
                 </form>
             </div>
-            <div class="card-header">
-                <h1 class="title">كل الانتقالات</h1>
-{{--                <a class="add" href="users/create" >إضافة</a>--}}
-            </div>
-            <div class="box-table">
-                <table>
+
+
+            <table id="example"  dir="rtl" class="table text-end  col-12  pt-5 m-3" style="width:95%"  dir="rtl" >
                     <thead >
-                    <tr class="sticky-top">
-                        <th>#</th>
-                        <th>الرقم</th>
-                        <th>الإسم</th>
-                        <th>من</th>
-                        <th>الى</th>
-                        <th>التأكيد الاول</th>
-                        <th>تاريخ التأكيد الأول</th>
-                        <th>التأكيد الثاني</th>
-                        <th>تاريخ التأكيد الثاني</th>
+                    <tr >
+                        <th class="text-center">#</th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">من</th>
+                        <th class="text-center">الى</th>
+                        <th class="text-center">التأكيد الاول</th>
+                        <th class="text-center">تاريخ التأكيد الأول</th>
+                        <th class="text-center">التأكيد الثاني</th>
+                        <th class="text-center">تاريخ التأكيد الثاني</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -106,9 +112,8 @@
                     @endforeach
                     </tbody>
                 </table>
-            </div>
 
-        </div>
-    </div>
+
+
 @endsection
 

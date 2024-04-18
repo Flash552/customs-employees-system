@@ -1,50 +1,39 @@
 @extends("layouts.master")
 
 @section('title')
-    الرئيسية
+    الصفحة الرئيسية
 @endsection
 @section('active_dash')
     active
 @endsection
 @section('content')
-    <h3 class="title-main">الرئيسية</h3>
+    <h3 class="title-main ">الصفحة الرئيسية</h3>
     <hr>
-    <div class="wrapper-two ">
+    <div class="wrapper-two  "dir="rtl">
         <div class="wrapper">
             <div class="d-flex m-2 justify-content-around align-items-center rounded box-s">
                 <div class="info">
-                    <h1 data-set="2340">0</h1>
                     <p>الموظفين</p>
-                </div>
-                <div class="icon">
-                    <i class="fa-solid fa-user fa-2x"></i>
+                    <h1 data-set="253">0</h1>
                 </div>
             </div>
             <div class="d-flex m-2 justify-content-around align-items-center rounded box-s">
                 <div class="info">
-                    <h1 data-set="2340" >0</h1>
-                    <p>المستخدمين</p>
+                    <p>قرارت</p>
+                    <h1 data-set="1555" >0</h1>
                 </div>
-                <div class="icon">
-                    <i class="fa-solid fa-users fa-2x"></i>
+
+            </div>
+            <div class="d-flex m-2 justify-content-around align-items-center rounded box-s">
+                <div class="info">
+                    <p>غياب</p>
+                    <h1 data-set="15" >0</h1>
                 </div>
             </div>
             <div class="d-flex m-2 justify-content-around align-items-center rounded box-s">
                 <div class="info">
-                    <h1 data-set="2340">0</h1>
-                    <p>سلة المحذوفات</p>
-                </div>
-                <div class="icon">
-                    <i class="fa-solid fa-trash-can fa-2x"></i>
-                </div>
-            </div>
-            <div class="d-flex m-2 justify-content-around align-items-center rounded box-s">
-                <div class="info">
-                    <h1 data-set="2340">0</h1>
-                    <p>employees</p>
-                </div>
-                <div class="icon">
-                    <i class="fa-solid fa-users fa-2x"></i>
+                    <p>تقارير</p>
+                    <h1 data-set="152" >0</h1>
                 </div>
             </div>
         </div>
