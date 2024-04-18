@@ -35,7 +35,7 @@
             </a>
         </li>
         <li>
-            <a class="@yield('active_absence')" href="/absence">
+            <a class="@yield('active_firing')" href="/firing">
                 <i class="fa-solid fa-box-open"></i>
                 <span>قرارات الفصل</span>
             </a>
