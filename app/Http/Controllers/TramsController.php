@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Station;
-use App\Models\Trams;
+use App\Models\Transfer;
+
 use mysql_xdevapi\Exception;
 
-class TramsController extends Controller
+class TransferController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class TramsController extends Controller
     public function index()
     {
         $stations = Station::all();
-        $trams = Trams::all();
-        return view("trams.trams", compact("trams","stations"));
+        $Transfer = Transfer::all();
+        return view("Transfer.Transfer", compact("Transfer","stations"));
     }
 
     /**
@@ -33,10 +34,10 @@ class TramsController extends Controller
     public function store(Request $request)
     {
         // try {
-            $find = Trams::where("id_emp", "=", $request->id_emp)->first();
+            $find = Transfer::where("id_emp", "=", $request->id_emp)->first();
             if($find){
                 return redirect()
-                    ->route("trams.index")->with("message", [
+                    ->route("Transfer.index")->with("message", [
                         "type" => "warning",
                         "msg" => "هذا الموظف موجود"
                     ]);
@@ -54,16 +55,16 @@ class TramsController extends Controller
                 $data = array_filter($data, function( $value) {
                     return !is_null($value);
                 });
-                Trams::create($data);
+                Transfer::create($data);
                 return redirect()
-                    ->route("trams.index")->with("message", [
+                    ->route("Transfer.index")->with("message", [
                         "type" => "success",
                         "msg" => "تم الإضافة بنجاح"
                     ]);
             }
         // } catch (Exception $e){
         //     return redirect()
-        //         ->route("trams.index")->with("message", [
+        //         ->route("Transfer.index")->with("message", [
         //             "type" => "danger",
         //             "msg" => $e->getMessage(),
         //         ]);
@@ -76,7 +77,7 @@ class TramsController extends Controller
     public function show(Request $request,string $id)
     {
 //        $stations = Station::all();
-//        return view("employees.modal.add_trams", compact("stations"));
+//        return view("employees.modal.add_Transfer", compact("stations"));
     }
 
     /**
@@ -92,7 +93,7 @@ class TramsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $tms = Trams::find($id);
+        $tms = Transfer::find($id);
         $tms->update([
             "id_to_station" => $request->id_to_station,
             "confirm_first" => $request->confirm_first,
@@ -101,7 +102,7 @@ class TramsController extends Controller
             "confirm_date_two" => $request->confirm_two == 1 ? Date("Y-m-d") : null,
         ]);
         return redirect()
-            ->route("trams.index")->with("message", [
+            ->route("Transfer.index")->with("message", [
                 "type" => "primary",
                 "msg" => "تم التعديل بنجاح"
             ]);
@@ -112,8 +113,8 @@ class TramsController extends Controller
      */
     public function destroy(string $id)
     {
-//        return Trams::where("id_tran", $id)->first();
-        Trams::withTrashed()
+//        return Transfer::where("id_tran", $id)->first();
+        Transfer::withTrashed()
             ->where("id_tran", $id)
             ->forceDelete();
         return redirect()->back()->with("message", [

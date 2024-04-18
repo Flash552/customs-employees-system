@@ -30,7 +30,7 @@ class TransferOrder extends Model
     public function order_employee(){
         return $this->belongsTo(Employee::class, "id_emp")->withDefault();
     }
-    public function transferred_employees(){
+    public function transferres(){
         return $this->hasMany(Transfer::class, "id_transfer_order");
     }
     public function fromStation(){

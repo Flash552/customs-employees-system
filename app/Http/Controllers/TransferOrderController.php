@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TransferOrder;
 use Illuminate\Http\Request;
+use  App\Models\Station;
 
 class TransferOrderController extends Controller
 {
@@ -12,7 +13,9 @@ class TransferOrderController extends Controller
      */
     public function index()
     {
-        //
+        $stations = Station::all();
+        $Transfer = TransferOrder::all();
+        return view("Transfer.Transfer", compact("TransferOrders","stations"));
     }
 
     /**
