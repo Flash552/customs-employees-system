@@ -7,12 +7,16 @@
     active
 @endsection
 @section('content')
-    <div class="wrapper-two">
-        <h3 class="title-main">سجل الغياب</h3>
-        <hr>
-        <div class="content-wrapper">
-            <div class="wrapper-two">
+<h3 class="title-main">سجل الغياب</h3>
+<hr>
+
+            <div class="wrapper-two" dir="rtl">
                 <form class="row g-4 needs-validation" novalidate>
+                    <div class="col-2 addemp">
+                        <!-- <button class="btn btn-primary" type="submit">بحث</button> -->
+                        <a class="add" href="users/create" data-bs-toggle="modal" data-bs-target="#AbsenceAdd">إضافة سجل</a>
+
+                    </div>
                     <div class="col-md-2">
                         <label for="validationCustom01" class="form-label">رقم الموظف</label>
                         <input type="text" class="form-control" id="validationCustom01"  required>
@@ -20,7 +24,7 @@
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label for="validationCustom02" class="form-label">الإسم</label>
                         <input type="text" class="form-control" id="validationCustom02"  required>
                         <div class="valid-feedback">
@@ -41,25 +45,22 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">بحث</button>
+
+                    <div class="col-md-1 addemp">
+                       <a href="" class="search">بحث</a>
+                        <!-- <a class="add me-5" href="users/create">إضافة مستخدم</a> -->
                     </div>
                 </form>
             </div>
-            <div class="card-header">
-                <h1 class="title">كل الموظفين</h1>
-                <a class="add" href="users/create" data-bs-toggle="modal" data-bs-target="#AbsenceAdd">إضافة سجل</a>
 
-            </div>
-            <div class="box-table">
-                <table>
+            <table id="example"  dir="rtl" class="table text-end  col-12  pt-5 m-3" style="width:95%"  dir="rtl" >
                     <thead >
                     <tr class="sticky-top">
-                        <th>#</th>
-                        <th>الرقم</th>
-                        <th>الإسم</th>
-                        <th>تاريخ بداية الغياب</th>
-                        <th>تاريخ نهاية الغياب</th>
+                        <th class="text-center">#</th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">تاريخ بداية الغياب</th>
+                        <th class="text-center">تاريخ نهاية الغياب</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -84,9 +85,8 @@
                     @include('absence.modal.delete_absence');
                     </tbody>
                 </table>
-            </div>
+
             @include('absence.modal.add_absence');
-        </div>
-    </div>
+
 @endsection
 

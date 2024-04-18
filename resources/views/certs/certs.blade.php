@@ -7,12 +7,15 @@
     active
 @endsection
 @section('content')
-    <div class="wrapper-two">
-        <h3 class="title-main">إدارة المؤهلات و الدورات</h3>
-        <hr>
-        <div class="content-wrapper">
-            <div class="wrapper-two">
+<h3 class="title-main">إدارة المؤهلات و الدورات</h3>
+<hr>
+
+            <div class="wrapper-two mb-5" dir="rtl" >
                 <form class="row g-4 needs-validation" novalidate>
+                    <div class="col-1 addemp">
+                        <a class="add" href="{{route('certs.create')}}">إضافة</a>
+                        <!-- <a href="" class="search">بحث</a> -->
+                    </div>
                     <div class="col-md-2">
                         <label for="validationCustom02" class="form-label">رقم الموظف</label>
                         <input type="text" class="form-control" id="validationCustom02" required>
@@ -34,29 +37,28 @@
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">بحث</button>
+
+                    <div class="col-1 addemp">
+                        <!-- <a class="add" href="{{route('certs.create')}}">إضافة</a> -->
+                        <a href="" class="search">بحث</a>
                     </div>
                 </form>
             </div>
-            <div class="card-header">
-                <h1 class="title">كل المؤهلات العملية والدورات</h1>
-                <a class="add" href="{{route('certs.create')}}">إضافة</a>
-            </div>
-            <div class="box-table">
-                <table>
+
+
+            <table id="example"  dir="rtl" class="table text-end  col-12  pt-5 m-3" style="width:95%"  dir="rtl" >
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>الرقم</th>
-                        <th>الإسم</th>
-                        <th>الدرجة الوظيفية</th>
-                        <th>المؤهل العلمي</th>
-                        <th>الرتبة</th>
-                        <th>عرض المؤهل العملي</th>
-                        <th>الدورات</th>
-                        <th>عرض الدورة</th>
-                        <th>ملاحظة</th>
+                        <th class="text-center">#</th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">الدرجة الوظيفية</th>
+                        <th class="text-center">المؤهل العلمي</th>
+                        <th class="text-center">الرتبة</th>
+                        <th class="text-center">عرض المؤهل العملي</th>
+                        <th class="text-center">الدورات</th>
+                        <th class="text-center">عرض الدورة</th>
+                        <th class="text-center">ملاحظة</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -106,7 +108,6 @@
                     </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
+
+
 @endsection

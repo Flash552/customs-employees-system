@@ -9,7 +9,7 @@
 @section('content')
     <h3 class="title-main ">الصفحة الرئيسية</h3>
     <hr>
-    <div class="wrapper-two ">
+    <div class="wrapper-two  "dir="rtl">
         <div class="wrapper">
             <div class="d-flex m-2 justify-content-around align-items-center rounded box-s">
                 <div class="info">

@@ -7,12 +7,16 @@
     active
 @endsection
 @section('content')
-    <div class="wrapper-two">
-        <h3 class="title-main">إضافة المستخدمين</h3>
-        <hr>
-        <div class="content-wrapper">
-            <div class="wrapper-two">
+<h3 class="title-main">المستخدمين</h3>
+<hr>
+    <div class="" >
+        <div class="">
+            <div class="wrapper-two "dir="rtl">
                 <form class="row g-4 needs-validation" novalidate>
+                <div class="col-md-3 addemp">
+                       <!-- <a href="" class="search">بحث</a> -->
+                        <a class="add me-5" href="users/create">إضافة مستخدم</a>
+                    </div>
                     <div class="col-md-2">
                         <label for="validationCustom01" class="form-label">اسم المستخدم</label>
                         <input type="text" class="form-control" id="validationCustom01"  required>
@@ -20,75 +24,375 @@
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label for="validationCustom01" class="form-label">الإسم</label>
                         <input type="text" class="form-control" id="validationCustom01"  required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">بحث</button>
+                    <div class="col-md-2 addemp">
+                       <a href="" class="search">بحث</a>
+                        <!-- <a class="add me-5" href="users/create">إضافة مستخدم</a> -->
                     </div>
                 </form>
             </div>
-            <div class="card-header">
-                <h1 class="title">كل المستخدمين</h1>
-                <a class="add" href="users/create">إضافة مستخدم</a>
-            </div>
-            <div class="box-table">
-                <table>
-                    <thead >
-                    <tr class="sticky-top">
-                        <th>#</th>
-                        <th>الرقم</th>
-                        <th>الإسم</th>
-                        <th>اسم المستخدم</th>
-                        <!-- <th>كلمة السر</th> -->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="d-flex justify-content-center align-items-center">
-                            <!-- <a href="#" class="edit print">
-                                <i class="fa-solid fa-print"></i>
-                            </a> -->
-                            <a href="users/show" class="edit">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                            <form action="../../PHP/script.php" method="POST">
-                                <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </form>
-                        </td>
-                        <td>1</td>
-                        <td>جهاد شرع الله</td>
-                        <td>JIHAD_LYX</td>
-                        <!-- <td>922502218</td> -->
-                    </tr>
-                    <tr>
-                        <td class="d-flex justify-content-center align-items-center">
-                            <!-- <a href="#" class="edit print">
-                                <i class="fa-solid fa-print"></i>
-                            </a> -->
-                            <a href="edit_user copy.html" class="edit">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                            <form action="../../PHP/script.php" method="POST">
-                                <button type="submit" style="border:none; outline:none" class="delete" name="Delete" value="1">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </form>
-                        </td>
-                        <td>2</td>
-                        <td>علي</td>
-                        <td>ALI01</td>
-                        <!-- <td>922502219</td>  -->
-                    </tr>
+
+            <table id="example"  dir="rtl" class="table text-end  col-12  pt-5 m-3" style="width:95%"  dir="rtl" >
+        <thead>
+            <tr >
+                        <th class="text-center">#</th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
+        <tr>
+                        <th class="text-center">
+                                    <a href="" class="edit">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+
+                                    <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#EmpDelete"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button type="button" class="eye" data-bs-toggle="modal" data-bs-target="#EmpShow"
+                                        data-bs-whatever="@mdo">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                        </th>
+                        <th class="text-center">الرقم</th>
+                        <th class="text-center">الإسم</th>
+                        <th class="text-center">اسم المستخدم</th>
+            </tr>
                     </tbody>
-                </table>
-            </div>
+
+            </table>
         </div>
     </div>
 @endsection

@@ -356,6 +356,15 @@ button.edit{
     color: white;
     transition: 0.3s;
 }
+.addemp a.search{
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #0D6EFD;
+    color: white;
+    transition: 0.3s;
+}
 .addemp a.add:hover{
 
     background-color: var(--sidebar-color);
@@ -374,10 +383,10 @@ button.edit{
     /* max-height: 100%; */
 }
 .wrapper-two table{
-    border-collapse: collapse;
+    /* border-collapse: collapse;
     border: 2px solid #eee;
     width: 100%;
-    max-height: 100% !important;
+    max-height: 100% !important; */
 }
 .wrapper-two table th {
     position: sticky;
