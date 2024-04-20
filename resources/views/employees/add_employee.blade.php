@@ -142,6 +142,11 @@
                             Please provide a valid city.
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label">صورة شخصية</label>
+                        <input   type="file" name="image" id="image" class="form-control" aria-label="file example" required>
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                    </div>
                 </div>
                   <!-- بيانات العمل -->
                 <div class="row" style="width: 800px;     margin: 0 auto;">
@@ -271,11 +276,7 @@
                             Please provide a valid zip.
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom05" class="form-label">صورة شخصية</label>
-                        <input   type="file" name="image" id="image" class="form-control" aria-label="file example" required>
-                        <div class="invalid-feedback">Example invalid form file feedback</div>
-                    </div>
+
                 </div>
 
 
