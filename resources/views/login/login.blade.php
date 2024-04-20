@@ -41,6 +41,10 @@
             color : #fff !important;
 
         }
+        .text-muted{
+            color: #fff !important;
+            padding-top:320px  ;
+        }
     </style>
 </head>
 <body  dir="rtl" >
@@ -64,14 +68,13 @@
 </div>
 
   <a href=""><button type="submit" class="btn ">تسجيل دخول</button></a>
+  <p class="  text-muted text-center">© 2024 مصلحة جمارك الليبية </p>
 </form>
 </main>
 
 
 
 
-
-<div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div>
 
 @include("layouts.footer-scripts")
 </body>
