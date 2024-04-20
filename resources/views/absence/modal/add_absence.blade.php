@@ -1,5 +1,6 @@
-<!-- The Modal -->
-<div class="modal fade" id="AbsenceAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- The Modal -->.
+
+<div class="modal " dir="rtl" id="AbsenceAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

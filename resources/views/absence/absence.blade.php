@@ -9,7 +9,7 @@
 @section('content')
 <h3 class="title-main">سجل الغياب</h3>
 <hr>
-
+@include('absence.modal.add_absence');
             <div class="wrapper-two" dir="rtl">
                 <form class="row g-4 needs-validation" novalidate>
                     <div class="col-2 addemp">
@@ -86,7 +86,7 @@
                     </tbody>
                 </table>
 
-            @include('absence.modal.add_absence');
+
 
 @endsection
 

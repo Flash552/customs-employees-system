@@ -11,6 +11,7 @@
     color: #ffffff !important;
     border-color: #bebebe !important;
     border: #fff solid 1px;
+    border: #a59357 solid 1px;
 
 }
 .eye{
@@ -77,10 +78,15 @@ button.edit{
 #hide{
     min-width: 250px !important;
 }
+#AbsenceAdd{
+     margin-top: 600px !important;
+     margin-left: 800px !important;
+    /* margin: auto !important; */
+}
 .content{
     width: 100%;
-    /* padding: 15px; */
-    height: 1000px;
+    padding: 15px;
+    /* height: 1000px; */
 }
 @media (max-width: 767px){
     .page .sidebar{

@@ -17,11 +17,11 @@
       @include('layouts.head')
 
 </head>
-<body >
+<body   >
     <div class="page">
         @include('layouts.sideBar')
         <!-- <div id="hide"></div> -->
-        <div class="content">
+        <div class="content"  >
             @include('layouts.main-headerBar')
             @yield('content')
         </div>
@@ -37,6 +37,8 @@
     {{-- <script>
      new DataTable('#tablejs');
     </script> --}}
+
+
 </body>
 </html>
 
