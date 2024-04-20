@@ -9,7 +9,7 @@
 @section('content')
     <h3 class="title-main">بيانات شخصية</h3>
     <hr>
-    <div class="content-wrapper h-auto" >
+    <div class="content-wrapper h-auto" dir="rtl" >
         <div class="wrapper-two d-flex justify-content-around">
             <div class="image rounded-circle p-1" style="width: 200px;">
                 <img style="max-width: 100%;" src="{{asset('assets/images/avatar.png')}}" alt="">

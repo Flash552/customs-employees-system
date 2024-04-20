@@ -11,46 +11,67 @@
     <style>
         body{
             display: flex;
-            align-items: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            background-color: #f5f5f5;
+            justify-content: center;
+            /* align-items: center; */
+            /* height: 100vh; */
+            padding-top: 120px;
+            /* padding-bottom: 40px; */
+            background-color: #1a4581;
+            color : #fff;
+        }
+        img{
+            /* padding: 0 20px 0 0 ; */
+            /* margin: 0 20px 0 0  ; */
+            width: 340px;
+            padding: 20px;
+        }
+        main{
+            width: 360px;
+        }
+        main .btn{
+            width: 100%;
+            background-color : #a59357 !important;
+            /* border: #fff solid 1px; */
+            color : #fff !important;
+        }
+        main .btn:hover{
+            width: 100%;
+            background-color : #D0BA6F !important;
+            /* border: #fff solid 1px; */
+            color : #fff !important;
+
         }
     </style>
 </head>
-<body class="text-center" dir="rtl">
-<div class="container w-25 ">
-    <main class="form-signin">
-        <form action="/dashboard" method="get">
-            @csrf
-            @method('get')
-            <img class="mb-4" src="{{asset('assets/images/logo.png')}}" alt="" width="180" height="180">
-            <h1 class="h3 mb-3 fw-normal">الرجاء تسجيل الدخول</h1>
-            <div class="form-floating">
-                <select class="form-control" id="floatingInput" required>
-                    <option selected disabled value="">اختر</option>
-                    <option value="0">jihadlyx</option>
-                    <option value="1">ali021</option>
-                </select>
-                <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
-                <label for="floatingInput">اسم المستخدم</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">كلمة السر</label>
-            </div>
-            <div class="checkbox mb-3">
-{{--                <label>--}}
-{{--                    <input type="checkbox" value="remember-me"> ذكرني--}}
-{{--                </label>--}}
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">تسجل الدخول</button>
-            <p class="mt-5 mb-3 text-muted">&copy; جهاد شرع الله 218922502219+</p>
-            <p class="mb-3 text-muted">&copy; محمد قمو 218922502219+</p>
-        </form>
-    </main>
+<body  dir="rtl" >
+
+
+<main class="form-signin">
+    <form>
+        <img src="{{ asset('assets/images/long_customs.png') }}" alt=""  class="m-2 mt-5 mb-5">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">بريد الكتروني</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">كلمة السر</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check ">
+      <input type="checkbox" class="form-check-input float-end" id="exampleCheck1">
+      <label class="form-check-label me-4" for="exampleCheck1">ذكرني</label>
 </div>
 
+  <a href=""><button type="submit" class="btn ">تسجيل دخول</button></a>
+</form>
+</main>
+
+
+
+
+
+<div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div>
 
 @include("layouts.footer-scripts")
 </body>
