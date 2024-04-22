@@ -76,14 +76,13 @@
                     <thead >
                     <tr >
                         <th class="text-center">#</th>
-                        <th class="text-center">الرقم</th>
-                        <th class="text-center">الإسم</th>
-                        <th class="text-center">من</th>
-                        <th class="text-center">الى</th>
-                        <th class="text-center">التأكيد الاول</th>
-                        <th class="text-center">تاريخ التأكيد الأول</th>
-                        <th class="text-center">التأكيد الثاني</th>
-                        <th class="text-center">تاريخ التأكيد الثاني</th>
+                        <th class="text-center">عنوان القرار</th>
+                        <th class="text-center">رقم الموظف المسؤول</th>
+                        <th class="text-center">رقم المستخدم</th>
+                        <th class="text-center"> رقم مركز العمل المنتقل منه</th>
+                        <th class="text-center">رقم مركز العمل المنتقل اليه</th>
+                        <th class="text-center"> حالة الاعتماد</th>
+                        <th class="text-center">الوصف</th>
                     </tr>
                     </thead>
                     <tbody>
