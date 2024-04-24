@@ -164,7 +164,7 @@ class EmployeeController extends Controller
         });
 
         array_shift($empData);
-
+        array_shift($empData);
         $employes = Employee::Where($empData)->get();
 
         if ($employes == null || $employes->count() == 0) {
