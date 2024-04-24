@@ -58,8 +58,8 @@ class EmployeeController extends Controller
     {
         //return $request;
 
-        $validateRules = [
-         //   'PID_emp' =>  ['required', 'unique:employees', 'numeric', 'max:11'],
+        // $validateRules = [
+        //  //   'PID_emp' =>  ['required', 'unique:employees', 'numeric', 'max:11'],
         //     'name' =>  ['required',  'max:150'],
         //    'phone' =>  ['nullable', 'numeric','unique:employees,phone', 'max:11'],
         //     'id_jop' =>  ['required', 'numeric', 'exists:jop_title,id_jop'],
@@ -90,8 +90,8 @@ class EmployeeController extends Controller
         //     'expertise_start_date' =>  ['nullable', 'date'],
         // ];
 
-        // // $this->validate($request, $validateRules);
-        // //$request->validate($validateRules);
+        // $this->validate($request, $validateRules);
+        //$request->validate($validateRules);
         // $validator = FacadesValidator::make($request->all(),$validateRules);
         // if ($validator->fails()) {
         //     return back()->withErrors($validator)
