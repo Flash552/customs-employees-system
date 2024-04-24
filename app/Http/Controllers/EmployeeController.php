@@ -60,43 +60,43 @@ class EmployeeController extends Controller
 
         $validateRules = [
          //   'PID_emp' =>  ['required', 'unique:employees', 'numeric', 'max:11'],
-            'name' =>  ['required',  'max:150'],
-           'phone' =>  ['nullable', 'numeric','unique:employees,phone', 'max:11'],
-            'id_jop' =>  ['required', 'numeric', 'exists:jop_title,id_jop'],
-            'id_state' =>  ['required', 'numeric', 'exists:status_emp,id_state'],
-            'id_type_emp' =>  ['required', 'numeric', 'exists:type_emp,id_type_emp'],
-            'id_rank' =>  ['required', 'numeric', 'exists:rank_emp,id_rank'],
-            'image' =>  ['nullable','image'],
-            'id_station' =>  ['required', 'numeric'],
-            'premotion_date'  =>  ['nullable', 'date'],
-            'last_premotion_date' =>  ['nullable', 'date'],
-            'start_duty_date' =>  ['nullable', 'date'],
-            'start_date' =>  ['nullable', 'date'],
-            'end_duty_resson' =>  ['nullable'],
-            'marital_status' =>  ['nullable'],
-            'sex' =>  ['nullable'],
-            'decision_number' =>  ['nullable'],
-            'decision_date' =>  ['nullable', 'date'],
-            'mother_name' =>  ['nullable'],
-           // 'national_number' =>  ['nullable', 'max:20', 'numeric'],
-            'id_number' =>  ['nullable', 'max:20'],
-            'passport_number' =>  ['nullable'],
-            'birthdate' =>  ['nullable', 'date'],
-            //'email' =>  ['nullable','unique:employees ,email'],
-            'bank_name' =>  ['nullable'],
-            'bank_branch' =>  ['nullable'],
-            'bank_account_id' =>  ['nullable'],
-            'expertise' =>  ['nullable'],
-            'expertise_start_date' =>  ['nullable', 'date'],
-        ];
+        //     'name' =>  ['required',  'max:150'],
+        //    'phone' =>  ['nullable', 'numeric','unique:employees,phone', 'max:11'],
+        //     'id_jop' =>  ['required', 'numeric', 'exists:jop_title,id_jop'],
+        //     'id_state' =>  ['required', 'numeric', 'exists:status_emp,id_state'],
+        //     'id_type_emp' =>  ['required', 'numeric', 'exists:type_emp,id_type_emp'],
+        //     'id_rank' =>  ['required', 'numeric', 'exists:rank_emp,id_rank'],
+        //     'image' =>  ['nullable','image'],
+        //     'id_station' =>  ['required', 'numeric'],
+        //     'premotion_date'  =>  ['nullable', 'date'],
+        //     'last_premotion_date' =>  ['nullable', 'date'],
+        //     'start_duty_date' =>  ['nullable', 'date'],
+        //     'start_date' =>  ['nullable', 'date'],
+        //     'end_duty_resson' =>  ['nullable'],
+        //     'marital_status' =>  ['nullable'],
+        //     'sex' =>  ['nullable'],
+        //     'decision_number' =>  ['nullable'],
+        //     'decision_date' =>  ['nullable', 'date'],
+        //     'mother_name' =>  ['nullable'],
+        //    // 'national_number' =>  ['nullable', 'max:20', 'numeric'],
+        //     'id_number' =>  ['nullable', 'max:20'],
+        //     'passport_number' =>  ['nullable'],
+        //     'birthdate' =>  ['nullable', 'date'],
+        //     //'email' =>  ['nullable','unique:employees ,email'],
+        //     'bank_name' =>  ['nullable'],
+        //     'bank_branch' =>  ['nullable'],
+        //     'bank_account_id' =>  ['nullable'],
+        //     'expertise' =>  ['nullable'],
+        //     'expertise_start_date' =>  ['nullable', 'date'],
+        // ];
 
-        // $this->validate($request, $validateRules);
-        //$request->validate($validateRules);
-        $validator = FacadesValidator::make($request->all(),$validateRules);
-        if ($validator->fails()) {
-            return back()->withErrors($validator)
-                        ->withInput();
-        }
+        // // $this->validate($request, $validateRules);
+        // //$request->validate($validateRules);
+        // $validator = FacadesValidator::make($request->all(),$validateRules);
+        // if ($validator->fails()) {
+        //     return back()->withErrors($validator)
+        //                 ->withInput();
+        // }
         $employe = Employee::create($request->all());
 
         if($request->hasFile("image")){
