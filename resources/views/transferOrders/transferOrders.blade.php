@@ -24,21 +24,21 @@
 
                     </div>
                     <div class="col-md-2">
-                        <label for="validationCustom01" class="form-label">رقم الموظف</label>
+                        <label for="validationCustom01" class="form-label" > رقم الموظف مسؤول</label>
                         <input type="text" class="form-control" id="validationCustom01"  required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <label for="validationCustom02" class="form-label">الإسم</label>
+                        <label for="validationCustom02" class="form-label">عنوان قرار</label>
                         <input type="text" class="form-control" id="validationCustom02"  required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <label for="validationCustom04" class="form-label">من</label>
+                        <label for="validationCustom04" class="form-label">مركز العمل المنتقل منه</label>
                         <select name='id_from_station' class="form-select" id="validationCustom04" required>
                             <option selected disabled >اختر</option>
                             @foreach ($stations as $station )
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <label for="validationCustom04" class="form-label">الى</label>
+                        <label for="validationCustom04" class="form-label">العمل المنتقل اليه</label>
                         <select name='id_to_station' class="form-select" id="validationCustom04" required>
                             <option selected disabled >اختر</option>
                             @foreach ($stations as $station )
