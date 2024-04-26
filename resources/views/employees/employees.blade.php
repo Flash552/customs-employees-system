@@ -38,6 +38,7 @@
                             data-bs-target="#EmpSearch">بحث متقدم</button>
                         <button class="btn btn-primary" type="submit">بحث</button>
                     </div>
+
                     <div class="col-md-2 text-end">
 
                         <label for="validationCustom02" class="form-label ">رقم الموظف</label>
