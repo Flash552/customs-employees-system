@@ -16,8 +16,8 @@
             /* height: 100vh; */
             padding-top: 120px;
             /* padding-bottom: 40px; */
-            background-color: #1a4581;
-            color : #fff;
+            background-color: #492D82;
+            color :#492D82;
         }
         img{
             /* padding: 0 20px 0 0 ; */
@@ -30,15 +30,15 @@
         }
         main .btn{
             width: 100%;
-            background-color : #a59357 !important;
+            background-color : #492D82 !important;
             /* border: #fff solid 1px; */
-            color : #fff !important;
+            color :  #fff; !important;
         }
         main .btn:hover{
             width: 100%;
-            background-color : #D0BA6F !important;
+            background-color : #fff !important;
             /* border: #fff solid 1px; */
-            color : #fff !important;
+            color : #492D82; !important;
 
         }
         .text-muted{
@@ -51,12 +51,12 @@
 
 
 <main class="form-signin">
-    <form>
-        <img src="{{ asset('assets/images/long_customs.png') }}" alt=""  class="m-2 mt-5 mb-5">
+    <div class="card ">
+    <form class="m-3">
+        <p for="exampleInputEmail1" class="text-center">تسجيل الدخول</p>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">بريد الكتروني</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">كلمة السر</label>
@@ -68,8 +68,8 @@
 </div>
 
   <a href=""><button type="submit" class="btn ">تسجيل دخول</button></a>
-  <p class="  text-muted text-center">© 2024 مصلحة جمارك الليبية </p>
-</form>
+  
+</form></div>
 </main>
 
 
