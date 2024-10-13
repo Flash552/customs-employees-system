@@ -39,10 +39,13 @@ Route::get('dashboard', function (){
     return view('dashboard.dashboard');
 });
 Route::resource("employees",EmployeeController::class);
+Route::post('employees/update', [EmployeeController::class, 'update'])
+    ->name('employees.update');
 Route::get('employees/searchAdvanced/{id}', [EmployeeController::class, 'searchAdvanced'])
     ->name('employees.searchAdvanced');
 Route::get('employees/print/{id}', [EmployeeController::class, 'print'])
     ->name('employees.print');
+
 Route::get('employees/printAll/{id}', [EmployeeController::class, 'printAll'])
     ->name('employees.printAll');
 Route::resource("users",UserController::class);

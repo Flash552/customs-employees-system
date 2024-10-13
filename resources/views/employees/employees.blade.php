@@ -79,7 +79,7 @@
 
 
 
-            <table id="example" class="table  col-12  pt-5 m-3" style="width:50wv"  dir="rtl" >
+            <table id="empTable" class="table table-striped col-12  pt-5 m-3" style="width:50wv"  dir="rtl" >
         <thead>
             <tr>
                 <!-- <th>Name</th>
@@ -198,6 +198,20 @@
 @endsection
 
 @section('scripts')
+    <script>
+        new DataTable('#empTable', {
+            columnDefs: [
+                {"visible": false, "targets": [3, 4, 5, 9, 12, 13, 14]} // Specify the indices of the columns you want to hide
+            ],
+            layout: {
+                topStart: {
+                    buttons: [ 'excel', 'print', 'colvis' ]
+                }
+            },scrollX: true
+
+
+        });
+    </script>
     <!-- <script>
         let form_emp = document.querySelector('#checked');
         let inputs = document.querySelectorAll('.check_emp');
